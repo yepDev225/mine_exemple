@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPLO GROUP-INTERNATIONAL – L'avenir minier durable</title>
+    <meta name="description" content="Expert en géologie minière en Côte d'Ivoire, EXPLO GROUP-INTERNATIONAL développe des solutions minières durables et innovantes pour l'avenir">
+    <meta name="keywords" content="géologie minière, Côte d'Ivoire, exploitation minière durable, ressources minières, mines responsables">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        copper: '#B87333',
+                        forest: '#228B22',
+                        stone: '#8A8A8A',
+                        gold: '#D4AF37'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .navbar-transparent {
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-solid {
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #D4AF37;
+            margin-bottom: 3rem;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -1.5rem;
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #B87333, #D4AF37);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(180, 115, 51, 0.3);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .expertise-card {
+            background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+            border-left: 4px solid #228B22;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .mobile-menu.open {
+            max-height: 100vh;
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .carousel-item {
+                width: 50%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .carousel-item {
+                width: 33.333%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 navbar-transparent transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="h-10 w-10 bg-gold rounded-md flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">EG</span>
+                    </div>
+                    <span class="ml-2 text-white font-semibold">EXPLO GROUP</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#accueil" class="text-white hover:text-gold transition-colors">Accueil</a>
+                    <a href="#apropos" class="text-white hover:text-gold transition-colors">À propos</a>
+                    <a href="#filiales" class="text-white hover:text-gold transition-colors">Filiales</a>
+                    <a href="#expertise" class="text-white hover:text-gold transition-colors">Expertise</a>
+                    <a href="#projets" class="text-white hover:text-gold transition-colors">Projets</a>
+                    <a href="#contact" class="text-white hover:text-gold transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu bg-stone-900 md:hidden">
+            <div class="container px-4 py-4">
+                <a href="#accueil" class="block py-3 text-white hover:text-gold transition-colors border-b border-stone-700">Accueil</a>
+                <a href="#apropos" class="block py-3 text-white hover:text-gold transition-colors border-b border-stone-700">À propos</a>
+                <a href="#filiales" class="block py-3 text-white hover:text-gold transition-colors border-b border-stone-700">Filiales</a>
+                <a href="#expertise" class="block py-3 text-white hover:text-gold transition-colors border-b border-stone-700">Expertise</a>
+                <a href="#projets" class="block py-3 text-white hover:text-gold transition-colors border-b border-stone-700">Projets</a>
+                <a href="#contact" class="block py-3 text-white hover:text-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div class="hero-video-placeholder bg-gradient-to-r from-stone-800 to-stone-900 absolute inset-0"></div>
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 text-center text-white px-4" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">L'AVENIR MINIER DURABLE</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Innovation et responsabilité au cœur de l'exploitation minière</p>
+            <button class="bg-copper hover:bg-gold text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                Découvrir nos solutions
+            </button>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="apropos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4">QUI SOMMES-NOUS</h2>
+                <div class="w-24 h-1 bg-copper mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <div class="bg-gradient-to-br from-copper to-gold h-80 rounded-lg shadow-xl flex items-center justify-center">
+                        <i class="ri-building-4-line text-white text-6xl opacity-80"></i>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-stone-800 mb-6">Notre vision</h3>
+                    <p class="text-stone-600 mb-6">
+                        EXPLO GROUP-INTERNATIONAL est un leader dans le secteur minier en Côte d'Ivoire, 
+                        œuvrant pour le développement d'une industrie minière durable et responsable. 
+                        Notre approche combine expertise technique de pointe et engagement environnemental.
+                    </p>
+                    <p class="text-stone-600 mb-8">
+                        Fondé sur des valeurs d'innovation et de respect des communautés locales, 
+                        nous transformons les ressources minérales en opportunités de développement 
+                        économique tout en préservant l'écosystème pour les générations futures.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-forest rounded-full p-2 mr-3">
+                                <i class="ri-award-line text-white"></i>
+                            </div>
+                            <span class="text-stone-800 font-medium">Excellence</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-copper rounded-full p-2 mr-3">
+                                <i class="ri-shield-check-line text-white"></i>
+                            </div>
+                            <span class="text-stone-800 font-medium">Sécurité</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gold rounded-full p-2 mr-3">
+                                <i class="ri-refresh-line text-white"></i>
+                            </div>
+                            <span class="text-stone-800 font-medium">Durabilité</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-stone-700 rounded-full p-2 mr-3">
+                                <i class="ri-group-line text-white"></i>
+                            </div>
+                            <span class="text-stone-800 font-medium">Communauté</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filiales Section -->
+    <section id="filiales" class="py-16 bg-stone-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4">NOS ENTITÉS</h2>
+                <div class="w-24 h-1 bg-copper mx-auto"></div>
+            </div>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-12">
+                    <!-- Item 1 -->
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-icon">
+                            <i class="ri-diamond-line text-white"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-copper mb-4">EXPLO MINERALS</h3>
+                            <p class="text-stone-600">
+                                Spécialisée dans l'exploration et l'extraction de minerais précieux, 
+                                EXPLO MINERALS utilise des technologies de pointe pour maximiser 
+                                le rendement tout en minimisant l'impact environnemental.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-icon">
+                            <i class="ri-map-2-line text-white"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-copper mb-4">GEO EXPLO SERVICES</h3>
+                            <p class="text-stone-600">
+                                Services géologiques complets incluant cartographie, forage, 
+                                analyse de données et conseil en gestion des ressources minérales 
+                                pour des projets miniers optimisés.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-icon">
+                            <i class="ri-leaf-line text-white"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-copper mb-4">MINING ECO SOLUTIONS</h3>
+                            <p class="text-stone-600">
+                                Développement de solutions environnementales innovantes pour 
+                                la réhabilitation des sites miniers et la gestion durable 
+                                des ressources en eau.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-icon">
+                            <i class="ri-community-line text-white"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-copper mb-4">COMMUNITY MINING DEVELOPMENT</h3>
+                            <p class="text-stone-600">
+                                Programme de développement communautaire visant à créer 
+                                des partenariats durables avec les populations locales 
+                                et à maximiser les retombées positives des activités minières.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4">NOTRE EXPERTISE</h2>
+                <div class="w-24 h-1 bg-copper mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="expertise-card p-6 rounded-lg" data-aos="flip-left">
+                    <div class="bg-copper rounded-full p-3 inline-block mb-4">
+                        <i class="ri-compass-3-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Exploration Géologique</h3>
+                    <p class="text-stone-600">
+                        Technologies avancées de prospection et d'analyse des gisements minéraux 
+                        pour une évaluation précise des ressources.
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="expertise-card p-6 rounded-lg" data-aos="flip-left" data-aos-delay="100">
+                    <div class="bg-forest rounded-full p-3 inline-block mb-4">
+                        <i class="ri-cpu-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Exploitation Minière</h3>
+                    <p class="text-stone-600">
+                        Méthodes d'extraction innovantes et responsables, optimisant la production 
+                        tout en réduisant l'impact environnemental.
+                    </p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="expertise-card p-6 rounded-lg" data-aos="flip-left" data-aos-delay="200">
+                    <div class="bg-gold rounded-full p-3 inline-block mb-4">
+                        <i class="ri-repeat-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Gestion Durable</h3>
+                    <p class="text-stone-600">
+                        Stratégies de gestion environnementale et plans de réhabilitation 
+                        pour une exploitation minière véritablement durable.
+                    </p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="expertise-card p-6 rounded-lg" data-aos="flip-left" data-aos-delay="300">
+                    <div class="bg-stone-700 rounded-full p-3 inline-block mb-4">
+                        <i class="ri-bar-chart-2-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Analyse de Données</h3>
+                    <p class="text-stone-600">
+                        Intelligence artificielle et analyse avancée de données pour 
+                        optimiser les opérations et prédire les tendances du marché.
+                    </p>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="expertise-card p-6 rounded-lg" data-aos="flip-left" data-aos-delay="400">
+                    <div class="bg-copper rounded-full p-3 inline-block mb-4">
+                        <i class="ri-group-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Développement Communautaire</h3>
+                    <p class="text-stone-600">
+                        Programmes de formation et initiatives de développement local 
+                        créant une valeur partagée avec les communautés hôtes.
+                    </p>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="expertise-card p-6 rounded-lg" data-aos="flip-left" data-aos-delay="500">
+                    <div class="bg-forest rounded-full p-3 inline-block mb-4">
+                        <i class="ri-line-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Innovation Technologique</h3>
+                    <p class="text-stone-600">
+                        Recherche et développement continu pour mettre en œuvre les 
+                        technologies les plus avancées dans le secteur minier.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approche Durable Section -->
+    <section class="py-16 bg-forest text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">NOTRE APPROCHE DURABLE</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="zoom-in">
+                    <div class="bg-white bg-opacity-20 rounded-full p-5 inline-block mb-6">
+                        <i class="ri-earth-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Environnement</h3>
+                    <p class="px-4">Réduction de l'empreinte écologique et préservation de la biodiversité dans toutes nos opérations.</p>
+                </div>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="bg-white bg-opacity-20 rounded-full p-5 inline-block mb-6">
+                        <i class="ri-heart-3-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Social</h3>
+                    <p class="px-4">Amélioration des conditions de vie des communautés locales et respect des droits de l'homme.</p>
+                </div>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bg-white bg-opacity-20 rounded-full p-5 inline-block mb-6">
+                        <i class="ri-money-dollar-circle-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Économie</h3>
+                    <p class="px-4">Création de valeur partagée et développement économique local durable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projets" class="py-16 bg-stone-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4">PROJETS RÉCENTS</h2>
+                <div class="w-24 h-1 bg-copper mx-auto"></div>
+            </div>
+            
+            <!-- Carousel -->
+            <div class="relative overflow-hidden">
+                <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="carousel">
+                    <!-- Project 1 -->
+                    <div class="carousel-item px-3">
+                        <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <div class="bg-gradient-to-br from-copper to-gold h-48 flex items-center justify-center">
+                                <i class="ri-gem-line text-white text-5xl"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-stone-800 mb-2">Projet Minier d'Or d'Abengourou</h3>
+                                <p class="text-stone-600 mb-4">Exploitation aurifère responsable avec technologies de traitement sans cyanure.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-copper font-semibold">Côte d'Ivoire</span>
+                                    <a href="#" class="text-forest hover:text-gold transition-colors">Voir plus →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="carousel-item px-3">
+                        <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <div class="bg-gradient-to-br from-forest to-green-600 h-48 flex items-center justify-center">
+                                <i class="ri-seedling-line text-white text-5xl"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-stone-800 mb-2">Programme de Réhabilitation de Bouaké</h3>
+                                <p class="text-stone-600 mb-4">Restoration écologique d'anciens sites miniers et développement agricole.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-copper font-semibold">Côte d'Ivoire</span>
+                                    <a href="#" class="text-forest hover:text-gold transition-colors">Voir plus →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="carousel-item px-3">
+                        <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <div class="bg-gradient-to-br from-stone-600 to-stone-800 h-48 flex items-center justify-center">
+                                <i class="ri-graduation-cap-line text-white text-5xl"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-stone-800 mb-2">Centre de Formation Minière de Yamoussoukro</h3>
+                                <p class="text-stone-600 mb-4">Formation aux métiers miniers pour les jeunes ivoiriens et ivoiriennes.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-copper font-semibold">Côte d'Ivoire</span>
+                                    <a href="#" class="text-forest hover:text-gold transition-colors">Voir plus →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md -ml-4 hidden md:block">
+                    <i class="ri-arrow-left-s-line text-copper text-xl"></i>
+                </button>
+                <button class="carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md -mr-4 hidden md:block">
+                    <i class="ri-arrow-right-s-line text-copper text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-center mt-12">
+                <button class="bg-copper hover:bg-gold text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                    Voir tous nos projets
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4">CONTACTEZ-NOUS</h2>
+                <div class="w-24 h-1 bg-copper mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-stone-700 mb-2">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-copper">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-stone-700 mb-2">Adresse email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-copper">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-stone-700 mb-2">Sujet</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-copper">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-stone-700 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-copper"></textarea>
+                        </div>
+                        <button type="submit" class="bg-copper hover:bg-gold text-white px-8 py-3 rounded-full font-semibold transition-colors w-full">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-stone-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-6">Informations de contact</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-copper rounded-full p-3 mr-4">
+                                    <i class="ri-map-pin-2-line text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-stone-800">Adresse</h4>
+                                    <p class="text-stone-600">Plateau, Abidjan, Côte d'Ivoire</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-forest rounded-full p-3 mr-4">
+                                    <i class="ri-phone-line text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-stone-800">Téléphone</h4>
+                                    <p class="text-stone-600">+225 XX XX XX XX</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-gold rounded-full p-3 mr-4">
+                                    <i class="ri-mail-line text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-stone-800">Email</h4>
+                                    <p class="text-stone-600">contact@explogroup-ci.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-stone-800 mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-stone-200 hover:bg-copper text-stone-700 hover:text-white rounded-full p-3 transition-colors">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <a href="#" class="bg-stone-200 hover:bg-copper text-stone-700 hover:text-white rounded-full p-3 transition-colors">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+                                <a href="#" class="bg-stone-200 hover:bg-copper text-stone-700 hover:text-white rounded-full p-3 transition-colors">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                                <a href="#" class="bg-stone-200 hover:bg-copper text-stone-700 hover:text-white rounded-full p-3 transition-colors">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/225XXXXXXXXX" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-colors z-40">
+        <i class="ri-whatsapp-line text-xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="navbar-solid text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="h-12 w-12 bg-gold rounded-md flex items-center justify-center mb-4">
+                        <span class="text-white font-bold text-lg">EG</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">
+                        Leader dans l'exploitation minière durable en Côte d'Ivoire et en Afrique de l'Ouest.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-stone-400 hover:text-gold transition-colors text-sm">Accueil</a></li>
+                        <li><a href="#apropos" class="text-stone-400 hover:text-gold transition-colors text-sm">À propos</a></li>
+                        <li><a href="#filiales" class="text-stone-400 hover:text-gold transition-colors text-sm">Filiales</a></li>
+                        <li><a href="#expertise" class="text-stone-400 hover:text-gold transition-colors text-sm">Expertise</a></li>
+                        <li><a href="#projets" class="text-stone-400 hover:text-gold transition-colors text-sm">Projets</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-stone-400 hover:text-gold transition-colors text-sm">Exploration minière</a></li>
+                        <li><a href="#" class="text-stone-400 hover:text-gold transition-colors text-sm">Exploitation</a></li>
+                        <li><a href="#" class="text-stone-400 hover:text-gold transition-colors text-sm">Consulting</a></li>
+                        <li><a href="#" class="text-stone-400 hover:text-gold transition-colors text-sm">Formation</a></li>
+                        <li><a href="#" class="text-stone-400 hover:text-gold transition-colors text-sm">Développement durable</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
+                    <p class="text-stone-400 mb-4 text-sm">Abonnez-vous à notre newsletter pour recevoir nos actualités.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l-lg focus:outline-none text-stone-800 w-full text-sm">
+                        <button type="submit" class="bg-copper hover:bg-gold px-4 py-2 rounded-r-lg transition-colors">
+                            <i class="ri-send-plane-line"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-stone-400 text-sm">© 2023 EXPLO GROUP-INTERNATIONAL. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-stone-400 hover:text-gold transition-colors text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-stone-400 hover:text-gold transition-colors text-sm">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll behavior
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.remove('navbar-transparent');
+                navbar.classList.add('navbar-solid');
+            } else {
+                navbar.classList.remove('navbar-solid');
+                navbar.classList.add('navbar-transparent');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+           
+            // Implement mobile menu functionality here
+            alert('Menu mobile à implémenter');
+        });
+
+        // Carousel functionality
+        const carousel = document.querySelector('.carousel-container');
+        const items = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const itemWidth = items[0].offsetWidth;
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', function() {
+            if (currentIndex < items.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Responsive carousel
+        window.addEventListener('resize', updateCarousel);
+    </script>
+</body>
+</html>

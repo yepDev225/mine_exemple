@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPLO GROUP-INTERNATIONAL - Expertise minière et géologique de classe mondiale</title>
+    <meta name="description" content="EXPLO GROUP-INTERNATIONAL, leader en expertise minière et géologique en Côte d'Ivoire. Services professionnels d'études géologiques, prospection et exploitation minière.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bleu-nuit': '#0A1A35',
+                        'or': '#D4AF37',
+                        'or-hover': '#BF9B30',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Styles personnalisés */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(10, 26, 53, 0.8), rgba(10, 26, 53, 0.8)), url('https://images.unsplash.com/photo-1582058091505-6b8c3a6c9be3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-divider {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .section-divider::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, transparent 49%, #f3f4f6 50%);
+        }
+        
+        .section-divider.reverse::before {
+            background: linear-gradient(to top right, transparent 49%, #f3f4f6 50%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #D4AF37;
+        }
+        
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .form-input {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="text-xl font-bold text-white">
+                    EXPLO GROUP<span class="text-or">-INTERNATIONAL</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#accueil" class="nav-link active">Accueil</a>
+                    <a href="#presentation" class="nav-link">Présentation</a>
+                    <a href="#entites" class="nav-link">Nos Entités</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#engagement" class="nav-link">Engagement</a>
+                    <a href="#temoignages" class="nav-link">Témoignages</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <!-- Mobile Navigation Toggle -->
+                <div class="md:hidden">
+                    <button class="hamburger" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu bg-bleu-nuit md:hidden" id="mobile-menu">
+                <div class="py-4 space-y-4">
+                    <a href="#accueil" class="block px-4 py-2 text-white hover:text-or transition duration-300">Accueil</a>
+                    <a href="#presentation" class="block px-4 py-2 text-white hover:text-or transition duration-300">Présentation</a>
+                    <a href="#entites" class="block px-4 py-2 text-white hover:text-or transition duration-300">Nos Entités</a>
+                    <a href="#services" class="block px-4 py-2 text-white hover:text-or transition duration-300">Services</a>
+                    <a href="#engagement" class="block px-4 py-2 text-white hover:text-or transition duration-300">Engagement</a>
+                    <a href="#temoignages" class="block px-4 py-2 text-white hover:text-or transition duration-300">Témoignages</a>
+                    <a href="#contact" class="block px-4 py-2 text-white hover:text-or transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center text-center text-white" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Logo (à remplacer par le vrai logo) -->
+                <div class="mb-8 p-4 bg-white rounded-lg inline-block">
+                    <h1 class="text-3xl md:text-4xl font-bold text-bleu-nuit">EXPLO GROUP<span class="text-or">-INTERNATIONAL</span></h1>
+                </div>
+                
+                <h2 class="text-2xl md:text-4xl font-bold mb-6">Expertise minière et géologique de classe internationale</h2>
+                <p class="text-xl mb-8 max-w-2xl">Leader dans l'exploration et l'exploitation des ressources minières en Côte d'Ivoire et en Afrique de l'Ouest</p>
+                <a href="#contact" class="bg-or hover:bg-or-hover text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Contactez-nous
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Présentation du Groupe -->
+    <section class="py-20 bg-gray-100">
+        <div class="section-divider"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-bleu-nuit mb-4">Présentation du Groupe</h2>
+                <div class="h-1 w-24 bg-or mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-bleu-nuit mb-6">Notre Histoire</h3>
+                    <p class="text-gray-700 mb-6">Fondé en 2010, EXPLO GROUP-INTERNATIONAL est rapidement devenu un acteur majeur dans le secteur minier en Côte d'Ivoire. Notre croissance repose sur l'excellence technique et l'innovation dans l'exploration et l'exploitation des ressources minières.</p>
+                    
+                    <h3 class="text-2xl font-semibold text-bleu-nuit mb-6">Notre Mission</h3>
+                    <p class="text-gray-700 mb-6">Développer de manière responsable le potentiel minier de la Côte d'Ivoire et de la sous-région, en alliant expertise technique de pointe, respect des normes internationales et responsabilité sociale et environnementale.</p>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-bleu-nuit mb-6">Nos Valeurs</h3>
+                        
+                        <div class="mb-6 flex items-start">
+                            <div class="bg-bleu-nuit rounded-full p-3 mr-4">
+                                <i class="fas fa-shield-alt text-or text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-medium text-bleu-nuit mb-2">Sécurité</h4>
+                                <p class="text-gray-700">La sécurité de nos employés et partenaires est notre priorité absolue.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6 flex items-start">
+                            <div class="bg-bleu-nuit rounded-full p-3 mr-4">
+                                <i class="fas fa-certificate text-or text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-medium text-bleu-nuit mb-2">Fiabilité</h4>
+                                <p class="text-gray-700">Nous tenons nos engagements et garantissons la qualité de nos services.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-bleu-nuit rounded-full p-3 mr-4">
+                                <i class="fas fa-leaf text-or text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-medium text-bleu-nuit mb-2">Développement Durable</h4>
+                                <p class="text-gray-700">Nous nous engageons à minimiser l'impact environnemental de nos activités.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nos Entités -->
+    <section class="py-20 bg-white">
+        <div class="section-divider reverse"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-bleu-nuit mb-4">Nos Entités</h2>
+                <div class="h-1 w-24 bg-or mx-auto mb-8"></div>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">Le groupe EXPLO GROUP-INTERNATIONAL est structuré en quatre entités spécialisées, couvrant l'ensemble de la chaîne de valeur minière.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Entité 1 -->
+                <div class="bg-gray-100 rounded-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">Explo-Gold Sarl-U</h3>
+                    <p class="text-gray-700">Bureau d'étude technique spécialisé dans la recherche et l'évaluation des gisements aurifères.</p>
+                </div>
+                
+                <!-- Entité 2 -->
+                <div class="bg-gray-100 rounded-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">EXPLO-RESSOURCES SARL</h3>
+                    <p class="text-gray-700">Exploration et exploitation des ressources minières diversifiées avec une approche innovante.</p>
+                </div>
+                
+                <!-- Entité 3 -->
+                <div class="bg-gray-100 rounded-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">EXPLO-MINING SARL</h3>
+                    <p class="text-gray-700">Spécialiste de l'exploitation minière à grande échelle avec des technologies de pointe.</p>
+                </div>
+                
+                <!-- Entité 4 -->
+                <div class="bg-gray-100 rounded-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">EXPLO MINING AND RESSOURCES SARL</h3>
+                    <p class="text-gray-700">Gestion intégrée des ressources et conseil stratégique pour les projets miniers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section class="py-20 bg-gray-100">
+        <div class="section-divider"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-bleu-nuit mb-4">Services Clés</h2>
+                <div class="h-1 w-24 bg-or mx-auto mb-8"></div>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">Une offre complète de services pour l'industrie minière, de l'exploration à l'exploitation.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-bleu-nuit text-4xl mb-4">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">Études Géologiques</h3>
+                    <p class="text-gray-700">Cartographie géologique détaillée, analyse structurale et identification des cibles minières potentielles.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-bleu-nuit text-4xl mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">Prospection</h3>
+                    <p class="text-gray-700">Services de prospection avancée utilisant des technologies de pointe pour identifier les gisements minéraux.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-bleu-nuit text-4xl mb-4">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">Exploitation Minière</h3>
+                    <p class="text-gray-700">Exploitation responsable et efficiente des ressources minières avec les meilleures pratiques industrielles.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-bleu-nuit text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">Conseil en Ressources Minières</h3>
+                    <p class="text-gray-700">Expertise stratégique pour optimiser la valorisation des ressources et les investissements miniers.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-bleu-nuit text-4xl mb-4">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">Analyses Géochimiques</h3>
+                    <p class="text-gray-700">Laboratoire moderne d'analyses géochimiques pour la caractérisation des échantillons miniers.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg p-6 shadow-md card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-bleu-nuit text-4xl mb-4">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bleu-nuit mb-4">Gestion des Ressources Hydriques</h3>
+                    <p class="text-gray-700">Solutions intégrées pour la gestion de l'eau dans les opérations minières, respectueuses de l'environnement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Engagement & Durabilité -->
+    <section class="py-20 bg-white">
+        <div class="section-divider reverse"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-bleu-nuit mb-4">Engagement & Durabilité</h2>
+                <div class="h-1 w-24 bg-or mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1613&q=80" alt="Développement durable" class="rounded-lg shadow-lg">
+                </div>
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-bleu-nuit mb-6">Responsabilité Environnementale</h3>
+                    <p class="text-gray-700 mb-6">Nous nous engageons à minimiser l'impact environnemental de nos activités through des pratiques d'exploitation responsables, la réhabilitation des sites et la préservation de la biodiversité.</p>
+                    
+                    <h3 class="text-2xl font-semibold text-bleu-nuit mb-6">Respect des Normes</h3>
+                    <p class="text-gray-700 mb-6">Toutes nos opérations respectent strictement les normes ivoiriennes et internationales en matière d'exploitation minière, de sécurité et de protection de l'environnement.</p>
+                    
+                    <h3 class="text-2xl font-semibold text-bleu-nuit mb-6">Développement Communautaire</h3>
+                    <p class="text-gray-700">Nous contribuons au développement socio-économique des communautés locales par la création d'emplois, des programmes de formation et des investissements dans les infrastructures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages & Partenaires -->
+    <section class="py-20 bg-gray-100">
+        <div class="section-divider"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-bleu-nuit mb-4">Ils Nous Font Confiance</h2>
+                <div class="h-1 w-24 bg-or mx-auto mb-8"></div>
+            </div>
+            
+            <div class="mb-16" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-bleu-nuit mb-8 text-center">Témoignages</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-or text-2xl mb-4">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">"EXPLO GROUP-INTERNATIONAL a fait preuve d'un professionnalisme remarquable dans l'évaluation de notre projet minier. Leur expertise technique est exceptionnelle."</p>
+                        <p class="font-semibold text-bleu-nuit">— Directeur de Projet, MineCorp</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-or text-2xl mb-4">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">"Leur approche responsable et durable de l'exploitation minière a été déterminante dans notre choix de partenaire. Des résultats impressionnants."</p>
+                        <p class="font-semibold text-bleu-nuit">— CEO, GlobalResources</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-or text-2xl mb-4">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">"La qualité des études géologiques réalisées par EXPLO-GOLD a dépassé nos attentes. Un partenaire de confiance pour nos projets en Afrique de l'Ouest."</p>
+                        <p class="font-semibold text-bleu-nuit">— Directeur Exploration, GoldWest</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-bleu-nuit mb-8 text-center">Partenaires</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                    <div class="flex justify-center">
+                        <img src="https://via.placeholder.com/150x80?text=Partenaire+1" alt="Partenaire 1" class="partner-logo">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://via.placeholder.com/150x80?text=Partenaire+2" alt="Partenaire 2" class="partner-logo">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://via.placeholder.com/150x80?text=Partenaire+3" alt="Partenaire 3" class="partner-logo">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://via.placeholder.com/150x80?text=Partenaire+4" alt="Partenaire 4" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="section-divider reverse"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-bleu-nuit mb-4">Contactez-nous</h2>
+                <div class="h-1 w-24 bg-or mx-auto mb-8"></div>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">Une question, un projet ? Notre équipe est à votre disposition pour vous accompagner.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Nom complet</label>
+                            <input type="text" id="name" class="form-input" placeholder="Votre nom">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Adresse e-mail</label>
+                            <input type="email" id="email" class="form-input" placeholder="votre@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-2">Sujet</label>
+                            <input type="text" id="subject" class="form-input" placeholder="Sujet de votre message">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="form-input" placeholder="Votre message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-or hover:bg-or-hover text-white font-bold py-3 px-8 rounded-lg transition duration-300 w-full">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-bleu-nuit text-white p-8 rounded-lg h-full">
+                        <h3 class="text-2xl font-semibold mb-6">Coordonnées</h3>
+                        
+                        <div class="mb-6 flex items-start">
+                            <div class="mr-4 text-or">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Adresse</h4>
+                                <p>Plateau, Avenue Lamblin<br>Abidjan, Côte d'Ivoire</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6 flex items-start">
+                            <div class="mr-4 text-or">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Téléphone</h4>
+                                <p>+225 27 20 123 456</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6 flex items-start">
+                            <div class="mr-4 text-or">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p>contact@explogroup-international.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-white hover:text-or transition duration-300">
+                                    <i class="fab fa-linkedin-in text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-or transition duration-300">
+                                    <i class="fab fa-twitter text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-or transition duration-300">
+                                    <i class="fab fa-facebook-f text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bleu-nuit text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">EXPLO GROUP-INTERNATIONAL</h3>
+                    <p class="text-gray-300">Expertise minière et géologique de classe mondiale en Côte d'Ivoire et en Afrique de l'Ouest.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">Accueil</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">À propos</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">Services</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Entités</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">Explo-Gold Sarl-U</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">EXPLO-RESSOURCES SARL</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">EXPLO-MINING SARL</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">EXPLO MINING AND RESSOURCES SARL</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Mentions Légales</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">Conditions d'utilisation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-or transition duration-300">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 EXPLO GROUP-INTERNATIONAL. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton WhatsApp -->
+    <a href="https://wa.me/2252720123456" class="btn-whatsapp" aria-label="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialisation de AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>
