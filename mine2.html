@@ -16,6 +16,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,6 +107,134 @@
         .carousel-item {
             transition: opacity 0.5s ease;
         }
+        
+        /* Styles pour la navbar responsive */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .hamburger-menu span {
+            width: 100%;
+            height: 3px;
+            background-color: #FFD700;
+            border-radius: 5px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: center;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: #2a2a2a;
+            z-index: 1000;
+            padding: 80px 30px 30px;
+            transition: left 0.4s ease-in-out;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mobile-menu.active {
+            left: 0;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            color: white;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu a:hover {
+            color: #FFD700;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Media Queries pour le responsive */
+        @media (max-width: 768px) {
+            body *{
+                overflow: hidden;
+            }
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            .desktop-menu {
+                display: none !important;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem !important;
+            }
+            
+            .flip-card {
+                height: 220px !important;
+                margin-bottom: 20px;
+            }
+            
+            .stats-number {
+                font-size: 2.5rem;
+            }
+            
+            .carousel-item {
+                width: 100% !important;
+            }
+            
+            .mobile-logo {
+                height: 60px !important;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px !important;
+            }
+            
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body class="relative">
@@ -121,9 +250,11 @@
     <nav class="fixed w-full bg-[#2a2a2a] py-4 z-50 nav-glow">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="./img/logo3.png" alt="EXPLO GROUP Logo" class="h-20">
+                <img src="./img/logo3.png" alt="EXPLO GROUP Logo" class="h-20 mobile-logo">
             </div>
-            <div class="hidden md:flex space-x-8">
+            
+            <!-- Menu Desktop -->
+            <div class="desktop-menu hidden md:flex space-x-8">
                 <a href="#home" class="text-white hover:text-[#FFD700] transition-colors">Accueil</a>
                 <a href="#about" class="text-white hover:text-[#FFD700] transition-colors">À propos</a>
                 <a href="#subsidiaries" class="text-white hover:text-[#FFD700] transition-colors">Filiales</a>
@@ -131,17 +262,35 @@
                 <a href="#safety" class="text-white hover:text-[#FFD700] transition-colors">Sécurité</a>
                 <a href="#contact" class="text-white hover:text-[#FFD700] transition-colors">Contact</a>
             </div>
+            
+            <!-- Bouton Hamburger pour Mobile -->
+            <button class="hamburger-menu md:hidden" id="hamburger-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Menu Mobile -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" class="text-white hover:text-[#FFD700] transition-colors">Accueil</a>
+        <a href="#about" class="text-white hover:text-[#FFD700] transition-colors">À propos</a>
+        <a href="#subsidiaries" class="text-white hover:text-[#FFD700] transition-colors">Filiales</a>
+        <a href="#services" class="text-white hover:text-[#FFD700] transition-colors">Services</a>
+        <a href="#safety" class="text-white hover:text-[#FFD700] transition-colors">Sécurité</a>
+        <a href="#contact" class="text-white hover:text-[#FFD700] transition-colors">Contact</a>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
         <div id="vanta-background" class="absolute inset-0 z-0"></div>
         <div class="container mx-auto px-6 text-center z-10" data-aos="fade-up">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 neon-gold">EXPLO GROUP INTERNATIONAL</h1>
-            <h2 class="text-2xl md:text-4xl mb-8 neon-green">EXPERTS EN MINES ET EN GÉOLOGIE</h2>
+            <h1 class="hero-title text-5xl md:text-7xl font-bold mb-6 neon-gold">EXPLO GROUP INTERNATIONAL</h1>
+            <h2 class="hero-subtitle text-2xl md:text-4xl mb-8 neon-green">EXPERTS EN MINES ET EN GÉOLOGIE</h2>
             <p class="text-xl max-w-3xl mx-auto mb-10">Expertise mondiale en exploration minière, estimation des ressources et opérations minières durables</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <div class="hero-buttons flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" class="bg-[#FFD700] text-[#1a1a1a] px-8 py-3 rounded-lg font-bold text-lg">Entrer en contact</a>
                 <a href="#services" class="border-2 border-[#FFD700] text-[#FFD700] px-8 py-3 rounded-lg font-bold text-lg">Nos services</a>
             </div>
@@ -193,7 +342,7 @@
                 <div class="flip-card h-64" data-aos="flip-left">
                     <div class="flip-card-inner h-full rounded-lg">
                         <div class="flip-card-front bg-[#1a1a1a] rounded-lg border border-[#FFD700] flex flex-col items-center justify-center p-4">
-                            <img src="./img/logo3.png" alt="EXPLO GROUP" class="h-25 mb-4">
+                            <img src="./img/logo3.png" alt="EXPLO GROUP" class="h-20 mb-4">
                             <h3 class="text-xl font-semibold text-center">EXPLO GROUP INTERNATIONAL</h3>
                         </div>
                         <div class="flip-card-back bg-[#1a1a1a] rounded-lg border border-[#FFD700] flex items-center justify-center p-4">
@@ -481,7 +630,7 @@
             </div>
         </div>
     </footer>
-    <a href="https://wa.me/+2250748301344" class=" btn-whatsapp bg-[#FFD700] text-[#1a1a1a] px-4 py-2 rounded-lg font-semibold flex items-center" aria-label="Contactez-nous sur WhatsApp">
+    <a href="https://wa.me/+2250748301344" target="_blank" class=" btn-whatsapp bg-[#FFD700] text-[#1a1a1a] px-4 py-2 rounded-lg font-semibold flex items-center" aria-label="Contactez-nous sur WhatsApp">
                 <i data-feather="message-circle" class="mr-2"></i> WhatsApp
             </a>
 
@@ -527,20 +676,7 @@
             window.requestAnimationFrame(step);
         }
 
-        // Start counters when stats section is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    document.querySelectorAll('.stats-number').forEach(el => {
-                        const target = parseInt(el.getAttribute('data-target'));
-                        animateValue(el, 0, target, 2000);
-                    });
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(document.querySelector('.bg-[#2a2a2a].py-20'));
+        
 
         // Carousel functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -570,6 +706,35 @@
             window.addEventListener('resize', () => {
                 const newItemWidth = items[0].clientWidth;
                 carousel.style.transform = `translateX(-${currentIndex * newItemWidth}px)`;
+            });
+        });
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('overlay');
+            
+            hamburgerButton.addEventListener('click', ()=>{
+                mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            overlay.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Close menu when clicking on links
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
             });
         });
 
