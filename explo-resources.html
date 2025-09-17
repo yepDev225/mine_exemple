@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPLO RESOURCES SARL - Planification Minière</title>
+    <meta name="description" content="EXPLO RESOURCES SARL - Services de planification minière, d'ingénierie et d'optimisation opérationnelle pour les opérations minières actives.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="icon" href="../img/icon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./img/explo3.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-glow {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #FFC107;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: #e0a800;
+            transform: translateY(-5px);
+        }
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+        <i data-feather="arrow-up"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white py-4 z-50 nav-glow">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="../index.html">
+                    <img src="../img/logo1.png" alt="EXPLO RESOURCES Logo" class="h-16">
+                </a>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex space-x-8">
+                <a href="../index.html" class="text-gray-800 hover:text-[#FFC107] transition-colors">Accueil</a>
+                <a href="#about" class="text-gray-800 hover:text-[#FFC107] transition-colors">À propos</a>
+                <a href="#services" class="text-gray-800 hover:text-[#FFC107] transition-colors">Services</a>
+                <a href="#gallery" class="text-gray-800 hover:text-[#FFC107] transition-colors">Galerie</a>
+                <a href="#contact" class="text-gray-800 hover:text-[#FFC107] transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-20 hero-section">
+        <div class="container mx-auto px-6 text-center z-10" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">EXPLO RESOURCES SARL</h1>
+            <h2 class="text-2xl md:text-4xl mb-8 text-white">Expert en planification minière et optimisation opérationnelle</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-10 text-white">Services de planification minière, d'ingénierie et d'optimisation opérationnelle pour les opérations minières actives</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-[#FFC107] text-gray-900 px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#e0a800] transition">Entrer en contact</a>
+                <a href="../index.html#services" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition">Nos services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-6 text-gray-800">À propos d'EXPLO RESOURCES SARL</h2>
+                    <p class="mb-4 text-gray-600">EXPLO RESOURCES SARL est une filiale spécialisée du groupe EXPLO GROUP INTERNATIONAL, dédiée à la planification minière et à l'optimisation opérationnelle.</p>
+                    <p class="mb-4 text-gray-600">Notre équipe d'ingénieurs miniers expérimentés fournit des solutions techniques avancées pour maximiser la valeur des opérations minières tout au long de leur cycle de vie.</p>
+                    <p class="text-gray-600">Nous combinons expertise technique et innovation pour développer des plans miniers robustes, des conceptions d'ingénierie précises et des stratégies d'optimisation qui améliorent la productivité et la rentabilité.</p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1593118247619-e2d6f056869e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Planification minière" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Nos services spécialisés</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+                    <i data-feather="layers" class="text-[#FFC107] h-12 w-12 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Planification Minièree</h3>
+                    <p class="text-gray-600">Développement de plans miniers stratégiques, tactiques et opérationnels pour maximiser la valeur des gisements.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <i data-feather="settings" class="text-[#FFC107] h-12 w-12 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Ingénierie Minièree</h3>
+                    <p class="text-gray-600">Conception détaillée de mines à ciel ouvert et souterraines, y compris la sélection d'équipements.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <i data-feather="trending-up" class="text-[#FFC107] h-12 w-12 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Optimisation Opérationnelle</h3>
+                    <p class="text-gray-600">Amélioration des processus opérationnels pour augmenter l'efficacité et réduire les coûts.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <i data-feather="dollar-sign" class="text-[#FFC107] h-12 w-12 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Études de Faisabilité</h3>
+                    <p class="text-gray-600">Évaluations techniques et économiques complètes pour les projets miniers.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <i data-feather="clipboard" class="text-[#FFC107] h-12 w-12 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Gestion de Projet</h3>
+                    <p class="text-gray-600">Supervision et coordination complètes des projets miniers from conception to execution.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="500">
+                    <i data-feather="bar-chart-2" class="text-[#FFC107] h-12 w-12 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Analyse Économique</h3>
+                    <p class="text-gray-600">Évaluations financières détaillées et modélisation de la valeur des projets miniers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-6 text-gray-800">Projets de planification minière</h2>
+            <p class="text-center text-xl mb-16 max-w-3xl mx-auto text-gray-600">Découvrez nos réalisations en planification et optimisation minière</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+                    <img src="./img/explo6.jpg" alt="Mine à ciel ouvert" class="gallery-image">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./img/gal13.jpg" alt="Équipements miniers" class="gallery-image">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./img/explo10.jpg" alt="Optimisation opérationnelle" class="gallery-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-6 text-gray-800">Contactez-nous</h2>
+            <p class="text-center text-xl mb-16 max-w-3xl mx-auto text-gray-600">Discutons de vos besoins en planification minière</p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-gray-800">Nom et prénom</label>
+                            <input type="text" id="name" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-gray-800">Adresse email</label>
+                            <input type="email" id="email" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-gray-800">Entreprise</label>
+                            <input type="text" id="company" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 text-gray-800">Message</label>
+                            <textarea id="message" rows="5" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FFC107]"></textarea>
+                        </div>
+                        <button type="submit" class="bg-[#FFC107] text-gray-900 px-8 py-3 rounded-lg font-bold text-lg w-full hover:bg-[#e0a800] transition">Envoyer un message</button>
+                    </form>
+                </div>
+                
+                <div data-aos="fade-left" class="flex flex-col justify-center">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Coordonnées</h3>
+                        <div class="space-y-3 text-gray-600">
+                            <p class="flex items-center"><i data-feather="mail" class="mr-2 text-[#FFC107]"></i> resources@explogroup.com</p>
+                            <p class="flex items-center"><i data-feather="phone" class="mr-2 text-[#FFC107]"></i> +225 07 48 301 344</p>
+                            <p class="flex items-center"><i data-feather="map-pin" class="mr-2 text-[#FFC107]"></i> Abidjan, Côte d'Ivoire</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Heures d'ouverture</h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p>Lundi - Vendredi: 8h00 - 18h00</p>
+                            <p>Samedi: 9h00 - 13h00</p>
+                            <p>Dimanche: Fermé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-[#FFC107]">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="../img/logo1.png" alt="EXPLO RESOURCES" class="h-16 mb-4">
+                    <p class="mb-4 text-gray-600">Services de planification minière, d'ingénierie et d'optimisation opérationnelle pour les opérations minières actives.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-800">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-600 hover:text-[#FFC107]">Accueil</a></li>
+                        <li><a href="#about" class="text-gray-600 hover:text-[#FFC107]">À propos</a></li>
+                        <li><a href="#services" class="text-gray-600 hover:text-[#FFC107]">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-600 hover:text-[#FFC107]">Galerie</a></li>
+                        <li><a href="#contact" class="text-gray-600 hover:text-[#FFC107]">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-800">Filiales</h4>
+                    <ul class="space-y-2">
+                        <li><a href="explo-gold.html" class="text-gray-600 hover:text-[#FFC107]">EXPLO GOLD SARL-U</a></li>
+                        <li><a href="explo-resources.html" class="text-gray-600 hover:text-[#FFC107]">EXPLO RESOURCES SARL</a></li>
+                        <li><a href="explo-mining.html" class="text-gray-600 hover:text-[#FFC107]">EXPLO MINING SARL</a></li>
+                        <li><a href="explo-mining-and-resources.html" class="text-gray-600 hover:text-[#FFC107]">EXPLO MINING ET RESOURCES SARL</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-800">Localisation</h4>
+                    <div class="h-48 rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15890.339165449815!2d-4.029963488594127!3d5.32726899951811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eba131366553%3A0xbb6747e85334c6ea!2sLe%20Plateau%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1758021926656!5m2!1sfr!2sci" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-300 text-center">
+                <p class="text-gray-600">&copy; 2023 EXPLO RESOURCES SARL. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/+2250748301344" target="_blank" class=" btn-whatsapp bg-[#FFC107] text-gray-900 px-4 py-2 rounded-lg font-semibold flex items-center hover:bg-[#e0a800] transition" aria-label="Contactez-nous sur WhatsApp">
+                <i data-feather="message-circle" class="mr-2"></i> WhatsApp
+    </a>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            // Scroll to top functionality
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('active');
+                } else {
+                    scrollTopButton.classList.remove('active');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        })
+    </script>
+</body>
+</html>
