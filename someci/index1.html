@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMECI SA - Pionnier de l'Or, de l'Énergie et de l'Environnement en Côte d'Ivoire</title>
+    <meta name="description" content="SOMECI SA, entreprise ivoirienne leader dans l'exploitation aurifère, l'énergie solaire, la gestion des déchets et les services financiers. Découvrez nos engagements RSE et nos projets innovants.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        anthracite: '#2C3E50',
+                        sustainable: '#27AE60',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://placehold.co/180x60/2C3E50/FFFFFF/png?text=SOMECI+SA" alt="Logo SOMECI SA" class="h-10">
+            </div>
+            <div class="hidden md:flex space-x-10">
+                <a href="#accueil" class="text-anthracite hover:text-gold font-medium transition-colors">Accueil</a>
+                <a href="#apropos" class="text-anthracite hover:text-gold font-medium transition-colors">À propos</a>
+                <a href="#activites" class="text-anthracite hover:text-gold font-medium transition-colors">Activités</a>
+                <a href="#projets" class="text-anthracite hover:text-gold font-medium transition-colors">Projets</a>
+                <a href="#actualites" class="text-anthracite hover:text-gold font-medium transition-colors">Actualités</a>
+                <a href="#contact" class="text-anthracite hover:text-gold font-medium transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-anthracite">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#accueil" class="text-anthracite hover:text-gold font-medium">Accueil</a>
+                <a href="#apropos" class="text-anthracite hover:text-gold font-medium">À propos</a>
+                <a href="#activites" class="text-anthracite hover:text-gold font-medium">Activités</a>
+                <a href="#projets" class="text-anthracite hover:text-gold font-medium">Projets</a>
+                <a href="#actualites" class="text-anthracite hover:text-gold font-medium">Actualités</a>
+                <a href="#contact" class="text-anthracite hover:text-gold font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="pt-24 pb-20 md:pt-40 md:pb-32 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./img/ban.jpg')">
+        <div class="container mx-auto px-6 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">SOMECI SA</h1>
+            <h2 class="text-2xl md:text-4xl font-light mb-8">Pionnier de l'Or, de l'Énergie et de l'Environnement</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">Leader ivoirien dans l'exploitation minière responsable, les énergies renouvelables et la gestion durable des déchets</p>
+            <a href="#contact" class="bg-gold hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full inline-flex items-center transition-all transform hover:scale-105">
+                Demander un partenariat
+                <i data-feather="arrow-right" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Domaines Section -->
+    <section id="activites" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-anthracite mb-16" data-aos="fade-up">Nos Domaines d'Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Mine -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gold rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="trending-up" class="text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-anthracite mb-4">Exploitation Aurifère</h3>
+                    <p class="text-gray-600">Exploitation responsable de gisements aurifères avec des technologies de pointe et respect des normes internationales.</p>
+                </div>
+                
+                <!-- Énergie -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-sustainable rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="sun" class="text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-anthracite mb-4">Énergie Solaire</h3>
+                    <p class="text-gray-600">Développement de solutions énergétiques durables pour alimenter nos opérations et les communautés locales.</p>
+                </div>
+                
+                <!-- Déchets -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-anthracite rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="refresh-cw" class="text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-anthracite mb-4">Gestion des Déchets</h3>
+                    <p class="text-gray-600">Solutions innovantes de traitement et valorisation des déchets industriels et miniers pour un environnement plus propre.</p>
+                </div>
+                
+                <!-- Finance -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gold rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="dollar-sign" class="text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-anthracite mb-4">Services Financiers</h3>
+                    <p class="text-gray-600">Solutions financières innovantes pour soutenir le développement économique local et régional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À Propos Section -->
+    <section id="apropos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF/png?text=Équipe+SOMECI" alt="Équipe SOMECI SA" class="rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-anthracite mb-6">Notre Histoire et Vision</h2>
+                    <p class="text-gray-600 mb-6">Fondée en 2005, SOMECI SA s'est imposée comme un acteur majeur dans le secteur minier ivoirien et a diversifié ses activités pour répondre aux défis énergétiques et environnementaux de notre temps.</p>
+                    <p class="text-gray-600 mb-8">Notre vision est de créer une entreprise durable qui allie performance économique, responsabilité sociale et respect de l'environnement, contribuant ainsi au développement de la Côte d'Ivoire.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-gold text-4xl font-bold mb-2">15+</h4>
+                            <p class="text-anthracite">Années d'expérience</p>
+                        </div>
+                        <div>
+                            <h4 class="text-gold text-4xl font-bold mb-2">50+</h4>
+                            <p class="text-anthracite">Projets réalisés</p>
+                        </div>
+                        <div>
+                            <h4 class="text-gold text-4xl font-bold mb-2">200+</h4>
+                            <p class="text-anthracite">Employés</p>
+                        </div>
+                        <div>
+                            <h4 class="text-gold text-4xl font-bold mb-2">5</h4>
+                            <p class="text-anthracite">Régions d'activité</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projets" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-anthracite mb-6" data-aos="fade-up">Nos Projets Majeurs</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12" data-aos="fade-up">Découvrez nos réalisations emblématiques qui témoignent de notre expertise et de notre engagement pour le développement durable.</p>
+            
+            <div class="flex flex-wrap justify-center mb-8" data-aos="fade-up">
+                <button class="filter-button px-4 py-2 mx-2 my-2 rounded-full bg-white text-anthracite border border-gold hover:bg-gold hover:text-white transition-all" data-filter="all">Tous</button>
+                <button class="filter-button px-4 py-2 mx-2 my-2 rounded-full bg-white text-anthracite border border-gold hover:bg-gold hover:text-white transition-all" data-filter="mine">Mines</button>
+                <button class="filter-button px-4 py-2 mx-2 my-2 rounded-full bg-white text-anthracite border border-gold hover:bg-gold hover:text-white transition-all" data-filter="energy">Énergie</button>
+                <button class="filter-button px-4 py-2 mx-2 my-2 rounded-full bg-white text-anthracite border border-gold hover:bg-gold hover:text-white transition-all" data-filter="waste">Déchets</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gallery">
+                <!-- Projet 1 -->
+                <div class="project-item mine bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF/png?text=Mine+Yaouré" alt="Projet Mine Yaouré" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-anthracite mb-2">Mine Yaouré</h3>
+                        <p class="text-gray-600 mb-4">Exploitation aurifère à ciel ouvert avec technologies de traitement de pointe et gestion environnementale rigoureuse.</p>
+                        <a href="#" class="text-gold font-medium flex items-center">
+                            Voir le projet
+                            <i data-feather="arrow-right" class="ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 -->
+                <div class="project-item energy bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF/png?text=Centrale+Solaire" alt="Projet Centrale Solaire" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-anthracite mb-2">Centrale Solaire de Boundiali</h3>
+                        <p class="text-gray-600 mb-4">Installation photovoltaïque de 10MW pour alimenter nos sites miniers et les communautés avoisinantes.</p>
+                        <a href="#" class="text-gold font-medium flex items-center">
+                            Voir le projet
+                            <i data-feather="arrow-right" class="ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Projet 3 -->
+                <div class="project-item waste bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF/png?text=Centre+Traitement+Déchets" alt="Projet Centre de Traitement des Déchets" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-anthracite mb-2">Centre de Traitement des Déchets</h3>
+                        <p class="text-gray-600 mb-4">Unité moderne de tri, traitement et valorisation des déchets industriels dans la région d'Abidjan.</p>
+                        <a href="#" class="text-gold font-medium flex items-center">
+                            Voir le projet
+                            <i data-feather="arrow-right" class="ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSE Section -->
+    <section class="py-20 bg-sustainable text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Notre Engagement RSE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="shield" class="text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Environnement</h3>
+                    <p>Réduction de notre empreinte écologique, préservation de la biodiversité et gestion responsable des ressources naturelles.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="heart" class="text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Soutien aux Orphelinats</h3>
+                    <p>Programmes de soutien aux orphelinats locaux, incluant dons, équipements et programmes éducatifs.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="home" class="text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Urgences Rurales</h3>
+                    <p>Interventions d'urgence dans les zones rurales : accès à l'eau, soins de santé et infrastructures communautaires.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center" data-aos="fade-up">
+                <a href="#" class="border-2 border-white text-white hover:bg-white hover:text-sustainable font-bold py-3 px-8 rounded-full inline-flex items-center transition-all">
+                    Découvrir nos actions
+                    <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actualités Section -->
+    <section id="actualites" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-anthracite mb-6" data-aos="fade-up">Actualités</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12" data-aos="fade-up">Restez informé de nos dernières actualités, projets et engagements.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF/png?text=Nouveau+Gisement" alt="Nouveau gisement découvert" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-gold text-sm font-medium">Exploitation Minière</span>
+                        <h3 class="text-xl font-bold text-anthracite mt-2 mb-3">Découverte d'un nouveau gisement prometteur</h3>
+                        <p class="text-gray-600 mb-4">SOMECI SA annonce la découverte d'un important gisement aurifère dans la région du Worodougou.</p>
+                        <a href="#" class="text-gold font-medium flex items-center">
+                            Lire la suite
+                            <i data-feather="arrow-right" class="ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 2 -->
+                <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF/png?text=Partenariat+Énergie" alt="Partenariat énergie solaire" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-gold text-sm font-medium">Énergie Solaire</span>
+                        <h3 class="text-xl font-bold text-anthracite mt-2 mb-3">Partenariat pour l'énergie solaire en milieu rural</h3>
+                        <p class="text-gray-600 mb-4">SOMECI SA s'associe à une ONG internationale pour électrifier 50 villages isolés.</p>
+                        <a href="#" class="text-gold font-medium flex items-center">
+                            Lire la suite
+                            <i data-feather="arrow-right" class="ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 3 -->
+                <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF/png?text=Distinction+RSE" alt="Distinction RSE" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <span class="text-gold text-sm font-medium">RSE</span>
+                        <h3 class="text-xl font-bold text-anthracite mt-2 mb-3">SOMECI SA reçoit le prix de l'entreprise responsable</h3>
+                        <p class="text-gray-600 mb-4">Notre engagement en faveur du développement durable est récompensé par une distinction internationale.</p>
+                        <a href="#" class="text-gold font-medium flex items-center">
+                            Lire la suite
+                            <i data-feather="arrow-right" class="ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="bg-gold hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition-all">
+                    Voir toutes les actualités
+                    <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-anthracite text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Contactez-nous</h2>
+                    <p class="mb-8">Nous sommes à votre disposition pour toute demande d'information ou de partenariat.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-gold rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i data-feather="map-pin" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Adresse</h4>
+                                <p>Plateau, Avenue Lamblin<br>Abidjan, Côte d'Ivoire</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gold rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i data-feather="phone" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Téléphone</h4>
+                                <p>+225 20 30 40 50</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gold rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i data-feather="mail" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p>contact@someci.ci</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">Suivez-nous</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full w-10 h-10 flex items-center justify-center transition-all">
+                                <i data-feather="facebook" class="text-white"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full w-10 h-10 flex items-center justify-center transition-all">
+                                <i data-feather="twitter" class="text-white"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full w-10 h-10 flex items-center justify-center transition-all">
+                                <i data-feather="linkedin" class="text-white"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full w-10 h-10 flex items-center justify-center transition-all">
+                                <i data-feather="instagram" class="text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <form class="bg-white bg-opacity-10 p-8 rounded-xl">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2">Nom complet</label>
+                            <input type="text" id="name" class="w-full bg-white bg-opacity-5 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-gold">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-white bg-opacity-5 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-gold">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block mb-2">Sujet</label>
+                            <input type="text" id="subject" class="w-full bg-white bg-opacity-5 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-gold">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full bg-white bg-opacity-5 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-gold hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full w-full transition-all">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-anthracite bg-opacity-95 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://placehold.co/180x60/FFFFFF/2C3E50/png?text=SOMECI+SA" alt="Logo SOMECI SA" class="h-10 mb-6">
+                    <p class="text-white text-opacity-70">Leader ivoirien dans l'exploitation minière responsable, les énergies renouvelables et la gestion durable des déchets.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Liens rapides</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#accueil" class="text-white text-opacity-70 hover:text-gold transition-colors">Accueil</a></li>
+                        <li><a href="#apropos" class="text-white text-opacity-70 hover:text-gold transition-colors">À propos</a></li>
+                        <li><a href="#activites" class="text-white text-opacity-70 hover:text-gold transition-colors">Activités</a></li>
+                        <li><a href="#projets" class="text-white text-opacity-70 hover:text-gold transition-colors">Projets</a></li>
+                        <li><a href="#actualites" class="text-white text-opacity-70 hover:text-gold transition-colors">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Légal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white text-opacity-70 hover:text-gold transition-colors">Conditions d'utilisation</a></li>
+                        <li><a href="#" class="text-white text-opacity-70 hover:text-gold transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-white text-opacity-70 hover:text-gold transition-colors">Politique des cookies</a></li>
+                        <li><a href="#" class="text-white text-opacity-70 hover:text-gold transition-colors">Mentions légales</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-white text-opacity-70 mb-4">Abonnez-vous à notre newsletter pour recevoir nos actualités.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-l-lg py-2 px-4 text-white placeholder-white placeholder-opacity-60 focus:outline-none w-full">
+                        <button type="submit" class="bg-gold hover:bg-yellow-600 text-white rounded-r-lg px-4 transition-all">
+                            <i data-feather="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white text-opacity-70 text-sm">© 2023 SOMECI SA. Tous droits réservés.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-white text-opacity-70 hover:text-gold transition-colors text-sm">Plan du site</a>
+                    <a href="#" class="text-white text-opacity-70 hover:text-gold transition-colors text-sm">Accessibilité</a>
+                    <a href="#" class="text-white text-opacity-70 hover:text-gold transition-colors text-sm">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialisation des animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Initialisation des icônes Feather
+        feather.replace();
+        
+        // Menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Filtrage des projets
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Mettre à jour le bouton actif
+                filterButtons.forEach(btn => btn.classList.remove('bg-gold', 'text-white'));
+                button.classList.add('bg-gold', 'text-white');
+                
+                // Filtrer les projets
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Fonctionnalité de défilement fluide pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Fermer le menu mobile si ouvert
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Changement d'apparence du header au scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg', 'py-3');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.remove('shadow-lg', 'py-3');
+                header.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+</html>
