@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENZ LOGISTICS - Transport, Transit et Logistique en Côte d'Ivoire</title>
+    <meta name="description" content="KENZ LOGISTICS, entreprise ivoirienne spécialisée dans le transport routier, transit maritime/terrestre/aérien, entreposage et import-export. Services logistiques fiables en Côte d'Ivoire.">
+    <meta name="keywords" content="logistique Côte d'Ivoire, transport et transit Abidjan, import export KENZ LOGISTICS, transit maritime, transport routier, entreposage">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg { background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('{IMAGE_PLACEHOLDER}') center/cover; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+        .nav-scroll { background: rgba(30, 58, 138, 0.95); backdrop-filter: blur(5px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-900">KENZ<span class="text-gray-600">LOG</span></a>
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href="#" class="text-green-600 hover:text-blue-700 font-medium">Accueil</a>
+                <a href="#about" class=" hover:text-blue-700 font-medium">À propos</a>
+                <a href="#services" class=" hover:text-blue-700 font-medium">Services</a>
+                <a href="#contact" class=" hover:text-blue-700 font-medium">Contact</a>
+            </div>
+            <button class="md:hidden text-blue-900">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-16 pb-20">
+        <div class="container mx-auto px-4 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Transport & Transit fiables en Côte d'Ivoire</h1>
+            <p class="text-xl md:text-2xl mb-8">Solutions logistiques complètes pour vos besoins d'import-export</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-medium transition duration-300">Demander un devis</a>
+                <a href="#services" class="border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-medium transition duration-300">Nos services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Nos Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Des solutions logistiques complètes adaptées à vos besoins spécifiques</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-900 mb-4">
+                        <i data-feather="truck" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Transport Routier</h3>
+                    <p class="text-gray-600">Solution de transport national et régional avec une flotte moderne et sécurisée</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-900 mb-4">
+                        <i data-feather="globe" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Transit</h3>
+                    <p class="text-gray-600">Transit maritime, terrestre et aérien avec dédouanement et accompagnement personnalisé</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-900 mb-4">
+                        <i data-feather="box" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Entreposage</h3>
+                    <p class="text-gray-600">Stockage sécurisé et manutention avec gestion des inventaires et préparation de commandes</p>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-blue-900 mb-4">
+                        <i data-feather="shopping-cart" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Import-Export</h3>
+                    <p class="text-gray-600">Accompagnement complet pour vos opérations internationales et gestion des formalités douanières</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="{IMAGE_PLACEHOLDER}" alt="Équipe KENZ LOGISTICS" class="rounded-xl shadow-lg w-full h-auto" loading="lazy">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">À propos de KENZ LOGISTICS</h2>
+                    <p class="text-gray-600 mb-4">Fondée en 2010, KENZ LOGISTICS s'est imposée comme un acteur majeur du secteur logistique en Côte d'Ivoire et dans la sous-région.</p>
+                    <p class="text-gray-600 mb-6">Notre mission est de fournir des solutions logistiques innovantes, fiables et sur mesure pour accompagner la croissance de nos clients dans leurs projets nationaux et internationaux.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-900 mb-2">Notre Mission</h3>
+                            <p class="text-gray-600 text-sm">Simplifier la supply chain de nos clients avec efficacité et professionnalisme</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-900 mb-2">Zone d'Intervention</h3>
+                            <p class="text-gray-600 text-sm">Côte d'Ivoire, Afrique de l'Ouest et international</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Contactez-nous</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <form class="bg-white rounded-xl shadow-md p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 mb-2">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 mb-2">Adresse email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 mb-2">Téléphone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 px-6 rounded-lg font-medium transition duration-300">Envoyer le message</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="bg-white rounded-xl shadow-md p-8 h-full">
+                        <h3 class="text-2xl font-semibold text-blue-900 mb-6">Coordonnées</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i data-feather="map-pin" class="text-blue-900 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Adresse</h4>
+                                    <p class="text-gray-600">Riviera Palmeraie, Abidjan, Côte d'Ivoire</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="phone" class="text-blue-900 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Téléphone</h4>
+                                    <p class="text-gray-600">+225 27 22 50 40 50</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="mail" class="text-blue-900 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">contact@kenzlogistics.ci</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/2250102030405?text=Bonjour%20KENZ%20LOGISTICS,%20je%20souhaite%20obtenir%20des%20informations" 
+                           class="mt-8 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-medium transition duration-300">
+                            <i data-feather="message-circle" class="w-5 h-5"></i>
+                            Nous contacter sur WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">KENZ LOGISTICS</h3>
+                    <p class="text-blue-200">Votre partenaire logistique fiable en Côte d'Ivoire et en Afrique de l'Ouest</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Accueil</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white">À propos</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white">Services</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Transport routier</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Transit</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Entreposage</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Import-Export</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connectez-vous</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-blue-200 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i data-feather="instagram"></i></a>
+                    </div>
+                    <p class="text-sm text-blue-200">© 2023 KENZ LOGISTICS. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scroll', 'shadow-md');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('nav-scroll', 'shadow-md');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>

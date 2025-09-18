@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENZLOG - Votre partenaire logistique de confiance en Côte d'Ivoire</title>
+    <meta name="description" content="KENZ LOGISTICS : Solutions logistiques premium à Abidjan. Transport, transit import-export et services logistiques en Afrique de l'Ouest. Rapidité et fiabilité garanties.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="entreprise logistique Abidjan, transport marchandises Côte d'Ivoire, transit import export Afrique de l'Ouest, logistique Abidjan">
+    <meta name="author" content="KENZ LOGISTICS">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="KENZLOG - Partenaire Logistique Premium">
+    <meta property="og:description" content="Solutions logistiques complètes en Côte d'Ivoire et Afrique de l'Ouest">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kenzlog.com">
+    <meta property="og:image" content="https://www.kenzlog.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚚</text></svg>">
+    
+    <!-- Styles & Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981',
+                        secondary: '#374151',
+                        accent: '#059669'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        .hero-pattern {
+            background-image: radial-gradient(#10b98112 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+        }
+    </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "KENZ LOGISTICS",
+        "description": "Entreprise de logistique et transport en Côte d'Ivoire",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Abidjan",
+            "addressCountry": "CI"
+        },
+        "areaServed": ["Côte d'Ivoire", "Afrique de l'Ouest"],
+        "serviceType": "Logistique, Transport, Transit"
+    }
+    </script>
+</head>
+<body class="font-sans bg-white text-secondary">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-primary">KENZ<span class="text-secondary">LOG</span></a>
+                
+                <div class="hidden md:flex space-x-10">
+                    <a href="#services" class="hover:text-primary transition-colors">Services</a>
+                    <a href="#engagement" class="hover:text-primary transition-colors">Engagement</a>
+                    <a href="#temoignages" class="hover:text-primary transition-colors">Témoignages</a>
+                    <a href="#faq" class="hover:text-primary transition-colors">FAQ</a>
+                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-accent transition-colors">Contact</a>
+                </div>
+                
+                <button class="md:hidden">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-secondary leading-tight mb-6">
+                        Votre partenaire logistique de confiance en <span class="text-primary">Côte d'Ivoire</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Solutions logistiques complètes pour votre entreprise. Rapidité, sécurité et suivi en temps réel.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-accent transition-colors">
+                            Demander un devis
+                        </a>
+                        <a href="#services" class="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors">
+                            Découvrir nos services
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-left">
+                    <img src="./img/ban.jpg" alt="Illustration logistique" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-secondary mb-4">Nos Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Des solutions logistiques complètes pour répondre à tous vos besoins</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="truck" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Transport National</h3>
+                    <p class="text-gray-600 mb-4">Livraison rapide et sécurisée dans toute la Côte d'Ivoire avec suivi en temps réel.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Camions frigorifiques disponibles</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Services express 24h/48h</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="globe" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Transit International</h3>
+                    <p class="text-gray-600 mb-4">Import-export vers tous les pays d'Afrique de l'Ouest avec gestion douanière complète.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Dédouanement simplifié</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Suivi multi-pays</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="package" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Stockage & Distribution</h3>
+                    <p class="text-gray-600 mb-4">Entrepôts sécurisés et gestion optimisée de votre supply chain.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Entrepôts climatisés</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Gestion d'inventaire</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Section -->
+    <section id="engagement" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-secondary mb-4">Notre Engagement Qualité</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">La satisfaction client au cœur de notre démarche</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="shield" class="text-primary w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Fiabilité</h3>
+                    <p class="text-gray-600">Respect strict des délais avec une ponctualité de 98% sur toutes nos prestations.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="map-pin" class="text-primary w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Suivi en Temps Réel</h3>
+                    <p class="text-gray-600">Localisation GPS permanente de vos marchandises avec notifications personnalisées.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="lock" class="text-primary w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Sécurité</h3>
+                    <p class="text-gray-600">Assurance tous risques et procédures de sécurité certifiées pour une tranquillité totale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section id="temoignages" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-secondary mb-4">Ils nous font confiance</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Découvrez les retours d'expérience de nos clients satisfaits</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Témoignage 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-secondary">Marie K.</h4>
+                            <p class="text-sm text-gray-500">Importatrice de produits alimentaires</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"KENZLOG a révolutionné notre chaîne d'approvisionnement. Leurs services de transit international sont rapides et fiables. Un partenaire de confiance !"</p>
+                    <div class="flex mt-4">
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-secondary">Paul A.</h4>
+                            <p class="text-sm text-gray-500">Directeur d'usine</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Le suivi en temps réel est exceptionnel. Je sais toujours où en est ma marchandise. Service client réactif et professionnel. Je recommande vivement !"</p>
+                    <div class="flex mt-4">
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-secondary">Sophie T.</h4>
+                            <p class="text-sm text-gray-500">Responsable logistique</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Leur expertise en dédouanement nous fait gagner un temps précieux. Des professionnels compétents qui comprennent les besoins des entreprises."</p>
+                    <div class="flex mt-4">
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4 mr-1"></i>
+                        <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-secondary mb-4">Questions Fréquentes</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Trouvez rapidement des réponses à vos interrogations</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Question 1 -->
+                <div class="mb-6" data-aos="fade-up" data-aos-delay="100">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-secondary py-4 border-b border-gray-200">
+                        <span>Quels sont les délais de livraison moyens ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </button>
+                    <div class="pt-2 pb-4 text-gray-600">
+                        <p>Nos délais varient selon la destination et le type de service. En moyenne :</p>
+                        <ul class="list-disc pl-5 mt-2">
+                            <li>Abidjan et périphérie : 24-48h</li>
+                            <li>Villes principales de Côte d'Ivoire : 2-4 jours</li>
+                            <li>Destinations internationales : 5-10 jours ouvrés</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="mb-6" data-aos="fade-up" data-aos-delay="200">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-secondary py-4 border-b border-gray-200">
+                        <span>Proposez-vous des services d'entreposage ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </button>
+                    <div class="pt-2 pb-4 text-gray-600">
+                        <p>Oui, nous disposons d'entrepôts sécurisés et climatisés à Abidjan, avec :</p>
+                        <ul class="list-disc pl-5 mt-2">
+                            <li>Surveillance 24h/24</li>
+                            <li>Contrôle de température</li>
+                            <li>Gestion d'inventaire</li>
+                            <li>Services de préparation de commandes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="mb-6" data-aos="fade-up" data-aos-delay="300">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-secondary py-4 border-b border-gray-200">
+                        <span>Comment suivre ma marchandise ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </button>
+                    <div class="pt-2 pb-4 text-gray-600">
+                        <p>Nous offrons un système de suivi en temps réel :</p>
+                        <ul class="list-disc pl-5 mt-2">
+                            <li>Numéro de suivi unique pour chaque envoi</li>
+                            <li>Plateforme en ligne accessible 24h/24</li>
+                            <li>Notifications par email/SMS aux étapes clés</li>
+                            <li>Assistance téléphonique dédiée</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="mb-6" data-aos="fade-up" data-aos-delay="400">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-secondary py-4 border-b border-gray-200">
+                        <span>Quelles sont vos zones d'intervention ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </button>
+                    <div class="pt-2 pb-4 text-gray-600">
+                        <p>Nous couvrons l'ensemble de la Côte d'Ivoire et proposons des services internationaux vers :</p>
+                        <ul class="list-disc pl-5 mt-2">
+                            <li>Tous les pays d'Afrique de l'Ouest (Ghana, Nigeria, Sénégal, etc.)</li>
+                            <li>Europe et Asie via nos partenaires</li>
+                            <li>Amérique du Nord pour les envois spécifiques</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary bg-opacity-5">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-secondary mb-4">Contactez-nous</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Une question ? Un projet ? Notre équipe vous répond sous 24h</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-secondary mb-2">Nom complet</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-secondary mb-2">Adresse email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-secondary mb-2">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-secondary mb-2">Type de service</label>
+                            <select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">Sélectionnez un service</option>
+                                <option value="transport_national">Transport National</option>
+                                <option value="transit_international">Transit International</option>
+                                <option value="stockage">Stockage & Distribution</option>
+                                <option value="autre">Autre service</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-secondary mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-accent transition-colors flex-1">
+                                Envoyer le message
+                            </button>
+                            
+                            <button type="button" id="whatsappBtn" class="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2 flex-1">
+                                <i data-feather="message-circle" class="w-5 h-5"></i>
+                                WhatsApp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <div>
+                        <h3 class="text-xl font-semibold text-secondary mb-4">Coordonnées</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i data-feather="map-pin" class="text-primary w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-secondary">Adresse</p>
+                                    <p class="text-gray-600">Plateau, Abidjan, Côte d'Ivoire</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i data-feather="phone" class="text-primary w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-secondary">Téléphone</p>
+                                    <p class="text-gray-600">+225 XX XX XX XX</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i data-feather="mail" class="text-primary w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-secondary">Email</p>
+                                    <p class="text-gray-600">contact@kenzlog.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-secondary mb-4">Horaires d'ouverture</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Lundi - Vendredi</span>
+                                <span class="font-medium text-secondary">8h00 - 18h00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Samedi</span>
+                                <span class="font-medium text-secondary">9h00 - 13h00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Dimanche</span>
+                                <span class="font-medium text-secondary">Fermé</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-secondary mb-4">Urgence logistique ?</h3>
+                        <p class="text-gray-600 mb-4">Notre équipe est disponible 24h/24 pour les situations urgentes.</p>
+                        <a href="tel:+225XXXXXXXXX" class="inline-flex items-center text-primary font-medium hover:text-accent transition-colors">
+                            <i data-feather="phone" class="w-5 h-5 mr-2"></i>
+                            Appeler l'urgence : +225 XX XX XX XX
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-display font-bold mb-6">KENZ<span class="text-primary">LOG</span></h4>
+                    <p class="text-gray-300 mb-4">Votre partenaire logistique de confiance en Côte d'Ivoire et en Afrique de l'Ouest.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-6">Services</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Transport National</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Transit International</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Stockage & Distribution</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Solutions Sur Mesure</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-6">Liens Rapides</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-300 hover:text-primary transition-colors">Nos Services</a></li>
+                        <li><a href="#engagement" class="text-gray-300 hover:text-primary transition-colors">Engagement Qualité</a></li>
+                        <li><a href="#temoignages" class="text-gray-300 hover:text-primary transition-colors">Témoignages</a></li>
+                        <li><a href="#faq" class="text-gray-300 hover:text-primary transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-6">Newsletter</h5>
+                    <p class="text-gray-300 mb-4">Inscrivez-vous pour recevoir nos actualités et offres spéciales.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-primary hover:bg-accent transition-colors px-4 py-2 rounded-r-lg">
+                            <i data-feather="send" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 text-sm">© 2023 KENZ LOGISTICS. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-300 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-300 hover:text-primary text-sm transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-300 hover:text-primary text-sm transition-colors">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Initialize feather icons
+        feather.replace();
+        
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Form data collection
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', formData);
+            
+            // Show success message (in a real scenario, you'd handle this properly)
+            alert('Merci pour votre message ! Nous vous contacterons sous 24h.');
+            this.reset();
+        });
+        
+        // WhatsApp button functionality
+        document.getElementById('whatsappBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value || 'Client';
+            const service = document.getElementById('service').value;
+            const serviceText = service ? document.getElementById('service').options[document.getElementById('service').selectedIndex].text : 'service logistique';
+            
+            const message = `Bonjour, je suis ${name}. Je suis intéressé(e) par votre service ${serviceText}. Pouvez-vous m'en dire plus ?`;
+            const encodedMessage = encodeURIComponent(message);
+            
+            window.open(`https://wa.me/225XXXXXXXXX?text=${encodedMessage}`, '_blank');
+        });
+        
+        // FAQ accordion functionality
+        document.querySelectorAll('#faq button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.setAttribute('data-feather', 'chevron-down');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.setAttribute('data-feather', 'chevron-up');
+                }
+                
+                feather.replace();
+            });
+        });
+    </script>
+</body>
+</html>
