@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SACGS-CI - Matières Premières Agricoles</title>
+    <meta name="description" content="Découvrez nos produits agricoles de qualité : herbicides, engrais et insecticides pour une agriculture performante et durable">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': '#10b981',
+                        'dark-gray': '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .modal-hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+        }
+        .modal-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .carousel-slide {
+            display: none;
+        }
+        .carousel-slide.active {
+            display: block;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-dark-gray bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="./index.html" class="text-emerald font-bold text-2xl">SACGS-CI</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="./index.html" class="hover:text-emerald transition-colors">Accueil</a>
+                    <a href="./energie.html" class="hover:text-emerald transition-colors">Énergie</a>
+                    <a href="./mines.html" class="hover:text-emerald transition-colors">Mines</a>
+                    <a href="./matieres-premieres.html" class="text-emerald font-semibold">Produits Agricoles</a>
+                    <div class="relative">
+                        <button id="cart-btn" class="hover:text-emerald transition-colors">
+                            <i data-feather="shopping-cart"></i>
+                            <span id="cart-count" class="cart-badge">0</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <div class="relative mr-4">
+                        <button id="mobile-cart-btn" class="text-dark-gray">
+                            <i data-feather="shopping-cart"></i>
+                            <span id="mobile-cart-count" class="cart-badge">0</span>
+                        </button>
+                    </div>
+                    <button id="menu-btn" class="text-dark-gray">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-emerald to-emerald-600 py-20 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Produits Agricoles</h1>
+            <p class="text-xl mb-8">Des solutions de qualité pour une agriculture performante et durable</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="all">
+                    Tous les produits
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="herbicides">
+                    Herbicides
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="engrais">
+                    Engrais
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="insecticides">
+                    Insecticides
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Herbicides -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden" data-category="herbicides" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Herbicide Selectif" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Herbicide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Herbicide Sélectif</h3>
+                        <p class="text-gray-600 mb-4">Élimine les mauvaises herbes sans affecter les cultures</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-emerald">25 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="1">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden" data-category="herbicides" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Herbicide Total" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Herbicide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Herbicide Total</h3>
+                        <p class="text-gray-600 mb-4">Élimine toutes les végétations pour préparer vos champs</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-emerald">32 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="2">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engrais -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden" data-category="engrais" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Engrais NPK" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Engrais</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Engrais NPK 15-15-15</h3>
+                        <p class="text-gray-600 mb-4">Équilibre parfait pour une croissance optimale</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-emerald">18 500 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="3">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden" data-category="engrais" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Engrais Organique" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Engrais</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Engrais Organique</h3>
+                        <p class="text-gray-600 mb-4">100% naturel pour une agriculture biologique</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-emerald">22 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="4">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insecticides -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden" data-category="insecticides" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Insecticide Polyvalent" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Insecticide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Insecticide Polyvalent</h3>
+                        <p class="text-gray-600 mb-4">Protection contre une large gamme d'insectes nuisibles</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-emerald">28 500 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="5">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden" data-category="insecticides" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Insecticide Spécifique" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Insecticide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Insecticide Spécifique</h3>
+                        <p class="text-gray-600 mb-4">Cible les insectes ravageurs sans affecter les auxiliaires</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-emerald">31 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="6">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 modal modal-hidden">
+        <div class="bg-white rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 id="modal-product-name" class="text-2xl font-bold"></h2>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                
+                <div class="mb-6 relative">
+                    <div id="carousel" class="relative">
+                        <div class="carousel-slide active">
+                            <img id="modal-main-image" src="" alt="" class="w-full h-64 md:h-96 object-cover rounded-lg">
+                        </div>
+                        <div class="carousel-slide">
+                            <img id="modal-secondary-image-1" src="" alt="" class="w-full h-64 md:h-96 object-cover rounded-lg">
+                        </div>
+                        <div class="carousel-slide">
+                            <img id="modal-secondary-image-2" src="" alt="" class="w-full h-64 md:h-96 object-cover rounded-lg">
+                        </div>
+                    </div>
+                    <button id="prev-btn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+                        <i data-feather="chevron-left"></i>
+                    </button>
+                    <button id="next-btn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+                        <i data-feather="chevron-right"></i>
+                    </button>
+                    <div class="flex justify-center mt-4">
+                        <button class="carousel-indicator active" data-slide="0"></button>
+                        <button class="carousel-indicator" data-slide="1"></button>
+                        <button class="carousel-indicator" data-slide="2"></button>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Description</h3>
+                        <p id="modal-product-description" class="text-gray-700 mb-6"></p>
+                        
+                        <h3 class="text-xl font-semibold mb-3">Caractéristiques</h3>
+                        <ul id="modal-product-features" class="list-disc pl-5 text-gray-700 mb-6"></ul>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                            <p class="text-3xl font-bold text-emerald mb-4" id="modal-product-price"></p>
+                            
+                            <div class="flex items-center mb-4">
+                                <label for="quantity" class="mr-3 font-medium">Quantité:</label>
+                                <div class="flex items-center border rounded-md">
+                                    <button id="decrease-qty" class="px-3 py-1 text-gray-600">-</button>
+                                    <input type="number" id="quantity" min="1" value="1" class="w-12 text-center border-0 py-1">
+                                    <button id="increase-qty" class="px-3 py-1 text-gray-600">+</button>
+                                </div>
+                            </div>
+                            
+                            <button id="add-to-cart-modal" class="w-full bg-emerald hover:bg-emerald-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
+                                Ajouter au panier
+                            </button>
+                        </div>
+                        
+                        <div class="bg-emerald-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2 flex items-center">
+                                <i data-feather="truck" class="mr-2"></i> Livraison rapide
+                            </h4>
+                            <p class="text-sm text-gray-700">Disponible sous 24h à 48h dans toute la Côte d'Ivoire</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl z-50 transform transition-transform translate-x-full">
+        <div class="p-6 h-full flex flex-col">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Votre Panier</h2>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items" class="flex-grow overflow-y-auto mb-6">
+                <!-- Cart items will be dynamically added here -->
+                <p id="empty-cart-message" class="text-center text-gray-500 py-8">Votre panier est vide</p>
+            </div>
+            
+            <div class="border-t pt-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-semibold">Total:</span>
+                    <span id="cart-total" class="text-2xl font-bold text-emerald">0 FCFA</span>
+                </div>
+                
+                <button id="checkout-btn" class="w-full bg-emerald hover:bg-emerald-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    Procéder au paiement
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 modal modal-hidden">
+        <div class="bg-white rounded-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl font-bold">Finaliser votre commande</h2>
+                    <button id="close-checkout" class="text-gray-500 hover:text-gray-700">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                
+                <form id="checkout-form" class="space-y-6">
+                    <div>
+                        <label for="customer-name" class="block mb-2 font-medium">Nom complet *</label>
+                        <input type="text" id="customer-name" required class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                    </div>
+                    
+                    <div>
+                        <label for="customer-phone" class="block mb-2 font-medium">Téléphone *</label>
+                        <input type="tel" id="customer-phone" required class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                    </div>
+                    
+                    <div>
+                        <label for="customer-email" class="block mb-2 font-medium">Email</label>
+                        <input type="email" id="customer-email" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                    </div>
+                    
+                    <div>
+                        <label for="customer-address" class="block mb-2 font-medium">Adresse de livraison *</label>
+                        <textarea id="customer-address" required rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald"></textarea>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-3">Récapitulatif de la commande</h3>
+                        <div id="order-summary" class="text-sm text-gray-700">
+                            <!-- Order summary will be dynamically added here -->
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-2 border-t">
+                            <span class="font-semibold">Total:</span>
+                            <span id="order-total" class="text-xl font-bold text-emerald">0 FCFA</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-emerald hover:bg-emerald-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
+                        Payer et confirmer la commande
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2023 SACGS-CI Group. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS and Feather Icons
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        feather.replace();
+
+        // Product data
+        const products = {
+            1: {
+                name: "Herbicide Sélectif",
+                category: "herbicides",
+                price: 25000,
+                description: "Notre herbicide sélectif de haute qualité élimine efficacement les mauvaises herbes sans affecter vos cultures principales. Formulé avec des composants de pointe, il offre une protection durable et respectueuse de l'environnement.",
+                features: [
+                    "Action rapide et efficace",
+                    "Respectueux de l'environnement",
+                    "Protection longue durée",
+                    "Compatibilité avec la plupart des cultures"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                ]
+            },
+            2: {
+                name: "Herbicide Total",
+                category: "herbicides",
+                price: 32000,
+                description: "Notre herbicide total est la solution idéale pour préparer vos champs en éliminant toutes les végétations indésirables. Sa formule puissante assure un nettoyage complet avant vos semis.",
+                features: [
+                    "Action totale sur toutes les végétations",
+                    "Pénétration rapide",
+                    "Résidus minimaux",
+                    "Idéal pour la préparation des sols"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                ]
+            },
+            3: {
+                name: "Engrais NPK 15-15-15",
+                category: "engrais",
+                price: 18500,
+                description: "Notre engrais NPK 15-15-15 offre un équilibre parfait d'azote, de phosphore et de potassium pour une croissance optimale de vos cultures. Spécialement formulé pour les sols ivoiriens.",
+                features: [
+                    "Équilibre parfait NPK 15-15-15",
+                    "Adapté aux sols ivoiriens",
+                    "Augmente le rendement des cultures",
+                    "Facile à appliquer"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                ]
+            },
+            4: {
+                name: "Engrais Organique",
+                category: "engrais",
+                price: 22000,
+                description: "Notre engrais organique 100% naturel est parfait pour l'agriculture biologique. Il enrichit le sol en matière organique et améliore sa structure pour des cultures saines et vigoureuses.",
+                features: [
+                    "100% naturel et biologique",
+                    "Améliore la structure du sol",
+                    "Favorise la vie microbienne",
+                    "Riche en nutriments essentiels"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                ]
+            },
+            5: {
+                name: "Insecticide Polyvalent",
+                category: "insecticides",
+                price: 28500,
+                description: "Notre insecticide polyvalent offre une protection complète contre une large gamme d'insectes nuisibles. Sa formulation innovante cible les ravageurs tout en préservant les insectes bénéfiques.",
+                features: [
+                    "Spectre d'action large",
+                    "Action rapide et persistante",
+                    "Respectueux des auxiliaires",
+                    "Facile à doser et appliquer"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                ]
+            },
+            6: {
+                name: "Insecticide Spécifique",
+                category: "insecticides",
+                price: 31000,
+                description: "Notre insecticide spécifique cible avec précision les insectes ravageurs les plus problématiques sans affecter les insectes auxiliaires bénéfiques. Idéal pour une lutte intégrée.",
+                features: [
+                    "Action ciblée sur ravageurs spécifiques",
+                    "Préserve la faune auxiliaire",
+                    "Faible impact environnemental",
+                    "Efficacité prouvée en conditions réelles"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                ]
+            }
+        };
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('sacgs-cart')) || [];
+        
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = totalItems;
+            document.getElementById('mobile-cart-count').textContent = totalItems;
+        }
+        
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const cartTotal = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                checkoutBtn.disabled = true;
+                cartTotal.textContent = '0 FCFA';
+                cartItems.innerHTML = '<p id="empty-cart-message" class="text-center text-gray-500 py-8">Votre panier est vide</p>';
+                return;
+            }
+            
+            emptyCartMessage.style.display = 'none';
+            checkoutBtn.disabled = false;
+            
+            let total = 0;
+            cartItems.innerHTML = '';
+            
+            cart.forEach((item, index) => {
+                const product = products[item.id];
+                const itemTotal = product.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'flex items-center py-4 border-b';
+                cartItem.innerHTML = `
+                    <img src="${product.images[0]}" alt="${product.name}" class="w-16 h-16 object-cover rounded">
+                    <div class="ml-4 flex-grow">
+                        <h4 class="font-medium">${product.name}</h4>
+                        <p class="text-emerald font-semibold">${product.price.toLocaleString()} FCFA</p>
+                        <div class="flex items-center mt-1">
+                            <button class="decrease-cart-item px-2 text-gray-500" data-index="${index}">-</button>
+                            <span class="mx-2">${item.quantity}</span>
+                            <button class="increase-cart-item px-2 text-gray-500" data-index="${index}">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-cart-item text-red-500 ml-2" data-index="${index}">
+                        <i data-feather="trash-2" class="w-4 h-4"></i>
+                    </button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = `${total.toLocaleString()} FCFA`;
+            feather.replace();
+        }
+        
+        function addToCart(productId, quantity) {
+            const existingItemIndex = cart.findIndex(item => item.id === productId);
+            
+            if (existingItemIndex !== -1) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    id: productId,
+                    quantity: quantity
+                });
+            }
+            
+            localStorage.setItem('sacgs-cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartDisplay();
+        }
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('sacgs-cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartDisplay();
+        }
+        
+        function updateCartItemQuantity(index, change) {
+            cart[index].quantity += change;
+            
+            if (cart[index].quantity <= 0) {
+                removeFromCart(index);
+            } else {
+                localStorage.setItem('sacgs-cart', JSON.stringify(cart));
+                updateCartDisplay();
+            }
+        }
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Update active state of filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('bg-emerald', 'text-white');
+                    btn.classList.add('border-emerald', 'text-emerald');
+                });
+                
+                button.classList.remove('border-emerald', 'text-emerald');
+                button.classList.add('bg-emerald', 'text-white');
+            });
+        });
+        
+        // Modal functionality
+        const productModal = document.getElementById('product-modal');
+        let currentProductId = null;
+        let currentSlide = 0;
+        
+        function showModal(productId) {
+            currentProductId = productId;
+            const product = products[productId];
+            
+            document.getElementById('modal-product-name').textContent = product.name;
+            document.getElementById('modal-product-description').textContent = product.description;
+            document.getElementById('modal-product-price').textContent = `${product.price.toLocaleString()} FCFA`;
+            
+            // Set features list
+            const featuresList = document.getElementById('modal-product-features');
+            featuresList.innerHTML = '';
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // Set images
+            document.getElementById('modal-main-image').src = product.images[0];
+            document.getElementById('modal-secondary-image-1').src = product.images[1];
+            document.getElementById('modal-secondary-image-2').src = product.images[2];
+            
+            // Reset carousel
+            currentSlide = 0;
+            updateCarousel();
+            
+            // Show modal
+            productModal.classList.remove('modal-hidden');
+            productModal.classList.add('modal-visible');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideModal() {
+            productModal.classList.remove('modal-visible');
+            productModal.classList.add('modal-hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function updateCarousel() {
+            document.querySelectorAll('.carousel-slide').forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 3;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + 3) % 3;
+            updateCarousel();
+        }
+        
+        // Cart sidebar functionality
+        const cartSidebar = document.getElementById('cart-sidebar');
+        
+        function showCart() {
+            cartSidebar.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+            updateCartDisplay();
+        }
+        
+        function hideCart() {
+            cartSidebar.classList.add('translate-x-full');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Checkout modal functionality
+        const checkoutModal = document.getElementById('checkout-modal');
+        
+        function showCheckout() {
+            checkoutModal.classList.remove('modal-hidden');
+            checkoutModal.classList.add('modal-visible');
+            document.body.style.overflow = 'hidden';
+            
+            // Update order summary
+            const orderSummary = document.getElementById('order-summary');
+            const orderTotal = document.getElementById('order-total');
+            
+            let summaryHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const product = products[item.id];
+                const itemTotal = product.price * item.quantity;
+                total += itemTotal;
+                
+                summaryHTML += `
+                    <div class="flex justify-between py-1">
+                        <span>${product.name} x${item.quantity}</span>
+                        <span>${itemTotal.toLocaleString()} FCFA</span>
+                    </div>
+                `;
+            });
+            
+            orderSummary.innerHTML = summaryHTML;
+            orderTotal.textContent = `${total.toLocaleString()} FCFA`;
+        }
+        
+        function hideCheckout() {
+            checkoutModal.classList.remove('modal-visible');
+            checkoutModal.classList.add('modal-hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function submitOrder(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('customer-name').value;
+            const phone = document.getElementById('customer-phone').value;
+            const email = document.getElementById('customer-email').value;
+            const address = document.getElementById('customer-address').value;
+            
+            // Format WhatsApp message
+            let message = `Bonjour, je souhaite commander les produits suivants:%0A%0A`;
+            
+            cart.forEach(item => {
+                const product = products[item.id];
+                const itemTotal = product.price * item.quantity;
+                message += `- ${product.name} (x${item.quantity}) : ${itemTotal.toLocaleString()} FCFA%0A`;
+            });
+            
+            const total = cart.reduce((sum, item) => sum + (products[item.id].price * item.quantity), 0);
+            message += `%0ATotal: ${total.toLocaleString()} FCFA%0A%0A`;
+            message += `Informations client:%0A`;
+            message += `Nom: ${name}%0A`;
+            message += `Téléphone: ${phone}%0A`;
+            if (email) message += `Email: ${email}%0A`;
+            message += `Adresse: ${address}`;
+            
+            // Clear cart
+            cart = [];
+            localStorage.setItem('sacgs-cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // Redirect to WhatsApp
+            window.location.href = `https://wa.me/22520304050?text=${message}`;
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart
+            updateCartCount();
+            updateCartDisplay();
+            
+            // Product modal events
+            document.querySelectorAll('.view-details-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = button.getAttribute('data-product-id');
+                    showModal(parseInt(productId));
+                });
+            });
+            
+            document.getElementById('close-modal').addEventListener('click', hideModal);
+            document.getElementById('add-to-cart-modal').addEventListener('click', () => {
+                const quantity = parseInt(document.getElementById('quantity').value);
+                addToCart(currentProductId, quantity);
+                hideModal();
+            });
+            
+            // Carousel events
+            document.getElementById('next-btn').addEventListener('click', nextSlide);
+            document.getElementById('prev-btn').addEventListener('click', prevSlide);
+            
+            document.querySelectorAll('.carousel-indicator').forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = parseInt(indicator.getAttribute('data-slide'));
+                    updateCarousel();
+                });
+            });
+            
+            // Quantity controls
+            document.getElementById('increase-qty').addEventListener('click', () => {
+                const quantityInput = document.getElementById('quantity');
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            });
+            
+            document.getElementById('decrease-qty').addEventListener('click', () => {
+                const quantityInput = document.getElementById('quantity');
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                }
+            });
+            
+            // Cart events
+            document.getElementById('cart-btn').addEventListener('click', showCart);
+            document.getElementById('mobile-cart-btn').addEventListener('click', showCart);
+            document.getElementById('close-cart').addEventListener('click', hideCart);
+            
+            // Checkout events
+            document.getElementById('checkout-btn').addEventListener('click', showCheckout);
+            document.getElementById('close-checkout').addEventListener('click', hideCheckout);
+            document.getElementById('checkout-form').addEventListener('submit', submitOrder);
+            
+            // Close modals when clicking outside
+            productModal.addEventListener('click', (e) => {
+                if (e.target === productModal) hideModal();
+            });
+            
+            checkoutModal.addEventListener('click', (e) => {
+                if (e.target === checkoutModal) hideCheckout();
+            });
+            
+            // Cart item manipulation
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('remove-cart-item')) {
+                    const index = e.target.getAttribute('data-index');
+                    removeFromCart(parseInt(index));
+                } else if (e.target.classList.contains('increase-cart-item')) {
+                    const index = e.target.getAttribute('data-index');
+                    updateCartItemQuantity(parseInt(index), 1);
+                } else if (e.target.classList.contains('decrease-cart-item')) {
+                    const index = e.target.getAttribute('data-index');
+                    updateCartItemQuantity(parseInt(index), -1);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

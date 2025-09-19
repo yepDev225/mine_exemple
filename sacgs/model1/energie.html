@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SACGS-CI - Énergie Renouvelable en Côte d'Ivoire</title>
+    <meta name="description" content="Solutions d'énergie renouvelable en Côte d'Ivoire : projets solaires innovants et durables pour un avenir énergétique propre">
+    <meta name="keywords" content="énergie renouvelable Côte d'Ivoire, solaire, projets énergétiques, énergie propre, développement durable">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': '#10b981',
+                        'dark-gray': '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .filter-active {
+            background-color: #10b981;
+            color: white;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-dark-gray bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-emerald font-bold text-2xl">SACGS-CI</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-emerald transition-colors">Accueil</a>
+                    <a href="mines.html" class="hover:text-emerald transition-colors">Mines</a>
+                    <a href="#contact" class="hover:text-emerald transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-dark-gray">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16 bg-gradient-to-r from-emerald-50 to-green-100">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-emerald">Énergie Renouvelable</h1>
+                    <p class="text-xl mb-8">Solutions innovantes et durables pour répondre aux besoins énergétiques de la Côte d'Ivoire et de la région ouest-africaine.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-emerald text-white px-4 py-2 rounded-full">Solaire</span>
+                        <span class="bg-emerald text-white px-4 py-2 rounded-full">Énergie verte</span>
+                        <span class="bg-emerald text-white px-4 py-2 rounded-full">Développement durable</span>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet énergétique" class="rounded-xl shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Nos Projets Énergétiques</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald hover:bg-emerald hover:text-white transition-colors filter-active" data-filter="all">
+                    Tous
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="solaire">
+                    Solaire
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="eolien">
+                    Éolien
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="biomasse">
+                    Biomasse
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="solaire" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1624395213044-8ef2fc221883?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Parc solaire Korhogo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Parc Solaire de Korhogo</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Korhogo, Nord de la Côte d'Ivoire</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i data-feather="zap" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 50 MW</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Mise en service: 2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Installation photovoltaïque de pointe alimentant plus de 100,000 foyers.</p>
+                        <button class="view-details-btn text-emerald font-semibold" data-project="1">Voir les détails →</button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="solaire" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1621839673705-661a74484b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Centrale solaire Abengourou" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Centrale Solaire d'Abengourou</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Abengourou, Est de la Côte d'Ivoire</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i data-feather="zap" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 25 MW</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Mise en service: 2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Projet intégré avec système de stockage pour alimentation continue.</p>
+                        <button class="view-details-btn text-emerald font-semibold" data-project="2">Voir les détails →</button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="biomasse" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Centrale biomasse Gagnoa" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Centrale Biomasse de Gagnoa</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Gagnoa, Ouest de la Côte d'Ivoire</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i data-feather="zap" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 15 MW</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Mise en service: 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Utilisation des résidus agricoles locaux pour production d'énergie verte.</p>
+                        <button class="view-details-btn text-emerald font-semibold" data-project="3">Voir les détails →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="modal-title" class="text-2xl font-bold"></h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-lg mb-6">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <h4 class="font-semibold mb-2">Informations du projet</h4>
+                        <div id="modal-details" class="space-y-2"></div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Description</h4>
+                        <p id="modal-description" class="text-gray-600"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quotation Form -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Demande de Devis</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 font-medium">Entreprise</label>
+                            <input type="text" id="company" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 font-medium">Téléphone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        </div>
+                        <div>
+                            <label for="project-type" class="block mb-2 font-medium">Type de projet</label>
+                            <select id="project-type" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                                <option value="">Sélectionnez une option</option>
+                                <option value="solaire">Installation solaire</option>
+                                <option value="eolien">Énergie éolienne</option>
+                                <option value="biomasse">Biomasse</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Vos besoins</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald"></textarea>
+                        </div>
+                        <button type="submit" class="bg-emerald hover:bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors w-full">
+                            Demander un devis
+                        </button>
+                    </form>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="bg-dark-gray text-white p-8 rounded-xl h-full">
+                        <h3 class="text-xl font-semibold mb-6">Pourquoi choisir nos solutions énergétiques?</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-emerald mr-3 mt-1"></i>
+                                <span>Technologies de pointe garantissant une efficacité maximale</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-emerald mr-3 mt-1"></i>
+                                <span>Solutions sur mesure adaptées à vos besoins spécifiques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-emerald mr-3 mt-1"></i>
+                                <span>Maintenance et support technique continus</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-emerald mr-3 mt-1"></i>
+                                <span>Respect des normes environnementales internationales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-emerald mr-3 mt-1"></i>
+                                <span>Rentabilité à long terme avec retour sur investissement garanti</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8 pt-6 border-t border-gray-600">
+                            <h4 class="font-semibold mb-4">Contactez-nous</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <i data-feather="phone" class="mr-3"></i>
+                                    <span>+225 20 30 40 50</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-feather="mail" class="mr-3"></i>
+                                    <span>energy@sacgs-ci.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">SACGS-CI Energy</h4>
+                    <p class="text-gray-400">Solutions innovantes d'énergie renouvelable pour un avenir durable en Côte d'Ivoire.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-emerald transition-colors">Accueil</a></li>
+                        <li><a href="mines.html" class="text-gray-400 hover:text-emerald transition-colors">Secteur Minier</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-emerald transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-emerald transition-colors">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-emerald transition-colors">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-emerald transition-colors">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-emerald transition-colors">
+                            <i data-feather="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SACGS-CI Group. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        feather.replace();
+        
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+                // Add active class to clicked button
+                button.classList.add('filter-active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        const viewButtons = document.querySelectorAll('.view-details-btn');
+        const modal = document.getElementById('project-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalDetails = document.getElementById('modal-details');
+        const modalDescription = document.getElementById('modal-description');
+
+        // Project data
+        const projects = {
+            1: {
+                title: "Parc Solaire de Korhogo",
+                image: "https://images.unsplash.com/photo-1624395213044-8ef2fc221883?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                details: [
+                    { icon: "map-pin", text: "Korhogo, Nord de la Côte d'Ivoire" },
+                    { icon: "zap", text: "Capacité: 50 MW" },
+                    { icon: "calendar", text: "Mise en service: 2023" },
+                    { icon: "users", text: "Bénéficiaires: 100,000 foyers" },
+                    { icon: "dollar-sign", text: "Investissement: 45 millions USD" }
+                ],
+                description: "Le parc solaire de Korhogo est l'une des plus grandes installations photovoltaïques de Côte d'Ivoire. Couvrant une superficie de 80 hectares, il comprend 150,000 panneaux solaires de technologie dernière génération. Ce projet contribue significativement à l'objectif national d'atteindre 42% d'énergie renouvelable dans le mix énergétique d'ici 2030."
+            },
+            2: {
+                title: "Centrale Solaire d'Abengourou",
+                image: "https://images.unsplash.com/photo-1621839673705-661a74484b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                details: [
+                    { icon: "map-pin", text: "Abengourou, Est de la Côte d'Ivoire" },
+                    { icon: "zap", text: "Capacité: 25 MW" },
+                    { icon: "calendar", text: "Mise en service: 2022" },
+                    { icon: "users", text: "Bénéficiaires: 50,000 foyers" },
+                    { icon: "battery", text: "Système de stockage: 10 MWh" }
+                ],
+                description: "Cette centrale solaire innovante intègre un système de stockage par batteries permettant une alimentation continue même pendant les périodes de faible ensoleillement. Le projet a créé plus de 200 emplois locaux durant sa construction et maintient 25 emplois permanents pour son exploitation et maintenance."
+            },
+            3: {
+                title: "Centrale Biomasse de Gagnoa",
+                image: "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                details: [
+                    { icon: "map-pin", text: "Gagnoa, Ouest de la Côte d'Ivoire" },
+                    { icon: "zap", text: "Capacité: 15 MW" },
+                    { icon: "calendar", text: "Mise en service: 2024" },
+                    { icon: "users", text: "Bénéficiaires: 30,000 foyers" },
+                    { icon: "tree", text: "Réduction CO2: 25,000 tonnes/an" }
+                ],
+                description: "Cette centrale utilise les résidus de cultures locales (principalement cacao et café) pour produire de l'énergie verte. Cette approche circulaire valorise les déchets agricoles tout en produisant une électricité fiable pour la région. Le projet inclut un programme de formation pour les agriculteurs locaux sur la collecte et la préparation des biomasses."
+            }
+        };
+
+        viewButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const projectId = button.getAttribute('data-project');
+                const project = projects[projectId];
+                
+                modalTitle.textContent = project.title;
+                modalImage.src = project.image;
+                modalImage.alt = project.title;
+                
+                // Clear previous details
+                modalDetails.innerHTML = '';
+                
+                // Add new details
+                project.details.forEach(detail => {
+                    const detailElement = document.createElement('div');
+                    detailElement.className = 'flex items-center text-gray-600';
+                    detailElement.innerHTML = `
+                        <i data-feather="${detail.icon}" class="w-4 h-4 mr-2"></i>
+                        <span>${detail.text}</span>
+                    `;
+                    modalDetails.appendChild(detailElement);
+                });
+                
+                modalDescription.textContent = project.description;
+                
+                // Show modal
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                // Refresh icons
+                feather.replace();
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const navMenu = document.querySelector('nav div:nth-child(2)');
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('md:flex');
+        });
+    </script>
+</body>
+</html>

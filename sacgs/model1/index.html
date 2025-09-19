@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SACGS-CI Group - Énergie, Mines et Agriculture en Côte d'Ivoire</title>
+    <meta name="description" content="SACGS-CI Group, leader ivoirien dans les secteurs de l'énergie, des mines et des matières premières agricoles. Innovation et développement durable.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': '#10b981',
+                        'dark-gray': '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.8)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .domain-card {
+            transition: all 0.3s ease;
+        }
+        .domain-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-dark-gray bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-emerald font-bold text-2xl">SACGS-CI</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-emerald transition-colors">Le Groupe</a>
+                    <a href="#stats" class="hover:text-emerald transition-colors">Chiffres</a>
+                    <a href="#news" class="hover:text-emerald transition-colors">Actualités</a>
+                    <a href="#contact" class="hover:text-emerald transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-dark-gray">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Innover pour l'Énergie, les Mines et l'Agriculture en Côte d'Ivoire</h1>
+            <p class="text-xl md:text-2xl mb-8">Leader ivoirien dans le développement durable des ressources naturelles</p>
+            <a href="#domains" class="bg-emerald hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold inline-block transition-colors">
+                Découvrir nos domaines
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Présentation du Groupe SACGS-CI</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-emerald mb-6">Une vision innovante pour l'Afrique de l'Ouest</h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        SACGS-CI Group est un acteur majeur dans les secteurs de l'énergie renouvelable, 
+                        l'exploitation minière responsable et la transformation des matières premières agricoles en Côte d'Ivoire.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Notre engagement pour le développement durable et l'innovation technologique 
+                        nous positionne comme un partenaire de choix pour la croissance économique de la région.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1643140680769-7c167a4d6c0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Centrale énergétique SACGS-CI" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domains Section -->
+    <section id="domains" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Nos Domaines d'Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="domain-card bg-white p-8 rounded-xl shadow-md text-center flex flex-col" data-aos="flip-left">
+                    <div class="w-16 h-16 bg-emerald rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="zap" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Énergie Renouvelable</h3>
+                    <p class="mb-6 flex-grow">Solutions solaires innovantes pour une énergie propre et accessible</p>
+                    <a href="./energie.html" class="bg-emerald hover:bg-emerald-600 text-white px-6 py-2 rounded-full font-medium inline-block transition-colors">
+                        Découvrir
+                    </a>
+                </div>
+                <div class="domain-card bg-white p-8 rounded-xl shadow-md text-center flex flex-col" data-aos="flip-left" data-aos-delay="150">
+                    <div class="w-16 h-16 bg-emerald rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="gem" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Exploitation Minière</h3>
+                    <p class="mb-6 flex-grow">Extraction responsable des ressources minières ouest-africaines</p>
+                    <a href="./mines.html" class="bg-emerald hover:bg-emerald-600 text-white px-6 py-2 rounded-full font-medium inline-block transition-colors">
+                        Découvrir
+                    </a>
+                </div>
+                <div class="domain-card bg-white p-8 rounded-xl shadow-md text-center flex flex-col" data-aos="flip-left" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-emerald rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="leaf" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Produits Agricoles</h3>
+                    <p class="mb-6 flex-grow">Valorisation des matières premières agricoles ivoiriennes de qualité</p>
+                    <a href="./matieres-premieres.html" class="bg-emerald hover:bg-emerald-600 text-white px-6 py-2 rounded-full font-medium inline-block transition-colors">
+                        Découvrir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-20 bg-emerald text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Chiffres Clés</h2>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="stat-card p-6" data-aos="zoom-in">
+                    <div class="text-4xl font-bold mb-2">15+</div>
+                    <p>Ans d'expérience</p>
+                </div>
+                <div class="stat-card p-6" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <p>Projets réalisés</p>
+                </div>
+                <div class="stat-card p-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-4xl font-bold mb-2">200+</div>
+                    <p>Collaborateurs</p>
+                </div>
+                <div class="stat-card p-6" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="text-4xl font-bold mb-2">12</div>
+                    <p>Régions couvertes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Actualités</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Nouveau projet solaire" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Nouveau projet solaire de 50MW</h3>
+                        <p class="text-gray-600 mb-4">Lancement d'un nouveau parc solaire dans le nord du pays</p>
+                        <a href="#" class="text-emerald font-semibold">Lire plus →</a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Innovation agricole" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Innovation dans l'agriculture durable</h3>
+                        <p class="text-gray-600 mb-4">Nouvelles techniques de production respectueuses de l'environnement</p>
+                        <a href="#" class="text-emerald font-semibold">Lire plus →</a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1581578021517-5d8ad8597858?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Partenariat minier" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Partenariat minier stratégique</h3>
+                        <p class="text-gray-600 mb-4">Collaboration avec des acteurs internationaux pour l'exploitation responsable</p>
+                        <a href="#" class="text-emerald font-semibold">Lire plus →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Contactez-nous</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald"></textarea>
+                        </div>
+                        <button type="submit" class="bg-emerald hover:bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="bg-dark-gray text-white p-8 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-6">Coordonnées</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i data-feather="map-pin" class="mr-4 mt-1"></i>
+                                <p>Abidjan, Plateau<br>Rue des Entrepreneurs, Côte d'Ivoire</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="phone" class="mr-4"></i>
+                                <p>+225 20 30 40 50</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="mail" class="mr-4"></i>
+                                <p>contact@sacgs-ci.com</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-white hover:text-emerald transition-colors">
+                                    <i data-feather="facebook"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-emerald transition-colors">
+                                    <i data-feather="twitter"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-emerald transition-colors">
+                                    <i data-feather="linkedin"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-emerald transition-colors">
+                                    <i data-feather="instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2023 SACGS-CI Group. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        feather.replace();
+        
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('h-auto');
+        });
+    </script>
+</body>
+</html>

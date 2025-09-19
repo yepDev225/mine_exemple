@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploitation Minière Responsable - SACGS-CI Group | Mines et Ressources en Côte d'Ivoire</title>
+    <meta name="description" content="Découvrez nos projets miniers responsables en Côte d'Ivoire. SACGS-CI Group, expert en exploitation minière durable et extraction de ressources naturelles.">
+    <meta name="keywords" content="exploitation minière responsable, mines Côte d'Ivoire, ressources naturelles, extraction minière, projets miniers, SACGS-CI, énergie renouvelable Côte d'Ivoire">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': '#10b981',
+                        'dark-gray': '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mining-hero {
+            background: linear-gradient(rgba(31, 41, 55, 0.85), rgba(31, 41, 55, 0.85)), url('https://images.unsplash.com/photo-1544531585-9847b58a5b6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .filter-btn.active {
+            background-color: #10b981;
+            color: white;
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .quote-form {
+            background: linear-gradient(rgba(16, 185, 129, 0.9), rgba(16, 185, 129, 0.9)), url('https://images.unsplash.com/photo-1566842600175-97dca3dfc3c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-dark-gray bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-emerald font-bold text-2xl">SACGS-CI</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-emerald transition-colors">Accueil</a>
+                    <a href="index.html#about" class="hover:text-emerald transition-colors">Le Groupe</a>
+                    <a href="index.html#stats" class="hover:text-emerald transition-colors">Chiffres</a>
+                    <a href="index.html#news" class="hover:text-emerald transition-colors">Actualités</a>
+                    <a href="index.html#contact" class="hover:text-emerald transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-dark-gray">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="mining-hero min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Exploitation Minière Responsable</h1>
+            <p class="text-xl md:text-2xl mb-8">Découvrez nos projets miniers durables en Côte d'Ivoire</p>
+            <a href="#projects" class="bg-emerald hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold inline-block transition-colors">
+                Voir nos projets
+            </a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre Approche Minière</h2>
+                    <p class="text-lg leading-relaxed mb-4">
+                        SACGS-CI Group s'engage dans une exploitation minière responsable qui allie performance économique,
+                        respect de l'environnement et développement des communautés locales.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Nos projets miniers en Côte d'Ivoire sont conçus pour minimiser l'impact environnemental tout en
+                        maximisant les retombées positives pour les populations et l'économie nationale.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1581578021517-5d8ad8597858?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Site minier responsable" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section id="projects" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Galerie de nos Projets Miniers</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors active" data-filter="all">
+                    Tous
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="or">
+                    Or
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="manganese">
+                    Manganèse
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="nickel">
+                    Nickel
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="or" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1571847140471-1c437b5af54f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet minier d'or" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Mine d'Or de Yaouré</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Bélier, Centre</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="database" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 7 tonnes/an</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Début: Janvier 2021</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Exploitation aurifère à ciel ouvert utilisant des technologies de pointe pour minimiser l'impact environnemental.</p>
+                        <a href="#" class="text-emerald font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="manganese" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1581059850277-846fe57c8ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet minier de manganèse" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Mine de Manganèse de Korhogo</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Poro, Nord</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="database" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 550,000 tonnes/an</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Début: Mars 2019</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Exploitation de l'un des plus importants gisements de manganèse d'Afrique de l'Ouest avec des méthodes responsables.</p>
+                        <a href="#" class="text-emerald font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="nickel" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1574359173085-7c5b, 
+                    elle n'est pas fini, je veux que tu generes le reste de la Page  de Mine qui s'affiche quand on clique sur le boutons decouvrir nos domaine  en reprenant a partie du projet 2 
+
+                    Galerie photo filtrable (grilles responsive) montrant projets et sites.
+
+                    Fiche descriptive pour chaque projet (titre, lieu, capacité, date).
+
+                    Intégration d'un formulaire de demande de devis.
+
+                    SEO ciblé : « énergie renouvelable Côte d'Ivoire », « exploitation minière responsable ».
+                    " alt="Projet minier de nickel" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Projet Nickel de Biankouma</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région des Montagnes, Ouest</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="database" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 60,000 tonnes/an</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Début: Juin 2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Projet novateur combinant extraction de nickel et énergie renouvelable pour une exploitation minière responsable en Côte d'Ivoire.</p>
+                        <a href="#" class="text-emerald font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="or" data-aos="fade-up" data-aos-delay="450">
+                    <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet minier d'or" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Mine d'Or de Ity</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région de la Mé, Ouest</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="database" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 8.5 tonnes/an</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Début: Septembre 2019</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Exploitation aurifère utilisant des technologies de pointe pour une exploitation minière responsable et durable.</p>
+                        <a href="#" class="text-emerald font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="manganese" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet minier de manganèse" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Mine de Manganèse de Bondoukou</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Gontougo, Nord-Est</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="database" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 400,000 tonnes/an</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Début: Février 2020</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Exploitation de manganèse avec système de gestion environnementale certifié et programmes de développement communautaire.</p>
+                        <a href="#" class="text-emerald font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="nickel" data-aos="fade-up" data-aos-delay="750">
+                    <img src="https://images.unsplash.com/photo-1598974357801-cbca100e65d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet minier de nickel" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Projet Nickel de Man</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Tonkpi, Ouest</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="database" class="w-4 h-4 mr-2"></i>
+                            <span>Capacité: 45,000 tonnes/an</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Début: Octobre 2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Projet innovant d'extraction de nickel avec utilisation d'énergies renouvelables pour une exploitation minière responsable en Côte d'Ivoire.</p>
+                        <a href="#" class="text-emerald font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-form py-20 text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Demandez un Devis Personnalisé</h2>
+                <p class="text-xl">Contactez-nous pour une étude personnalisée de votre projet minier</p>
+            </div>
+
+            <form class="bg-white rounded-2xl shadow-2xl p-8 text-dark-gray" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block mb-2 font-medium">Nom complet</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Entreprise</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block mb-2 font-medium">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Téléphone</label>
+                        <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald focus:border-transparent" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Type de projet</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald focus:border-transparent">
+                        <option value="">Sélectionnez une option</option>
+                        <option value="or">Exploitation d'or</option>
+                        <option value="manganese">Exploitation de manganèse</option>
+                        <option value="nickel">Exploitation de nickel</option>
+                        <option value="other">Autre ressource minière</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Message</label>
+                    <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald focus:border-transparent" placeholder="Décrivez votre projet et vos besoins..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-emerald hover:bg-emerald-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors">
+                    Envoyer ma demande
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SACGS-CI Group</h3>
+                    <p class="text-gray-400">Expert en exploitation minière responsable et développement durable en Côte d'Ivoire.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-emerald transition-colors">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-emerald transition-colors">Le Groupe</a></li>
+                        <li><a href="index.html#stats" class="text-gray-400 hover:text-emerald transition-colors">Chiffres</a></li>
+                        <li><a href="index.html#news" class="text-gray-400 hover:text-emerald transition-colors">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Nos Domaines</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mine.html" class="text-gray-400 hover:text-emerald transition-colors">Exploitation Minière</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emerald transition-colors">Énergies Renouvelables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-emerald transition-colors">Développement Durable</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            Abidjan, Côte d'Ivoire
+                        </p>
+                        <p class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            +225 27 22 50 00 00
+                        </p>
+                        <p class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            contact@sacgs-ci.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SACGS-CI Group. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
