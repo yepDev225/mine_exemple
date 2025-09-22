@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SACGS-CI - Matières Premières Agricoles</title>
-    <meta name="description" content="Découvrez nos produits agricoles de qualité : herbicides, engrais et insecticides pour une agriculture performante et durable">
+    <title>SACGS-CI - Agro-Industrie Bio</title>
+    <meta name="description" content="Produits agro-industriels bio SACGS-CI : engrais, herbicides et insecticides 100% naturels pour une agriculture durable">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -15,8 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'emerald': '#10b981',
-                        'dark-gray': '#1f2937',
+                        'primary': '#090448',
+                        'secondary': '#2f7d00',
+                        'light': '#bababa',
+                        'white': '#ffffff',
                     }
                 }
             }
@@ -63,23 +66,49 @@
             font-size: 12px;
             font-weight: bold;
         }
+        .quantity-btn {
+            transition: all 0.2s ease;
+        }
+        .quantity-btn:hover {
+            background-color: #f3f4f6;
+        }
+        .cart-item {
+            transition: all 0.3s ease;
+        }
+        .cart-item-remove {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .cart-item:hover .cart-item-remove {
+            opacity: 1;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 300px;
+        }
     </style>
 </head>
-<body class="font-sans antialiased text-dark-gray bg-gray-50">
+<body class="font-sans antialiased text-primary bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="./index.html" class="text-emerald font-bold text-2xl">SACGS-CI</a>
+                    <a href="./index.html" class="flex items-center">
+                        <img src="./img/logo.png" alt="Logo SACGS-CI" class="h-10">
+                    </a>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="./index.html" class="hover:text-emerald transition-colors">Accueil</a>
-                    <a href="./energie.html" class="hover:text-emerald transition-colors">Énergie</a>
-                    <a href="./mines.html" class="hover:text-emerald transition-colors">Mines</a>
-                    <a href="./matieres-premieres.html" class="text-emerald font-semibold">Produits Agricoles</a>
+                    <a href="./index.html" class="hover:text-secondary transition-colors">Accueil</a>
+                    <a href="./btp.html" class="hover:text-secondary transition-colors">BTP</a>
+                    <a href="./agriculture.html" class="hover:text-secondary transition-colors">Agriculture</a>
+                    <a href="./agro-industrie.html" class="text-secondary font-semibold">Agro-Industrie</a>
                     <div class="relative">
-                        <button id="cart-btn" class="hover:text-emerald transition-colors">
+                        <button id="cart-btn" class="hover:text-secondary transition-colors relative">
                             <i data-feather="shopping-cart"></i>
                             <span id="cart-count" class="cart-badge">0</span>
                         </button>
@@ -87,24 +116,33 @@
                 </div>
                 <div class="md:hidden flex items-center">
                     <div class="relative mr-4">
-                        <button id="mobile-cart-btn" class="text-dark-gray">
+                        <button id="mobile-cart-btn" class="text-primary relative">
                             <i data-feather="shopping-cart"></i>
                             <span id="mobile-cart-count" class="cart-badge">0</span>
                         </button>
                     </div>
-                    <button id="menu-btn" class="text-dark-gray">
+                    <button id="menu-btn" class="text-primary">
                         <i data-feather="menu"></i>
                     </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="./index.html" class="block px-3 py-2 hover:text-secondary transition-colors">Accueil</a>
+                    <a href="./btp.html" class="block px-3 py-2 hover:text-secondary transition-colors">BTP</a>
+                    <a href="./agriculture.html" class="block px-3 py-2 hover:text-secondary transition-colors">Agriculture</a>
+                    <a href="./agro-industrie.html" class="block px-3 py-2 text-secondary font-semibold">Agro-Industrie</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-emerald to-emerald-600 py-20 mt-16">
+    <section class="bg-gradient-to-r from-primary to-primary-900 py-20 mt-16">
         <div class="max-w-7xl mx-auto px-4 text-center text-white" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Produits Agricoles</h1>
-            <p class="text-xl mb-8">Des solutions de qualité pour une agriculture performante et durable</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Agro-Industrie Bio</h1>
+            <p class="text-xl mb-8">Produits 100% naturels pour une agriculture durable et performante</p>
         </div>
     </section>
 
@@ -112,16 +150,16 @@
     <section class="py-8 bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
-                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="all">
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors bg-secondary text-white" data-filter="all">
                     Tous les produits
                 </button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="herbicides">
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="herbicides">
                     Herbicides
                 </button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="engrais">
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="engrais">
                     Engrais
                 </button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-emerald text-emerald hover:bg-emerald hover:text-white transition-colors" data-filter="insecticides">
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="insecticides">
                     Insecticides
                 </button>
             </div>
@@ -137,12 +175,12 @@
                     <img src="https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                          alt="Herbicide Selectif" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Herbicide</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-2">Herbicide Sélectif</h3>
+                        <span class="bg-green-100 text-secondary text-xs font-medium px-2.5 py-0.5 rounded">Herbicide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Herbicide Sélectif Bio</h3>
                         <p class="text-gray-600 mb-4">Élimine les mauvaises herbes sans affecter les cultures</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-emerald">25 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="1">
+                            <span class="text-2xl font-bold text-secondary">25 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="1">
                                 Voir plus
                             </button>
                         </div>
@@ -153,12 +191,12 @@
                     <img src="https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                          alt="Herbicide Total" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Herbicide</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-2">Herbicide Total</h3>
+                        <span class="bg-green-100 text-secondary text-xs font-medium px-2.5 py-0.5 rounded">Herbicide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Herbicide Total Bio</h3>
                         <p class="text-gray-600 mb-4">Élimine toutes les végétations pour préparer vos champs</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-emerald">32 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="2">
+                            <span class="text-2xl font-bold text-secondary">32 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="2">
                                 Voir plus
                             </button>
                         </div>
@@ -170,12 +208,12 @@
                     <img src="https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                          alt="Engrais NPK" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Engrais</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-2">Engrais NPK 15-15-15</h3>
+                        <span class="bg-green-100 text-secondary text-xs font-medium px-2.5 py-0.5 rounded">Engrais</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Engrais NPK 15-15-15 Bio</h3>
                         <p class="text-gray-600 mb-4">Équilibre parfait pour une croissance optimale</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-emerald">18 500 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="3">
+                            <span class="text-2xl font-bold text-secondary">18 500 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="3">
                                 Voir plus
                             </button>
                         </div>
@@ -186,12 +224,12 @@
                     <img src="https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                          alt="Engrais Organique" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Engrais</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-2">Engrais Organique</h3>
+                        <span class="bg-green-100 text-secondary text-xs font-medium px-2.5 py-0.5 rounded">Engrais</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Engrais Organique Bio</h3>
                         <p class="text-gray-600 mb-4">100% naturel pour une agriculture biologique</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-emerald">22 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="4">
+                            <span class="text-2xl font-bold text-secondary">22 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="4">
                                 Voir plus
                             </button>
                         </div>
@@ -203,12 +241,12 @@
                     <img src="https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                          alt="Insecticide Polyvalent" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Insecticide</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-2">Insecticide Polyvalent</h3>
+                        <span class="bg-green-100 text-secondary text-xs font-medium px-2.5 py-0.5 rounded">Insecticide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Insecticide Polyvalent Bio</h3>
                         <p class="text-gray-600 mb-4">Protection contre une large gamme d'insectes nuisibles</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-emerald">28 500 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="5">
+                            <span class="text-2xl font-bold text-secondary">28 500 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="5">
                                 Voir plus
                             </button>
                         </div>
@@ -219,12 +257,12 @@
                     <img src="https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                          alt="Insecticide Spécifique" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Insecticide</span>
-                        <h3 class="text-xl font-semibold mt-2 mb-2">Insecticide Spécifique</h3>
+                        <span class="bg-green-100 text-secondary text-xs font-medium px-2.5 py-0.5 rounded">Insecticide</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-2">Insecticide Spécifique Bio</h3>
                         <p class="text-gray-600 mb-4">Cible les insectes ravageurs sans affecter les auxiliaires</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-emerald">31 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-emerald hover:bg-emerald-600 text-white rounded-lg transition-colors" data-product-id="6">
+                            <span class="text-2xl font-bold text-secondary">31 000 FCFA</span>
+                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="6">
                                 Voir plus
                             </button>
                         </div>
@@ -264,9 +302,9 @@
                         <i data-feather="chevron-right"></i>
                     </button>
                     <div class="flex justify-center mt-4">
-                        <button class="carousel-indicator active" data-slide="0"></button>
-                        <button class="carousel-indicator" data-slide="1"></button>
-                        <button class="carousel-indicator" data-slide="2"></button>
+                        <button class="carousel-indicator active w-3 h-3 bg-secondary rounded-full mx-1" data-slide="0"></button>
+                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full mx-1" data-slide="1"></button>
+                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full mx-1" data-slide="2"></button>
                     </div>
                 </div>
                 
@@ -276,29 +314,29 @@
                         <p id="modal-product-description" class="text-gray-700 mb-6"></p>
                         
                         <h3 class="text-xl font-semibold mb-3">Caractéristiques</h3>
-                        <ul id="modal-product-features" class="list-disc pl-5 text-gray-700 mb-6"></ul>
+                        <ul id="modal-product-features" class="list-disc pl-5 text-gray-700 mb-6 space-y-2"></ul>
                     </div>
                     
                     <div>
                         <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                            <p class="text-3xl font-bold text-emerald mb-4" id="modal-product-price"></p>
+                            <p class="text-3xl font-bold text-secondary mb-4" id="modal-product-price"></p>
                             
                             <div class="flex items-center mb-4">
                                 <label for="quantity" class="mr-3 font-medium">Quantité:</label>
                                 <div class="flex items-center border rounded-md">
-                                    <button id="decrease-qty" class="px-3 py-1 text-gray-600">-</button>
-                                    <input type="number" id="quantity" min="1" value="1" class="w-12 text-center border-0 py-1">
-                                    <button id="increase-qty" class="px-3 py-1 text-gray-600">+</button>
+                                    <button id="decrease-qty" class="quantity-btn px-3 py-1 text-gray-600 hover:bg-gray-100">-</button>
+                                    <input type="number" id="quantity" min="1" value="1" class="w-12 text-center border-0 py-1 bg-transparent">
+                                    <button id="increase-qty" class="quantity-btn px-3 py-1 text-gray-600 hover:bg-gray-100">+</button>
                                 </div>
                             </div>
                             
-                            <button id="add-to-cart-modal" class="w-full bg-emerald hover:bg-emerald-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
+                            <button id="add-to-cart-modal" class="w-full bg-secondary hover:bg-green-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
                                 Ajouter au panier
                             </button>
                         </div>
                         
-                        <div class="bg-emerald-50 p-4 rounded-lg">
-                            <h4 class="font-semibold mb-2 flex items-center">
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <h4 class="font-semibold mb-2 flex items-center text-secondary">
                                 <i data-feather="truck" class="mr-2"></i> Livraison rapide
                             </h4>
                             <p class="text-sm text-gray-700">Disponible sous 24h à 48h dans toute la Côte d'Ivoire</p>
@@ -319,18 +357,26 @@
                 </button>
             </div>
             
-            <div id="cart-items" class="flex-grow overflow-y-auto mb-6">
+            <div id="cart-items" class="flex-grow overflow-y-auto mb-6 space-y-4">
                 <!-- Cart items will be dynamically added here -->
                 <p id="empty-cart-message" class="text-center text-gray-500 py-8">Votre panier est vide</p>
             </div>
             
             <div class="border-t pt-4">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-gray-600">Sous-total:</span>
+                    <span id="cart-subtotal" class="font-semibold">0 FCFA</span>
+                </div>
                 <div class="flex justify-between items-center mb-4">
-                    <span class="font-semibold">Total:</span>
-                    <span id="cart-total" class="text-2xl font-bold text-emerald">0 FCFA</span>
+                    <span class="text-gray-600">Livraison:</span>
+                    <span id="cart-shipping" class="font-semibold">0 FCFA</span>
+                </div>
+                <div class="flex justify-between items-center mb-4 border-t pt-2">
+                    <span class="font-semibold text-lg">Total:</span>
+                    <span id="cart-total" class="text-2xl font-bold text-secondary">0 FCFA</span>
                 </div>
                 
-                <button id="checkout-btn" class="w-full bg-emerald hover:bg-emerald-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                <button id="checkout-btn" class="w-full bg-secondary hover:bg-green-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
                     Procéder au paiement
                 </button>
             </div>
@@ -351,37 +397,38 @@
                 <form id="checkout-form" class="space-y-6">
                     <div>
                         <label for="customer-name" class="block mb-2 font-medium">Nom complet *</label>
-                        <input type="text" id="customer-name" required class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        <input type="text" id="customer-name" required class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary">
                     </div>
                     
                     <div>
                         <label for="customer-phone" class="block mb-2 font-medium">Téléphone *</label>
-                        <input type="tel" id="customer-phone" required class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        <input type="tel" id="customer-phone" required class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary">
                     </div>
                     
                     <div>
                         <label for="customer-email" class="block mb-2 font-medium">Email</label>
-                        <input type="email" id="customer-email" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald">
+                        <input type="email" id="customer-email" class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary">
                     </div>
                     
                     <div>
                         <label for="customer-address" class="block mb-2 font-medium">Adresse de livraison *</label>
-                        <textarea id="customer-address" required rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-emerald focus:border-emerald"></textarea>
+                        <textarea id="customer-address" required rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary"></textarea>
                     </div>
                     
                     <div class="bg-gray-50 p-4 rounded-lg">
                         <h3 class="font-semibold mb-3">Récapitulatif de la commande</h3>
-                        <div id="order-summary" class="text-sm text-gray-700">
+                        <div id="order-summary" class="text-sm text-gray-700 space-y-2">
                             <!-- Order summary will be dynamically added here -->
                         </div>
                         <div class="flex justify-between items-center mt-4 pt-2 border-t">
                             <span class="font-semibold">Total:</span>
-                            <span id="order-total" class="text-xl font-bold text-emerald">0 FCFA</span>
+                            <span id="order-total" class="text-xl font-bold text-secondary">0 FCFA</span>
                         </div>
                     </div>
                     
-                    <button type="submit" class="w-full bg-emerald hover:bg-emerald-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
-                        Payer et confirmer la commande
+                    <button type="submit" class="w-full bg-secondary hover:bg-green-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
+                        <i data-feather="message-circle" class="inline mr-2"></i>
+                        Commander via WhatsApp
                     </button>
                 </form>
             </div>
@@ -389,7 +436,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark-gray text-white py-12 mt-12">
+    <footer class="bg-primary text-white py-12 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p>&copy; 2023 SACGS-CI Group. Tous droits réservés.</p>
         </div>
@@ -406,15 +453,15 @@
         // Product data
         const products = {
             1: {
-                name: "Herbicide Sélectif",
+                name: "Herbicide Sélectif Bio",
                 category: "herbicides",
                 price: 25000,
-                description: "Notre herbicide sélectif de haute qualité élimine efficacement les mauvaises herbes sans affecter vos cultures principales. Formulé avec des composants de pointe, il offre une protection durable et respectueuse de l'environnement.",
+                description: "Notre herbicide sélectif bio de haute qualité élimine efficacement les mauvaises herbes sans affecter vos cultures principales. Formulé avec des composants 100% naturels, il offre une protection durable et respectueuse de l'environnement.",
                 features: [
                     "Action rapide et efficace",
-                    "Respectueux de l'environnement",
+                    "100% naturel et biodégradable",
                     "Protection longue durée",
-                    "Compatibilité avec la plupart des cultures"
+                    "Compatibilité avec l'agriculture biologique"
                 ],
                 images: [
                     "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
@@ -423,15 +470,15 @@
                 ]
             },
             2: {
-                name: "Herbicide Total",
+                name: "Herbicide Total Bio",
                 category: "herbicides",
                 price: 32000,
-                description: "Notre herbicide total est la solution idéale pour préparer vos champs en éliminant toutes les végétations indésirables. Sa formule puissante assure un nettoyage complet avant vos semis.",
+                description: "Notre herbicide total bio est la solution idéale pour préparer vos champs en éliminant toutes les végétations indésirables. Sa formule 100% naturelle assure un nettoyage complet avant vos semis.",
                 features: [
                     "Action totale sur toutes les végétations",
                     "Pénétration rapide",
-                    "Résidus minimaux",
-                    "Idéal pour la préparation des sols"
+                    "100% naturel et écologique",
+                    "Idéal pour la préparation des sols bio"
                 ],
                 images: [
                     "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
@@ -440,15 +487,15 @@
                 ]
             },
             3: {
-                name: "Engrais NPK 15-15-15",
+                name: "Engrais NPK 15-15-15 Bio",
                 category: "engrais",
                 price: 18500,
-                description: "Notre engrais NPK 15-15-15 offre un équilibre parfait d'azote, de phosphore et de potassium pour une croissance optimale de vos cultures. Spécialement formulé pour les sols ivoiriens.",
+                description: "Notre engrais NPK 15-15-15 bio offre un équilibre parfait d'azote, de phosphore et de potassium pour une croissance optimale de vos cultures. Spécialement formulé pour l'agriculture biologique.",
                 features: [
                     "Équilibre parfait NPK 15-15-15",
-                    "Adapté aux sols ivoiriens",
+                    "100% naturel et organique",
                     "Augmente le rendement des cultures",
-                    "Facile à appliquer"
+                    "Certifié agriculture biologique"
                 ],
                 images: [
                     "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
@@ -457,7 +504,7 @@
                 ]
             },
             4: {
-                name: "Engrais Organique",
+                name: "Engrais Organique Bio",
                 category: "engrais",
                 price: 22000,
                 description: "Notre engrais organique 100% naturel est parfait pour l'agriculture biologique. Il enrichit le sol en matière organique et améliore sa structure pour des cultures saines et vigoureuses.",
@@ -474,15 +521,15 @@
                 ]
             },
             5: {
-                name: "Insecticide Polyvalent",
+                name: "Insecticide Polyvalent Bio",
                 category: "insecticides",
                 price: 28500,
-                description: "Notre insecticide polyvalent offre une protection complète contre une large gamme d'insectes nuisibles. Sa formulation innovante cible les ravageurs tout en préservant les insectes bénéfiques.",
+                description: "Notre insecticide polyvalent bio offre une protection complète contre une large gamme d'insectes nuisibles. Sa formulation 100% naturelle cible les ravageurs tout en préservant les insectes bénéfiques.",
                 features: [
                     "Spectre d'action large",
                     "Action rapide et persistante",
-                    "Respectueux des auxiliaires",
-                    "Facile à doser et appliquer"
+                    "100% naturel et écologique",
+                    "Respectueux des auxiliaires"
                 ],
                 images: [
                     "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
@@ -491,14 +538,14 @@
                 ]
             },
             6: {
-                name: "Insecticide Spécifique",
+                name: "Insecticide Spécifique Bio",
                 category: "insecticides",
                 price: 31000,
-                description: "Notre insecticide spécifique cible avec précision les insectes ravageurs les plus problématiques sans affecter les insectes auxiliaires bénéfiques. Idéal pour une lutte intégrée.",
+                description: "Notre insecticide spécifique bio cible avec précision les insectes ravageurs les plus problématiques sans affecter les insectes auxiliaires bénéfiques. Idéal pour une lutte intégrée en agriculture biologique.",
                 features: [
                     "Action ciblée sur ravageurs spécifiques",
                     "Préserve la faune auxiliaire",
-                    "Faible impact environnemental",
+                    "100% naturel et biodégradable",
                     "Efficacité prouvée en conditions réelles"
                 ],
                 images: [
@@ -518,16 +565,32 @@
             document.getElementById('mobile-cart-count').textContent = totalItems;
         }
         
+        function calculateCartTotals() {
+            let subtotal = 0;
+            cart.forEach(item => {
+                const product = products[item.id];
+                subtotal += product.price * item.quantity;
+            });
+            
+            const shipping = subtotal > 0 ? 5000 : 0; // Frais de livraison fixe
+            const total = subtotal + shipping;
+            
+            return { subtotal, shipping, total };
+        }
+        
         function updateCartDisplay() {
             const cartItems = document.getElementById('cart-items');
             const emptyCartMessage = document.getElementById('empty-cart-message');
             const checkoutBtn = document.getElementById('checkout-btn');
-            const cartTotal = document.getElementById('cart-total');
+            const { subtotal, shipping, total } = calculateCartTotals();
+            
+            document.getElementById('cart-subtotal').textContent = `${subtotal.toLocaleString()} FCFA`;
+            document.getElementById('cart-shipping').textContent = `${shipping.toLocaleString()} FCFA`;
+            document.getElementById('cart-total').textContent = `${total.toLocaleString()} FCFA`;
             
             if (cart.length === 0) {
                 emptyCartMessage.style.display = 'block';
                 checkoutBtn.disabled = true;
-                cartTotal.textContent = '0 FCFA';
                 cartItems.innerHTML = '<p id="empty-cart-message" class="text-center text-gray-500 py-8">Votre panier est vide</p>';
                 return;
             }
@@ -535,35 +598,35 @@
             emptyCartMessage.style.display = 'none';
             checkoutBtn.disabled = false;
             
-            let total = 0;
             cartItems.innerHTML = '';
             
             cart.forEach((item, index) => {
                 const product = products[item.id];
                 const itemTotal = product.price * item.quantity;
-                total += itemTotal;
                 
                 const cartItem = document.createElement('div');
-                cartItem.className = 'flex items-center py-4 border-b';
+                cartItem.className = 'cart-item bg-gray-50 p-4 rounded-lg relative';
                 cartItem.innerHTML = `
-                    <img src="${product.images[0]}" alt="${product.name}" class="w-16 h-16 object-cover rounded">
-                    <div class="ml-4 flex-grow">
-                        <h4 class="font-medium">${product.name}</h4>
-                        <p class="text-emerald font-semibold">${product.price.toLocaleString()} FCFA</p>
-                        <div class="flex items-center mt-1">
-                            <button class="decrease-cart-item px-2 text-gray-500" data-index="${index}">-</button>
-                            <span class="mx-2">${item.quantity}</span>
-                            <button class="increase-cart-item px-2 text-gray-500" data-index="${index}">+</button>
+                    <div class="flex items-center">
+                        <img src="${product.images[0]}" alt="${product.name}" class="w-16 h-16 object-cover rounded">
+                        <div class="ml-4 flex-grow">
+                            <h4 class="font-medium text-sm">${product.name}</h4>
+                            <p class="text-secondary font-semibold">${product.price.toLocaleString()} FCFA</p>
+                            <div class="flex items-center mt-1">
+                                <button class="decrease-cart-item quantity-btn px-2 py-1 text-gray-600 hover:bg-gray-200 rounded" data-index="${index}">-</button>
+                                <span class="mx-2 font-medium">${item.quantity}</span>
+                                <button class="increase-cart-item quantity-btn px-2 py-1 text-gray-600 hover:bg-gray-200 rounded" data-index="${index}">+</button>
+                                <span class="ml-2 text-sm font-semibold">= ${itemTotal.toLocaleString()} FCFA</span>
+                            </div>
                         </div>
+                        <button class="cart-item-remove remove-cart-item text-red-500 ml-2 p-1 rounded-full hover:bg-red-50" data-index="${index}">
+                            <i data-feather="trash-2" class="w-4 h-4"></i>
+                        </button>
                     </div>
-                    <button class="remove-cart-item text-red-500 ml-2" data-index="${index}">
-                        <i data-feather="trash-2" class="w-4 h-4"></i>
-                    </button>
                 `;
                 cartItems.appendChild(cartItem);
             });
             
-            cartTotal.textContent = `${total.toLocaleString()} FCFA`;
             feather.replace();
         }
         
@@ -582,6 +645,9 @@
             localStorage.setItem('sacgs-cart', JSON.stringify(cart));
             updateCartCount();
             updateCartDisplay();
+            
+            // Show success notification
+            showNotification('Produit ajouté au panier!');
         }
         
         function removeFromCart(index) {
@@ -602,6 +668,24 @@
             }
         }
         
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-20 right-4 bg-secondary text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
         // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', () => {
@@ -610,19 +694,25 @@
                 document.querySelectorAll('.product-card').forEach(card => {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
                         card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 50);
                     } else {
-                        card.style.display = 'none';
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
                     }
                 });
                 
                 // Update active state of filter buttons
                 document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('bg-emerald', 'text-white');
-                    btn.classList.add('border-emerald', 'text-emerald');
+                    btn.classList.remove('bg-secondary', 'text-white');
+                    btn.classList.add('border-secondary', 'text-secondary');
                 });
                 
-                button.classList.remove('border-emerald', 'text-emerald');
-                button.classList.add('bg-emerald', 'text-white');
+                button.classList.remove('border-secondary', 'text-secondary');
+                button.classList.add('bg-secondary', 'text-white');
             });
         });
         
@@ -680,9 +770,11 @@
             
             document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
                 if (index === currentSlide) {
-                    indicator.classList.add('active');
+                    indicator.classList.remove('bg-gray-300');
+                    indicator.classList.add('bg-secondary');
                 } else {
-                    indicator.classList.remove('active');
+                    indicator.classList.remove('bg-secondary');
+                    indicator.classList.add('bg-gray-300');
                 }
             });
         }
@@ -722,14 +814,13 @@
             // Update order summary
             const orderSummary = document.getElementById('order-summary');
             const orderTotal = document.getElementById('order-total');
+            const { subtotal, shipping, total } = calculateCartTotals();
             
             let summaryHTML = '';
-            let total = 0;
             
             cart.forEach(item => {
                 const product = products[item.id];
                 const itemTotal = product.price * item.quantity;
-                total += itemTotal;
                 
                 summaryHTML += `
                     <div class="flex justify-between py-1">
@@ -738,6 +829,17 @@
                     </div>
                 `;
             });
+            
+            summaryHTML += `
+                <div class="flex justify-between py-1 border-t mt-2">
+                    <span>Sous-total:</span>
+                    <span>${subtotal.toLocaleString()} FCFA</span>
+                </div>
+                <div class="flex justify-between py-1">
+                    <span>Livraison:</span>
+                    <span>${shipping.toLocaleString()} FCFA</span>
+                </div>
+            `;
             
             orderSummary.innerHTML = summaryHTML;
             orderTotal.textContent = `${total.toLocaleString()} FCFA`;
@@ -758,7 +860,7 @@
             const address = document.getElementById('customer-address').value;
             
             // Format WhatsApp message
-            let message = `Bonjour, je souhaite commander les produits suivants:%0A%0A`;
+            let message = `Bonjour SACGS-CI,%0A%0AJe souhaite commander les produits agro-industriels suivants:%0A%0A`;
             
             cart.forEach(item => {
                 const product = products[item.id];
@@ -766,9 +868,11 @@
                 message += `- ${product.name} (x${item.quantity}) : ${itemTotal.toLocaleString()} FCFA%0A`;
             });
             
-            const total = cart.reduce((sum, item) => sum + (products[item.id].price * item.quantity), 0);
-            message += `%0ATotal: ${total.toLocaleString()} FCFA%0A%0A`;
-            message += `Informations client:%0A`;
+            const { subtotal, shipping, total } = calculateCartTotals();
+            message += `%0ASous-total: ${subtotal.toLocaleString()} FCFA%0A`;
+            message += `Livraison: ${shipping.toLocaleString()} FCFA%0A`;
+            message += `*Total: ${total.toLocaleString()} FCFA*%0A%0A`;
+            message += `*Informations client:*%0A`;
             message += `Nom: ${name}%0A`;
             message += `Téléphone: ${phone}%0A`;
             if (email) message += `Email: ${email}%0A`;
@@ -778,11 +882,28 @@
             cart = [];
             localStorage.setItem('sacgs-cart', JSON.stringify(cart));
             updateCartCount();
+            updateCartDisplay();
             
             // Redirect to WhatsApp
-            window.location.href = `https://wa.me/22520304050?text=${message}`;
+            window.open(`https://wa.me/22520304050?text=${message}`, '_blank');
+            hideCheckout();
         }
         
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('open')) {
+                icon.setAttribute('data-feather', 'x');
+            } else {
+                icon.setAttribute('data-feather', 'menu');
+            }
+            feather.replace();
+        });
+
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize cart
@@ -847,10 +968,15 @@
                 if (e.target === checkoutModal) hideCheckout();
             });
             
+            cartSidebar.addEventListener('click', (e) => {
+                if (e.target === cartSidebar) hideCart();
+            });
+            
             // Cart item manipulation
             document.addEventListener('click', (e) => {
-                if (e.target.classList.contains('remove-cart-item')) {
-                    const index = e.target.getAttribute('data-index');
+                if (e.target.classList.contains('remove-cart-item') || e.target.closest('.remove-cart-item')) {
+                    const button = e.target.classList.contains('remove-cart-item') ? e.target : e.target.closest('.remove-cart-item');
+                    const index = button.getAttribute('data-index');
                     removeFromCart(parseInt(index));
                 } else if (e.target.classList.contains('increase-cart-item')) {
                     const index = e.target.getAttribute('data-index');

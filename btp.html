@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTP - SACGS-CI Group | Bâtiment et Travaux Publics en Côte d'Ivoire</title>
+    <meta name="description" content="Expert en Bâtiment et Travaux Publics en Côte d'Ivoire. SACGS-CI Group, leader dans la construction d'infrastructures modernes et durables.">
+    <meta name="keywords" content="BTP Côte d'Ivoire, construction bâtiment, travaux publics, infrastructure routes, électrification, promotion immobilière">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#090448',
+                        'secondary': '#2f7d00',
+                        'light': '#bababa',
+                        'white': '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .btp-hero {
+            background: linear-gradient(rgba(9, 4, 72, 0.85), rgba(9, 4, 72, 0.85)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .filter-btn.active {
+            background-color: #2f7d00;
+            color: white;
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .quote-form {
+            background: linear-gradient(rgba(47, 125, 0, 0.9), rgba(47, 125, 0, 0.9)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-primary bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="./img/logo.png" alt="Logo SACGS-CI" class="h-10">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-secondary transition-colors">Accueil</a>
+                    <a href="index.html#about" class="hover:text-secondary transition-colors">Le Groupe</a>
+                    <a href="index.html#stats" class="hover:text-secondary transition-colors">Chiffres</a>
+                    <a href="index.html#news" class="hover:text-secondary transition-colors">Actualités</a>
+                    <a href="index.html#contact" class="hover:text-secondary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-primary">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="btp-hero min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Bâtiment & Travaux Publics</h1>
+            <p class="text-xl md:text-2xl mb-8">Construction d'infrastructures modernes et durables en Côte d'Ivoire</p>
+            <a href="#projects" class="bg-secondary hover:bg-green-800 text-white px-8 py-4 rounded-full font-semibold inline-block transition-colors">
+                Voir nos réalisations
+            </a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre Expertise en BTP</h2>
+                    <p class="text-lg leading-relaxed mb-4">
+                        SACGS-CI Group est un acteur majeur dans le secteur du Bâtiment et des Travaux Publics en Côte d'Ivoire.
+                        Nous concevons et réalisons des infrastructures modernes, durables et respectueuses de l'environnement.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Notre approche combine innovation technologique, expertise technique et engagement pour la qualité,
+                        faisant de nous un partenaire de choix pour les projets d'infrastructure en Afrique de l'Ouest.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Chantier de construction" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Nos Services BTP</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-xl bg-gray-50 text-center" data-aos="fade-up">
+                    <div class="service-icon bg-primary mx-auto">
+                        <i data-feather="home" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Construction Immobilière</h3>
+                    <p class="text-gray-600">Construction de bâtiments résidentiels, commerciaux et industriels avec des normes de qualité élevées.</p>
+                </div>
+                
+                <div class="p-8 rounded-xl bg-gray-50 text-center" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon bg-secondary mx-auto">
+                        <i data-feather="layers" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Infrastructures Routières</h3>
+                    <p class="text-gray-600">Construction et réhabilitation de routes, ponts et ouvrages d'art pour désenclaver les territoires.</p>
+                </div>
+                
+                <div class="p-8 rounded-xl bg-gray-50 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon bg-primary mx-auto">
+                        <i data-feather="zap" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Électrification</h3>
+                    <p class="text-gray-600">Installation de réseaux électriques et d'éclairage public pour moderniser les infrastructures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section id="projects" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Nos Réalisations en BTP</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors active" data-filter="all">
+                    Tous
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="construction">
+                    Construction
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="routes">
+                    Routes
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="electrification">
+                    Électrification
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="construction" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet de construction immobilière" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Complexe Résidentiel Abidjan</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Abidjan, Plateau</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="home" class="w-4 h-4 mr-2"></i>
+                            <span>120 appartements</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Livraison: Décembre 2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Construction d'un complexe résidentiel haut de gamme avec espaces verts et équipements modernes.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="routes" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1574359173085-7c5bde5d5c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet routier" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Autoroute Abidjan-Grand Bassam</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Abidjan - Grand Bassam</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="layers" class="w-4 h-4 mr-2"></i>
+                            <span>25 km à 2x3 voies</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Livraison: Juin 2021</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Construction d'une autoroute moderne avec échangeurs, éclairage et système de péage électronique.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="electrification" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet d'électrification" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Électrification Rurale Korhogo</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Poro, Nord</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="zap" class="w-4 h-4 mr-2"></i>
+                            <span>15 villages électrifiés</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Livraison: Mars 2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Électrification de zones rurales avec énergie solaire et extension du réseau électrique national.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="construction" data-aos="fade-up" data-aos-delay="450">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet commercial" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Centre Commercial Yopougon</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Yopougon, Abidjan</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="shopping-bag" class="w-4 h-4 mr-2"></i>
+                            <span>12,000 m² commerciaux</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Livraison: Octobre 2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Construction d'un centre commercial moderne avec parking souterrain et espaces de restauration.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="routes" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet de pont" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Pont de Jacqueville</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Jacqueville, Sud</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="layers" class="w-4 h-4 mr-2"></i>
+                            <span>Longueur: 850 m</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Livraison: Février 2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Construction d'un pont moderne reliant Jacqueville au continent, facilitant les échanges commerciaux.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="electrification" data-aos="fade-up" data-aos-delay="750">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Projet d'éclairage public" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Éclairage Public Bouaké</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Bouaké, Centre</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="zap" class="w-4 h-4 mr-2"></i>
+                            <span>2,500 points lumineux LED</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Livraison: Août 2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Modernisation de l'éclairage public avec technologie LED et système de gestion à distance.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            Voir les détails <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-form py-20 text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Demandez un Devis Personnalisé</h2>
+                <p class="text-xl">Contactez-nous pour une étude personnalisée de votre projet BTP</p>
+            </div>
+
+            <form class="bg-white rounded-2xl shadow-2xl p-8 text-primary" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block mb-2 font-medium">Nom complet</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Entreprise</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block mb-2 font-medium">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Téléphone</label>
+                        <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Type de projet</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                        <option value="">Sélectionnez une option</option>
+                        <option value="construction">Construction Immobilière</option>
+                        <option value="routes">Infrastructures Routières</option>
+                        <option value="electrification">Électrification</option>
+                        <option value="other">Autre projet BTP</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Message</label>
+                    <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="Décrivez votre projet et vos besoins..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-secondary hover:bg-green-800 text-white font-semibold py-4 px-6 rounded-lg transition-colors">
+                    Envoyer ma demande
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SACGS-CI Group</h3>
+                    <p class="text-gray-300">Expert en Bâtiment et Travaux Publics en Côte d'Ivoire.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-secondary transition-colors">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-secondary transition-colors">Le Groupe</a></li>
+                        <li><a href="index.html#stats" class="text-gray-300 hover:text-secondary transition-colors">Chiffres</a></li>
+                        <li><a href="index.html#news" class="text-gray-300 hover:text-secondary transition-colors">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Nos Domaines</h4>
+                    <ul class="space-y-2">
+                        <li><a href="btp.html" class="text-gray-300 hover:text-secondary transition-colors">Bâtiment & Travaux Publics</a></li>
+                        <li><a href="agriculture.html" class="text-gray-300 hover:text-secondary transition-colors">Agriculture & Export</a></li>
+                        <li><a href="agro-industrie.html" class="text-gray-300 hover:text-secondary transition-colors">Agro-Industrie Bio</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            Abidjan, Plateau, Côte d'Ivoire
+                        </p>
+                        <p class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            +225 20 30 40 50
+                        </p>
+                        <p class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            contact@sacgs-ci.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2023 SACGS-CI Group. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

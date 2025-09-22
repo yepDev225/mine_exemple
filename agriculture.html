@@ -1,0 +1,559 @@
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture & Export - SACGS-CI Group | Import-Export et Plantations en Côte d'Ivoire</title>
+    <meta name="description" content="Expert en Agriculture et Export en Côte d'Ivoire. SACGS-CI Group, leader dans l'import-export de matières premières et création de plantations clés en main.">
+    <meta name="keywords" content="agriculture Côte d'Ivoire, export cacao, plantations clés en main, import-export café, anacarde, coton, vivrier">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#090448',
+                        'secondary': '#2f7d00',
+                        'light': '#bababa',
+                        'white': '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .agriculture-hero {
+            background: linear-gradient(rgba(47, 125, 0, 0.85), rgba(47, 125, 0, 0.85)), url('./img/ban2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .filter-btn.active {
+            background-color: #2f7d00;
+            color: white;
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .quote-form {
+            background: linear-gradient(rgba(9, 4, 72, 0.9), rgba(9, 4, 72, 0.9)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .process-step {
+            position: relative;
+        }
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            width: 40px;
+            height: 2px;
+            background-color: #2f7d00;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-primary bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="./img/logo.png" alt="Logo SACGS-CI" class="h-10">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-secondary transition-colors">Accueil</a>
+                    <a href="index.html#about" class="hover:text-secondary transition-colors">Le Groupe</a>
+                    <a href="index.html#stats" class="hover:text-secondary transition-colors">Chiffres</a>
+                    <a href="index.html#news" class="hover:text-secondary transition-colors">Actualités</a>
+                    <a href="index.html#contact" class="hover:text-secondary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-primary">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="agriculture-hero min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Agriculture & Export</h1>
+            <p class="text-xl md:text-2xl mb-8">Import-export de matières premières et création de plantations clés en main</p>
+            <a href="#products" class="bg-primary hover:bg-blue-900 text-white px-8 py-4 rounded-full font-semibold inline-block transition-colors">
+                Découvrir nos produits
+            </a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre Expertise Agricole</h2>
+                    <p class="text-lg leading-relaxed mb-4">
+                        SACGS-CI Group est un acteur majeur dans le secteur agricole et l'exportation en Côte d'Ivoire.
+                        Nous maîtrisons toute la chaîne de valeur, de la création de plantations à l'exportation des produits finis.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Notre approche combine l'expertise agricole traditionnelle avec les technologies modernes,
+                        garantissant des produits de qualité supérieure pour les marchés locaux et internationaux.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="./img/agrabout.jpg" 
+                         alt="Plantation agricole" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Nos Services Agricoles</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-xl bg-gray-50 text-center" data-aos="fade-up">
+                    <div class="service-icon bg-secondary mx-auto">
+                        <i data-feather="shopping-cart" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Import-Export</h3>
+                    <p class="text-gray-600">Exportation de cacao, café, anacarde, coton et produits vivriers vers les marchés internationaux.</p>
+                </div>
+                
+                <div class="p-8 rounded-xl bg-gray-50 text-center" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon bg-primary mx-auto">
+                        <i data-feather="tree" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Plantations Clés en Main</h3>
+                    <p class="text-gray-600">Création complète de plantations avec suivi technique et formation des exploitants.</p>
+                </div>
+                
+                <div class="p-8 rounded-xl bg-gray-50 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon bg-secondary mx-auto">
+                        <i data-feather="trending-up" class="text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Conseil & Formation</h3>
+                    <p class="text-gray-600">Accompagnement technique et formation des agriculteurs pour optimiser les rendements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Notre Processus</h2>
+            
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="process-step p-6" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="map" class="text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Étude du Terrain</h3>
+                    <p class="text-gray-600">Analyse complète des sols et conditions climatiques</p>
+                </div>
+                
+                <div class="process-step p-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="settings" class="text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Installation</h3>
+                    <p class="text-gray-600">Mise en place des infrastructures et plantations</p>
+                </div>
+                
+                <div class="process-step p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="monitor" class="text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Suivi Technique</h3>
+                    <p class="text-gray-600">Accompagnement continu et optimisation</p>
+                </div>
+                
+                <div class="process-step p-6" data-aos="fade-up" data-aos-delay="450">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="truck" class="text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Exportation</h3>
+                    <p class="text-gray-600">Commercialisation et exportation des récoltes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Gallery -->
+    <section id="products" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Nos Produits Agricoles</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors active" data-filter="all">
+                    Tous
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="cacao">
+                    Cacao
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="cafe">
+                    Café
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="anacarde">
+                    Anacarde
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors" data-filter="vivrier">
+                    Vivrier
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 - Cacao -->
+                <div class="product-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="cacao" data-aos="fade-up">
+                    <img src="./img/cacao.jpg" 
+                         alt="Fèves de cacao" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Cacao Premium</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Sud-Ouest</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Récolte: Octobre-Mars</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="package" class="w-4 h-4 mr-2"></i>
+                            <span>Export: Europe, Amérique</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cacao de qualité supérieure, cultivé selon les normes internationales les plus strictes.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            En savoir plus <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 - Café -->
+                <div class="product-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="cafe" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Grains de café" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Café Robusta</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région de l'Ouest</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Récolte: Novembre-Février</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="package" class="w-4 h-4 mr-2"></i>
+                            <span>Export: Monde entier</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Café robusta aromatique, cultivé en altitude pour une saveur exceptionnelle.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            En savoir plus <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 - Anacarde -->
+                <div class="product-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="anacarde" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./img/anacarde.jpg" 
+                         alt="Noix de cajou" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Anacarde</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Nord</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Récolte: Février-Mai</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="package" class="w-4 h-4 mr-2"></i>
+                            <span>Export: Asie, Europe</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Noix de cajou de première qualité, transformées localement selon les standards internationaux.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            En savoir plus <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 - Coton -->
+                <div class="product-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="coton" data-aos="fade-up" data-aos-delay="450">
+                    <img src="./img/coton.jpg" 
+                         alt="Coton" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Coton</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Région du Centre</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Récolte: Septembre-Décembre</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="package" class="w-4 h-4 mr-2"></i>
+                            <span>Export: Industrie textile</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Coton de qualité supérieure, idéal pour l'industrie textile internationale.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            En savoir plus <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 - Vivrier -->
+                <div class="product-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="vivrier" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Produits vivriers" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Produits Vivriers</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Toutes régions</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Récolte: Toute l'année</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="package" class="w-4 h-4 mr-2"></i>
+                            <span>Marchés locaux et régionaux</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Large gamme de produits vivriers frais pour approvisionner les marchés locaux.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            En savoir plus <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 - Plantation -->
+                <div class="product-card gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="plantation" data-aos="fade-up" data-aos-delay="750">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Plantation clé en main" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Plantations Clés en Main</h3>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>Partout en Côte d'Ivoire</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i data-feather="clock" class="w-4 h-4 mr-2"></i>
+                            <span>Durée: 6-24 mois</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i data-feather="users" class="w-4 h-4 mr-2"></i>
+                            <span>Formation incluse</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Service complet de création de plantations avec formation des exploitants.</p>
+                        <a href="#" class="text-secondary font-semibold flex items-center">
+                            En savoir plus <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-form py-20 text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Demandez un Devis Agricole</h2>
+                <p class="text-xl">Contactez-nous pour une étude personnalisée de votre projet agricole</p>
+            </div>
+
+            <form class="bg-white rounded-2xl shadow-2xl p-8 text-primary" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block mb-2 font-medium">Nom complet</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Entreprise</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block mb-2 font-medium">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Téléphone</label>
+                        <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Type de projet</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                        <option value="">Sélectionnez une option</option>
+                        <option value="import-export">Import-Export</option>
+                        <option value="plantation">Plantation Clé en Main</option>
+                        <option value="conseil">Conseil Agricole</option>
+                        <option value="other">Autre projet agricole</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Produits d'intérêt</label>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Cacao
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Café
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Anacarde
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Coton
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Vivrier
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Autre
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Message</label>
+                    <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="Décrivez votre projet et vos besoins..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-secondary hover:bg-green-800 text-white font-semibold py-4 px-6 rounded-lg transition-colors">
+                    Envoyer ma demande
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SACGS-CI Group</h3>
+                    <p class="text-gray-300">Expert en Agriculture et Export en Côte d'Ivoire.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-secondary transition-colors">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-secondary transition-colors">Le Groupe</a></li>
+                        <li><a href="index.html#stats" class="text-gray-300 hover:text-secondary transition-colors">Chiffres</a></li>
+                        <li><a href="index.html#news" class="text-gray-300 hover:text-secondary transition-colors">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Nos Domaines</h4>
+                    <ul class="space-y-2">
+                        <li><a href="btp.html" class="text-gray-300 hover:text-secondary transition-colors">Bâtiment & Travaux Publics</a></li>
+                        <li><a href="agriculture.html" class="text-gray-300 hover:text-secondary transition-colors">Agriculture & Export</a></li>
+                        <li><a href="agro-industrie.html" class="text-gray-300 hover:text-secondary transition-colors">Agro-Industrie Bio</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            Abidjan, Plateau, Côte d'Ivoire
+                        </p>
+                        <p class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            +225 20 30 40 50
+                        </p>
+                        <p class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            contact@sacgs-ci.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2023 SACGS-CI Group. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
