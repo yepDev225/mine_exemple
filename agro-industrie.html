@@ -26,12 +26,31 @@
         }
     </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
         .product-card {
             transition: all 0.3s ease;
         }
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .cart-open {
+            transform: translateX(0);
+        }
+        .cart-closed {
+            transform: translateX(100%);
+        }
+        .checkout-step {
+            transition: all 0.3s ease;
+        }
+        .checkout-step.active {
+            border-left: 4px solid #2f7d00;
         }
         .modal {
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -66,22 +85,6 @@
             font-size: 12px;
             font-weight: bold;
         }
-        .quantity-btn {
-            transition: all 0.2s ease;
-        }
-        .quantity-btn:hover {
-            background-color: #f3f4f6;
-        }
-        .cart-item {
-            transition: all 0.3s ease;
-        }
-        .cart-item-remove {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .cart-item:hover .cart-item-remove {
-            opacity: 1;
-        }
         .mobile-menu {
             max-height: 0;
             overflow: hidden;
@@ -90,11 +93,30 @@
         .mobile-menu.open {
             max-height: 300px;
         }
+        .hero-carousel-slide {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .hero-carousel-slide.active {
+            opacity: 1;
+        }
+        .hero-carousel-indicator {
+            transition: all 0.3s ease;
+        }
+        .hero-carousel-indicator.active {
+            background-color: #2f7d00;
+            transform: scale(1.2);
+        }
     </style>
 </head>
-<body class="font-sans  text-primary bg-gray-50">
+<body class="font-sans text-primary bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
@@ -138,11 +160,72 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-primary-900 py-20 mt-16">
-        <div class="max-w-7xl mx-auto px-4 text-center text-white" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Agro-Industrie Bio</h1>
-            <p class="text-xl mb-8">Produits 100% naturels pour une agriculture durable et performante</p>
+    <!-- Hero Carousel Section -->
+    <section class="relative h-[600px] mt-16 overflow-hidden">
+        <!-- Carousel Slides -->
+        <div class="relative h-full">
+            <!-- Slide 1 -->
+            <div class="hero-carousel-slide active">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/50"></div>
+                <img src="./img/angrais1.jpeg" 
+                     alt="Usine de production d'engrais bio" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="max-w-7xl mx-auto px-4 text-white" data-aos="fade-up">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Production d'Engrais Bio</h1>
+                        <p class="text-xl md:text-2xl mb-8 max-w-3xl">Notre usine moderne transforme les matières premières naturelles en engrais 100% biologiques pour une agriculture durable</p>
+                        <button class="bg-secondary hover:bg-green-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Découvrir nos produits
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-carousel-slide">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/50"></div>
+                <img src="./img/angrais2.jpeg" 
+                     alt="Process de fabrication des herbicides" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="max-w-7xl mx-auto px-4 text-white" data-aos="fade-up">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Herbicides Naturels</h1>
+                        <p class="text-xl md:text-2xl mb-8 max-w-3xl">Technologie avancée pour la production d'herbicides 100% naturels respectueux de l'environnement</p>
+                        <button class="bg-secondary hover:bg-green-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Voir les herbicides
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-carousel-slide">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/50"></div>
+                <img src="./img/angrais3.jpg" 
+                     alt="Laboratoire de contrôle qualité" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="max-w-7xl mx-auto px-4 text-white" data-aos="fade-up">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Qualité Certifiée</h1>
+                        <p class="text-xl md:text-2xl mb-8 max-w-3xl">Contrôle qualité rigoureux dans notre laboratoire pour garantir l'excellence de tous nos produits</p>
+                        <button class="bg-secondary hover:bg-green-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                            En savoir plus
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <button id="hero-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors">
+            <i data-feather="chevron-left" class="w-6 h-6"></i>
+        </button>
+        <button id="hero-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors">
+            <i data-feather="chevron-right" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Carousel Indicators -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <button class="hero-carousel-indicator w-3 h-3 bg-white/50 rounded-full active" data-slide="0"></button>
+            <button class="hero-carousel-indicator w-3 h-3 bg-white/50 rounded-full" data-slide="1"></button>
+            <button class="hero-carousel-indicator w-3 h-3 bg-white/50 rounded-full" data-slide="2"></button>
         </div>
     </section>
 
@@ -180,8 +263,9 @@
                         <p class="text-gray-600 mb-4">Élimine les mauvaises herbes sans affecter les cultures</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-secondary">25 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="1">
-                                Voir plus
+                            <button class="add-to-cart-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="1">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                Ajouter
                             </button>
                         </div>
                     </div>
@@ -196,8 +280,9 @@
                         <p class="text-gray-600 mb-4">Élimine toutes les végétations pour préparer vos champs</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-secondary">32 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="2">
-                                Voir plus
+                            <button class="add-to-cart-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="2">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                Ajouter
                             </button>
                         </div>
                     </div>
@@ -213,8 +298,9 @@
                         <p class="text-gray-600 mb-4">Équilibre parfait pour une croissance optimale</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-secondary">18 500 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="3">
-                                Voir plus
+                            <button class="add-to-cart-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="3">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                Ajouter
                             </button>
                         </div>
                     </div>
@@ -229,8 +315,9 @@
                         <p class="text-gray-600 mb-4">100% naturel pour une agriculture biologique</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-secondary">22 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="4">
-                                Voir plus
+                            <button class="add-to-cart-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="4">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                Ajouter
                             </button>
                         </div>
                     </div>
@@ -246,8 +333,9 @@
                         <p class="text-gray-600 mb-4">Protection contre une large gamme d'insectes nuisibles</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-secondary">28 500 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="5">
-                                Voir plus
+                            <button class="add-to-cart-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="5">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                Ajouter
                             </button>
                         </div>
                     </div>
@@ -262,8 +350,9 @@
                         <p class="text-gray-600 mb-4">Cible les insectes ravageurs sans affecter les auxiliaires</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-secondary">31 000 FCFA</span>
-                            <button class="view-details-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="6">
-                                Voir plus
+                            <button class="add-to-cart-btn px-4 py-2 bg-secondary hover:bg-green-800 text-white rounded-lg transition-colors" data-product-id="6">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                Ajouter
                             </button>
                         </div>
                     </div>
@@ -272,83 +361,8 @@
         </div>
     </section>
 
-    <!-- Product Modal -->
-    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 modal modal-hidden">
-        <div class="bg-white rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
-                <div class="flex justify-between items-start mb-6">
-                    <h2 id="modal-product-name" class="text-2xl font-bold"></h2>
-                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
-                        <i data-feather="x"></i>
-                    </button>
-                </div>
-                
-                <div class="mb-6 relative">
-                    <div id="carousel" class="relative">
-                        <div class="carousel-slide active">
-                            <img id="modal-main-image" src="" alt="" class="w-full h-64 md:h-96 object-cover rounded-lg">
-                        </div>
-                        <div class="carousel-slide">
-                            <img id="modal-secondary-image-1" src="" alt="" class="w-full h-64 md:h-96 object-cover rounded-lg">
-                        </div>
-                        <div class="carousel-slide">
-                            <img id="modal-secondary-image-2" src="" alt="" class="w-full h-64 md:h-96 object-cover rounded-lg">
-                        </div>
-                    </div>
-                    <button id="prev-btn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
-                        <i data-feather="chevron-left"></i>
-                    </button>
-                    <button id="next-btn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
-                        <i data-feather="chevron-right"></i>
-                    </button>
-                    <div class="flex justify-center mt-4">
-                        <button class="carousel-indicator active w-3 h-3 bg-secondary rounded-full mx-1" data-slide="0"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full mx-1" data-slide="1"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full mx-1" data-slide="2"></button>
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3">Description</h3>
-                        <p id="modal-product-description" class="text-gray-700 mb-6"></p>
-                        
-                        <h3 class="text-xl font-semibold mb-3">Caractéristiques</h3>
-                        <ul id="modal-product-features" class="list-disc pl-5 text-gray-700 mb-6 space-y-2"></ul>
-                    </div>
-                    
-                    <div>
-                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                            <p class="text-3xl font-bold text-secondary mb-4" id="modal-product-price"></p>
-                            
-                            <div class="flex items-center mb-4">
-                                <label for="quantity" class="mr-3 font-medium">Quantité:</label>
-                                <div class="flex items-center border rounded-md">
-                                    <button id="decrease-qty" class="quantity-btn px-3 py-1 text-gray-600 hover:bg-gray-100">-</button>
-                                    <input type="number" id="quantity" min="1" value="1" class="w-12 text-center border-0 py-1 bg-transparent">
-                                    <button id="increase-qty" class="quantity-btn px-3 py-1 text-gray-600 hover:bg-gray-100">+</button>
-                                </div>
-                            </div>
-                            
-                            <button id="add-to-cart-modal" class="w-full bg-secondary hover:bg-green-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                        
-                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
-                            <h4 class="font-semibold mb-2 flex items-center text-secondary">
-                                <i data-feather="truck" class="mr-2"></i> Livraison rapide
-                            </h4>
-                            <p class="text-sm text-gray-700">Disponible sous 24h à 48h dans toute la Côte d'Ivoire</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl z-50 transform transition-transform translate-x-full">
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl z-50 cart-closed transition-transform duration-300 overflow-y-auto">
         <div class="p-6 h-full flex flex-col">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Votre Panier</h2>
@@ -369,15 +383,15 @@
                 </div>
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-gray-600">Livraison:</span>
-                    <span id="cart-shipping" class="font-semibold">0 FCFA</span>
+                    <span id="cart-shipping" class="font-semibold">À discuter sur WhatsApp</span>
                 </div>
                 <div class="flex justify-between items-center mb-4 border-t pt-2">
-                    <span class="font-semibold text-lg">Total:</span>
+                    <span class="font-semibold text-lg">Total produits:</span>
                     <span id="cart-total" class="text-2xl font-bold text-secondary">0 FCFA</span>
                 </div>
                 
                 <button id="checkout-btn" class="w-full bg-secondary hover:bg-green-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                    Procéder au paiement
+                    Commander via WhatsApp
                 </button>
             </div>
         </div>
@@ -394,43 +408,118 @@
                     </button>
                 </div>
                 
-                <form id="checkout-form" class="space-y-6">
-                    <div>
-                        <label for="customer-name" class="block mb-2 font-medium">Nom complet *</label>
-                        <input type="text" id="customer-name" required class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary">
+                <div class="mb-6">
+                    <div class="flex mb-4">
+                        <div class="checkout-step active w-1/3 p-4 border-r border-gray-200">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center mr-2">1</div>
+                                <span>Panier</span>
+                            </div>
+                        </div>
+                        <div class="checkout-step w-1/3 p-4 border-r border-gray-200">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mr-2">2</div>
+                                <span>Informations</span>
+                            </div>
+                        </div>
+                        <div class="checkout-step w-1/3 p-4">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mr-2">3</div>
+                                <span>Confirmation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="checkout-step-1" class="checkout-step-content">
+                    <div id="checkout-items" class="mb-6">
+                        <!-- Checkout items will be dynamically added here -->
                     </div>
                     
-                    <div>
-                        <label for="customer-phone" class="block mb-2 font-medium">Téléphone *</label>
-                        <input type="tel" id="customer-phone" required class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary">
+                    <div class="border-t border-gray-200 pt-4 mb-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-600">Sous-total</span>
+                            <span id="checkout-subtotal" class="font-medium">0 FCFA</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-600">Livraison</span>
+                            <span id="checkout-shipping" class="font-medium">À discuter sur WhatsApp</span>
+                        </div>
+                        <div class="flex justify-between items-center text-lg font-bold">
+                            <span>Total produits</span>
+                            <span id="checkout-total" class="text-xl font-bold text-secondary">0 FCFA</span>
+                        </div>
                     </div>
                     
-                    <div>
-                        <label for="customer-email" class="block mb-2 font-medium">Email</label>
-                        <input type="email" id="customer-email" class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary">
+                    <button id="next-to-info" class="w-full bg-secondary hover:bg-green-800 text-white font-medium py-3 px-4 rounded-lg transition">
+                        Continuer
+                    </button>
+                </div>
+                
+                <div id="checkout-step-2" class="checkout-step-content hidden">
+                    <form id="customer-info-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet *</label>
+                            <input type="text" id="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone *</label>
+                            <input type="tel" id="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                        </div>
+                        <div>
+                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Adresse de livraison *</label>
+                            <textarea id="address" required rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary"></textarea>
+                        </div>
+                        <div>
+                            <label for="city" class="block text-sm font-medium text-gray-700 mb-1">Ville *</label>
+                            <input type="text" id="city" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary">
+                        </div>
+                        
+                        <div class="flex justify-between pt-4">
+                            <button type="button" id="back-to-cart" class="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium">
+                                Retour
+                            </button>
+                            <button type="button" id="next-to-confirmation" class="bg-secondary hover:bg-green-800 text-white font-medium py-2 px-6 rounded-lg transition">
+                                Continuer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="checkout-step-3" class="checkout-step-content hidden">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="message-circle" class="text-secondary w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Confirmation de commande</h3>
+                        <p class="text-gray-600">Votre commande sera envoyée sur WhatsApp pour finalisation</p>
                     </div>
                     
-                    <div>
-                        <label for="customer-address" class="block mb-2 font-medium">Adresse de livraison *</label>
-                        <textarea id="customer-address" required rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-secondary focus:border-secondary"></textarea>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h3 class="font-semibold mb-3">Récapitulatif de la commande</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold mb-3">Récapitulatif de la commande</h4>
                         <div id="order-summary" class="text-sm text-gray-700 space-y-2">
                             <!-- Order summary will be dynamically added here -->
                         </div>
                         <div class="flex justify-between items-center mt-4 pt-2 border-t">
-                            <span class="font-semibold">Total:</span>
+                            <span class="font-semibold">Total produits:</span>
                             <span id="order-total" class="text-xl font-bold text-secondary">0 FCFA</span>
                         </div>
                     </div>
                     
-                    <button type="submit" class="w-full bg-secondary hover:bg-green-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
-                        <i data-feather="message-circle" class="inline mr-2"></i>
-                        Commander via WhatsApp
-                    </button>
-                </form>
+                    <div class="flex justify-between pt-4">
+                        <button type="button" id="back-to-info" class="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium">
+                            Retour
+                        </button>
+                        <button id="send-whatsapp" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg transition">
+                            <i data-feather="message-circle" class="inline mr-2"></i>
+                            Envoyer sur WhatsApp
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -450,6 +539,38 @@
         });
         feather.replace();
 
+        // Hero Carousel Functionality
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-carousel-slide');
+        const heroIndicators = document.querySelectorAll('.hero-carousel-indicator');
+        
+        function showHeroSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroIndicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            heroSlides[index].classList.add('active');
+            heroIndicators[index].classList.add('active');
+            currentHeroSlide = index;
+        }
+        
+        function nextHeroSlide() {
+            const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+            showHeroSlide(nextIndex);
+        }
+        
+        function prevHeroSlide() {
+            const prevIndex = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(prevIndex);
+        }
+        
+        // Auto-advance hero carousel
+        let heroCarouselInterval = setInterval(nextHeroSlide, 5000);
+        
+        function resetHeroCarouselInterval() {
+            clearInterval(heroCarouselInterval);
+            heroCarouselInterval = setInterval(nextHeroSlide, 5000);
+        }
+
         // Product data
         const products = {
             1: {
@@ -464,9 +585,7 @@
                     "Compatibilité avec l'agriculture biologique"
                 ],
                 images: [
-                    "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 ]
             },
             2: {
@@ -481,9 +600,7 @@
                     "Idéal pour la préparation des sols bio"
                 ],
                 images: [
-                    "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 ]
             },
             3: {
@@ -498,9 +615,7 @@
                     "Certifié agriculture biologique"
                 ],
                 images: [
-                    "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 ]
             },
             4: {
@@ -515,9 +630,7 @@
                     "Riche en nutriments essentiels"
                 ],
                 images: [
-                    "https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1596638787647-904b822cee59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    "https://images.unsplash.com/photo-1611950506696-698b3e370ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 ]
             },
             5: {
@@ -532,9 +645,7 @@
                     "Respectueux des auxiliaires"
                 ],
                 images: [
-                    "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1590172205845-14f190ca9e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 ]
             },
             6: {
@@ -549,9 +660,7 @@
                     "Efficacité prouvée en conditions réelles"
                 ],
                 images: [
-                    "https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1589924169466-189b6a486caa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1589923188937-cb64779f4abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    "https://images.unsplash.com/photo-161336180345-32ace596e6a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 ]
             }
         };
@@ -572,21 +681,17 @@
                 subtotal += product.price * item.quantity;
             });
             
-            const shipping = subtotal > 0 ? 5000 : 0; // Frais de livraison fixe
-            const total = subtotal + shipping;
-            
-            return { subtotal, shipping, total };
+            return { subtotal };
         }
         
         function updateCartDisplay() {
             const cartItems = document.getElementById('cart-items');
             const emptyCartMessage = document.getElementById('empty-cart-message');
             const checkoutBtn = document.getElementById('checkout-btn');
-            const { subtotal, shipping, total } = calculateCartTotals();
+            const { subtotal } = calculateCartTotals();
             
             document.getElementById('cart-subtotal').textContent = `${subtotal.toLocaleString()} FCFA`;
-            document.getElementById('cart-shipping').textContent = `${shipping.toLocaleString()} FCFA`;
-            document.getElementById('cart-total').textContent = `${total.toLocaleString()} FCFA`;
+            document.getElementById('cart-total').textContent = `${subtotal.toLocaleString()} FCFA`;
             
             if (cart.length === 0) {
                 emptyCartMessage.style.display = 'block';
@@ -605,7 +710,7 @@
                 const itemTotal = product.price * item.quantity;
                 
                 const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item bg-gray-50 p-4 rounded-lg relative';
+                cartItem.className = 'cart-item bg-gray-50 p-4 rounded-lg';
                 cartItem.innerHTML = `
                     <div class="flex items-center">
                         <img src="${product.images[0]}" alt="${product.name}" class="w-16 h-16 object-cover rounded">
@@ -613,13 +718,17 @@
                             <h4 class="font-medium text-sm">${product.name}</h4>
                             <p class="text-secondary font-semibold">${product.price.toLocaleString()} FCFA</p>
                             <div class="flex items-center mt-1">
-                                <button class="decrease-cart-item quantity-btn px-2 py-1 text-gray-600 hover:bg-gray-200 rounded" data-index="${index}">-</button>
-                                <span class="mx-2 font-medium">${item.quantity}</span>
-                                <button class="increase-cart-item quantity-btn px-2 py-1 text-gray-600 hover:bg-gray-200 rounded" data-index="${index}">+</button>
+                                <button class="decrease-quantity text-gray-500 hover:text-gray-700" data-index="${index}">
+                                    <i data-feather="minus" class="w-4 h-4"></i>
+                                </button>
+                                <span class="mx-2 text-gray-800">${item.quantity}</span>
+                                <button class="increase-quantity text-gray-500 hover:text-gray-700" data-index="${index}">
+                                    <i data-feather="plus" class="w-4 h-4"></i>
+                                </button>
                                 <span class="ml-2 text-sm font-semibold">= ${itemTotal.toLocaleString()} FCFA</span>
                             </div>
                         </div>
-                        <button class="cart-item-remove remove-cart-item text-red-500 ml-2 p-1 rounded-full hover:bg-red-50" data-index="${index}">
+                        <button class="remove-from-cart ml-4 text-red-500 hover:text-red-700" data-index="${index}">
                             <i data-feather="trash-2" class="w-4 h-4"></i>
                         </button>
                     </div>
@@ -630,7 +739,7 @@
             feather.replace();
         }
         
-        function addToCart(productId, quantity) {
+        function addToCart(productId, quantity = 1) {
             const existingItemIndex = cart.findIndex(item => item.id === productId);
             
             if (existingItemIndex !== -1) {
@@ -716,148 +825,103 @@
             });
         });
         
-        // Modal functionality
-        const productModal = document.getElementById('product-modal');
-        let currentProductId = null;
-        let currentSlide = 0;
-        
-        function showModal(productId) {
-            currentProductId = productId;
-            const product = products[productId];
-            
-            document.getElementById('modal-product-name').textContent = product.name;
-            document.getElementById('modal-product-description').textContent = product.description;
-            document.getElementById('modal-product-price').textContent = `${product.price.toLocaleString()} FCFA`;
-            
-            // Set features list
-            const featuresList = document.getElementById('modal-product-features');
-            featuresList.innerHTML = '';
-            product.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featuresList.appendChild(li);
-            });
-            
-            // Set images
-            document.getElementById('modal-main-image').src = product.images[0];
-            document.getElementById('modal-secondary-image-1').src = product.images[1];
-            document.getElementById('modal-secondary-image-2').src = product.images[2];
-            
-            // Reset carousel
-            currentSlide = 0;
-            updateCarousel();
-            
-            // Show modal
-            productModal.classList.remove('modal-hidden');
-            productModal.classList.add('modal-visible');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function hideModal() {
-            productModal.classList.remove('modal-visible');
-            productModal.classList.add('modal-hidden');
-            document.body.style.overflow = 'auto';
-        }
-        
-        function updateCarousel() {
-            document.querySelectorAll('.carousel-slide').forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.remove('bg-gray-300');
-                    indicator.classList.add('bg-secondary');
-                } else {
-                    indicator.classList.remove('bg-secondary');
-                    indicator.classList.add('bg-gray-300');
-                }
-            });
-        }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % 3;
-            updateCarousel();
-        }
-        
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + 3) % 3;
-            updateCarousel();
-        }
-        
         // Cart sidebar functionality
         const cartSidebar = document.getElementById('cart-sidebar');
         
-        function showCart() {
-            cartSidebar.classList.remove('translate-x-full');
+        function openCart() {
+            cartSidebar.classList.remove('cart-closed');
+            cartSidebar.classList.add('cart-open');
             document.body.style.overflow = 'hidden';
             updateCartDisplay();
         }
         
-        function hideCart() {
-            cartSidebar.classList.add('translate-x-full');
+        function closeCart() {
+            cartSidebar.classList.remove('cart-open');
+            cartSidebar.classList.add('cart-closed');
             document.body.style.overflow = 'auto';
         }
         
         // Checkout modal functionality
         const checkoutModal = document.getElementById('checkout-modal');
         
-        function showCheckout() {
+        function openCheckout() {
             checkoutModal.classList.remove('modal-hidden');
             checkoutModal.classList.add('modal-visible');
             document.body.style.overflow = 'hidden';
-            
-            // Update order summary
-            const orderSummary = document.getElementById('order-summary');
-            const orderTotal = document.getElementById('order-total');
-            const { subtotal, shipping, total } = calculateCartTotals();
-            
-            let summaryHTML = '';
-            
-            cart.forEach(item => {
-                const product = products[item.id];
-                const itemTotal = product.price * item.quantity;
-                
-                summaryHTML += `
-                    <div class="flex justify-between py-1">
-                        <span>${product.name} x${item.quantity}</span>
-                        <span>${itemTotal.toLocaleString()} FCFA</span>
-                    </div>
-                `;
-            });
-            
-            summaryHTML += `
-                <div class="flex justify-between py-1 border-t mt-2">
-                    <span>Sous-total:</span>
-                    <span>${subtotal.toLocaleString()} FCFA</span>
-                </div>
-                <div class="flex justify-between py-1">
-                    <span>Livraison:</span>
-                    <span>${shipping.toLocaleString()} FCFA</span>
-                </div>
-            `;
-            
-            orderSummary.innerHTML = summaryHTML;
-            orderTotal.textContent = `${total.toLocaleString()} FCFA`;
+            updateCheckoutStep(1);
         }
         
-        function hideCheckout() {
+        function closeCheckout() {
             checkoutModal.classList.remove('modal-visible');
             checkoutModal.classList.add('modal-hidden');
             document.body.style.overflow = 'auto';
         }
         
-        function submitOrder(event) {
-            event.preventDefault();
+        function updateCheckoutStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.checkout-step-content').forEach(el => {
+                el.classList.add('hidden');
+            });
             
-            const name = document.getElementById('customer-name').value;
-            const phone = document.getElementById('customer-phone').value;
-            const email = document.getElementById('customer-email').value;
-            const address = document.getElementById('customer-address').value;
+            // Update step indicators
+            document.querySelectorAll('.checkout-step').forEach((el, index) => {
+                if (index + 1 < step) {
+                    el.classList.add('completed');
+                    el.querySelector('div').classList.remove('bg-gray-200');
+                    el.querySelector('div').classList.add('bg-secondary', 'text-white');
+                } else if (index + 1 === step) {
+                    el.classList.add('active');
+                    el.classList.remove('completed');
+                } else {
+                    el.classList.remove('active', 'completed');
+                    el.querySelector('div').classList.add('bg-gray-200', 'text-gray-600');
+                    el.querySelector('div').classList.remove('bg-secondary', 'text-white');
+                }
+            });
+            
+            // Show current step
+            document.getElementById(`checkout-step-${step}`).classList.remove('hidden');
+            
+            // Update content for step 1
+            if (step === 1) {
+                updateCheckoutItems();
+            }
+        }
+        
+        function updateCheckoutItems() {
+            const checkoutItems = document.getElementById('checkout-items');
+            checkoutItems.innerHTML = '';
+            
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const product = products[item.id];
+                const itemTotal = product.price * item.quantity;
+                subtotal += itemTotal;
+                
+                const itemElement = document.createElement('div');
+                itemElement.className = 'flex items-center py-3 border-b border-gray-200';
+                itemElement.innerHTML = `
+                    <img src="${product.images[0]}" alt="${product.name}" class="w-12 h-12 object-cover rounded">
+                    <div class="ml-3 flex-1">
+                        <h4 class="text-sm font-medium text-gray-800">${product.name}</h4>
+                        <p class="text-gray-600 text-sm">Quantité: ${item.quantity}</p>
+                    </div>
+                    <span class="text-secondary font-medium">${itemTotal.toLocaleString()} FCFA</span>
+                `;
+                checkoutItems.appendChild(itemElement);
+            });
+            
+            document.getElementById('checkout-subtotal').textContent = `${subtotal.toLocaleString()} FCFA`;
+            document.getElementById('checkout-total').textContent = `${subtotal.toLocaleString()} FCFA`;
+        }
+        
+        function sendWhatsAppOrder() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
             
             // Format WhatsApp message
             let message = `Bonjour SACGS-CI,%0A%0AJe souhaite commander les produits agro-industriels suivants:%0A%0A`;
@@ -868,15 +932,16 @@
                 message += `- ${product.name} (x${item.quantity}) : ${itemTotal.toLocaleString()} FCFA%0A`;
             });
             
-            const { subtotal, shipping, total } = calculateCartTotals();
-            message += `%0ASous-total: ${subtotal.toLocaleString()} FCFA%0A`;
-            message += `Livraison: ${shipping.toLocaleString()} FCFA%0A`;
-            message += `*Total: ${total.toLocaleString()} FCFA*%0A%0A`;
+            const { subtotal } = calculateCartTotals();
+            message += `%0ATotal produits: ${subtotal.toLocaleString()} FCFA%0A`;
+            message += `Livraison: À discuter%0A%0A`;
             message += `*Informations client:*%0A`;
             message += `Nom: ${name}%0A`;
             message += `Téléphone: ${phone}%0A`;
             if (email) message += `Email: ${email}%0A`;
-            message += `Adresse: ${address}`;
+            message += `Adresse: ${address}%0A`;
+            message += `Ville: ${city}%0A%0A`;
+            message += `Merci de me contacter pour finaliser la commande et discuter des frais de livraison.`;
             
             // Clear cart
             cart = [];
@@ -886,7 +951,7 @@
             
             // Redirect to WhatsApp
             window.open(`https://wa.me/22520304050?text=${message}`, '_blank');
-            hideCheckout();
+            closeCheckout();
         }
         
         // Mobile menu functionality
@@ -910,80 +975,130 @@
             updateCartCount();
             updateCartDisplay();
             
-            // Product modal events
-            document.querySelectorAll('.view-details-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const productId = button.getAttribute('data-product-id');
-                    showModal(parseInt(productId));
-                });
+            // Hero carousel events
+            document.getElementById('hero-next').addEventListener('click', () => {
+                nextHeroSlide();
+                resetHeroCarouselInterval();
             });
             
-            document.getElementById('close-modal').addEventListener('click', hideModal);
-            document.getElementById('add-to-cart-modal').addEventListener('click', () => {
-                const quantity = parseInt(document.getElementById('quantity').value);
-                addToCart(currentProductId, quantity);
-                hideModal();
+            document.getElementById('hero-prev').addEventListener('click', () => {
+                prevHeroSlide();
+                resetHeroCarouselInterval();
             });
             
-            // Carousel events
-            document.getElementById('next-btn').addEventListener('click', nextSlide);
-            document.getElementById('prev-btn').addEventListener('click', prevSlide);
-            
-            document.querySelectorAll('.carousel-indicator').forEach(indicator => {
+            heroIndicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', () => {
-                    currentSlide = parseInt(indicator.getAttribute('data-slide'));
-                    updateCarousel();
+                    showHeroSlide(index);
+                    resetHeroCarouselInterval();
                 });
             });
             
-            // Quantity controls
-            document.getElementById('increase-qty').addEventListener('click', () => {
-                const quantityInput = document.getElementById('quantity');
-                quantityInput.value = parseInt(quantityInput.value) + 1;
-            });
-            
-            document.getElementById('decrease-qty').addEventListener('click', () => {
-                const quantityInput = document.getElementById('quantity');
-                if (parseInt(quantityInput.value) > 1) {
-                    quantityInput.value = parseInt(quantityInput.value) - 1;
-                }
+            // Add to cart events
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = parseInt(button.getAttribute('data-product-id'));
+                    addToCart(productId);
+                });
             });
             
             // Cart events
-            document.getElementById('cart-btn').addEventListener('click', showCart);
-            document.getElementById('mobile-cart-btn').addEventListener('click', showCart);
-            document.getElementById('close-cart').addEventListener('click', hideCart);
+            document.getElementById('cart-btn').addEventListener('click', openCart);
+            document.getElementById('mobile-cart-btn').addEventListener('click', openCart);
+            document.getElementById('close-cart').addEventListener('click', closeCart);
             
             // Checkout events
-            document.getElementById('checkout-btn').addEventListener('click', showCheckout);
-            document.getElementById('close-checkout').addEventListener('click', hideCheckout);
-            document.getElementById('checkout-form').addEventListener('submit', submitOrder);
+            document.getElementById('checkout-btn').addEventListener('click', openCheckout);
+            document.getElementById('close-checkout').addEventListener('click', closeCheckout);
             
-            // Close modals when clicking outside
-            productModal.addEventListener('click', (e) => {
-                if (e.target === productModal) hideModal();
+            // Checkout navigation
+            document.getElementById('next-to-info').addEventListener('click', function() {
+                updateCheckoutStep(2);
             });
             
-            checkoutModal.addEventListener('click', (e) => {
-                if (e.target === checkoutModal) hideCheckout();
+            document.getElementById('back-to-cart').addEventListener('click', function() {
+                updateCheckoutStep(1);
             });
             
-            cartSidebar.addEventListener('click', (e) => {
-                if (e.target === cartSidebar) hideCart();
+            document.getElementById('next-to-confirmation').addEventListener('click', function() {
+                // Validate form
+                const form = document.getElementById('customer-info-form');
+                let valid = true;
+                
+                form.querySelectorAll('input[required], textarea[required]').forEach(input => {
+                    if (!input.value.trim()) {
+                        valid = false;
+                        input.classList.add('border-red-500');
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+                
+                if (valid) {
+                    updateCheckoutStep(3);
+                    updateOrderSummary();
+                }
             });
+            
+            document.getElementById('back-to-info').addEventListener('click', function() {
+                updateCheckoutStep(2);
+            });
+            
+            document.getElementById('send-whatsapp').addEventListener('click', sendWhatsAppOrder);
+            
+            function updateOrderSummary() {
+                const orderSummary = document.getElementById('order-summary');
+                const orderTotal = document.getElementById('order-total');
+                const { subtotal } = calculateCartTotals();
+                
+                let summaryHTML = '';
+                
+                cart.forEach(item => {
+                    const product = products[item.id];
+                    const itemTotal = product.price * item.quantity;
+                    
+                    summaryHTML += `
+                        <div class="flex justify-between py-1">
+                            <span>${product.name} x${item.quantity}</span>
+                            <span>${itemTotal.toLocaleString()} FCFA</span>
+                        </div>
+                    `;
+                });
+                
+                summaryHTML += `
+                    <div class="flex justify-between py-1 border-t mt-2">
+                        <span>Sous-total:</span>
+                        <span>${subtotal.toLocaleString()} FCFA</span>
+                    </div>
+                `;
+                
+                orderSummary.innerHTML = summaryHTML;
+                orderTotal.textContent = `${subtotal.toLocaleString()} FCFA`;
+            }
             
             // Cart item manipulation
             document.addEventListener('click', (e) => {
-                if (e.target.classList.contains('remove-cart-item') || e.target.closest('.remove-cart-item')) {
-                    const button = e.target.classList.contains('remove-cart-item') ? e.target : e.target.closest('.remove-cart-item');
+                if (e.target.classList.contains('remove-from-cart') || e.target.closest('.remove-from-cart')) {
+                    const button = e.target.classList.contains('remove-from-cart') ? e.target : e.target.closest('.remove-from-cart');
                     const index = button.getAttribute('data-index');
                     removeFromCart(parseInt(index));
-                } else if (e.target.classList.contains('increase-cart-item')) {
-                    const index = e.target.getAttribute('data-index');
+                } else if (e.target.classList.contains('increase-quantity') || e.target.closest('.increase-quantity')) {
+                    const button = e.target.classList.contains('increase-quantity') ? e.target : e.target.closest('.increase-quantity');
+                    const index = button.getAttribute('data-index');
                     updateCartItemQuantity(parseInt(index), 1);
-                } else if (e.target.classList.contains('decrease-cart-item')) {
-                    const index = e.target.getAttribute('data-index');
+                } else if (e.target.classList.contains('decrease-quantity') || e.target.closest('.decrease-quantity')) {
+                    const button = e.target.classList.contains('decrease-quantity') ? e.target : e.target.closest('.decrease-quantity');
+                    const index = button.getAttribute('data-index');
                     updateCartItemQuantity(parseInt(index), -1);
+                }
+            });
+            
+            // Close modals when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === cartSidebar) {
+                    closeCart();
+                }
+                if (event.target === checkoutModal) {
+                    closeCheckout();
                 }
             });
         });
