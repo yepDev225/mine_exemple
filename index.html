@@ -400,7 +400,9 @@
             <p>&copy; 2025 SACGS-CI Group. Tous droits réservés.</p>
         </div>
     </footer>
-
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
     <script>
         AOS.init({
             duration: 1000,
@@ -434,5 +436,40 @@
             });
         });
     </script>
+    <script>
+  // ⚡ Initialisation avec votre clé publique
+  emailjs.init("rv-hA4gvUhsDVLFxF");
+
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = {
+      from_name: document.getElementById("name").value,
+      reply_to: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+      send_time: new Date().toLocaleString("fr-FR", {
+        timeZone: "Africa/Abidjan",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+      })
+    };
+
+    emailjs.send("service_msxlqp3", "template_p1sucq7", data)
+      .then(() => {
+          alert("✅ Message envoyé avec succès !");
+          form.reset();
+      })
+      .catch((err) => {
+          console.error("Erreur EmailJS:", err);
+          alert("❌ Une erreur est survenue. Réessayez plus tard.");
+      });
+  });
+</script>
+
 </body>
 </html>

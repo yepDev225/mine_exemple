@@ -354,7 +354,9 @@
             </form>
         </div>
     </section>
-
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
     <!-- Footer -->
     <footer class="bg-primary text-white py-12">
         <div class="max-w-7xl mx-auto px-4">
@@ -396,7 +398,7 @@
                         </p>
                         <p class="flex items-center">
                             <i data-feather="mail" class="w-4 h-4 mr-2"></i>
-                            contact@sacgs-ci.com
+                            sacgsciking6@gmail.com / kngoran14@gmail.com
                         </p>
                     </div>
                 </div>
@@ -444,5 +446,48 @@
             });
         });
     </script>
+    <script>
+  emailjs.init("rv-hA4gvUhsDVLFxF");
+
+  const quoteForm = document.querySelector(".quote-form form");
+  quoteForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+     const products = Array.from(
+      quoteForm.querySelectorAll('input[type="checkbox"]:checked')
+    ).map(cb => cb.parentElement.textContent.trim()).join(", ") || "Aucun";
+
+    const data = {
+      full_name: quoteForm.querySelector('input[type="text"]').value,
+      company: quoteForm.querySelectorAll('input[type="text"]')[1].value,
+      email: quoteForm.querySelector('input[type="email"]').value,
+      phone: quoteForm.querySelector('input[type="tel"]').value,
+      project_type: quoteForm.querySelector("select").value,
+      products: products,
+      message: quoteForm.querySelector("textarea").value,
+      type:"agricole",
+      send_time: new Date().toLocaleString("fr-FR", {
+        timeZone: "Africa/Abidjan",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+      })
+    };
+
+    emailjs.send("service_msxlqp3", "template_sbt3fen", data)
+      .then(() => {
+        alert("✅ Votre demande de devis a bien été envoyée !");
+        quoteForm.reset();
+      })
+      .catch(err => {
+        console.error("Erreur EmailJS :", err);
+        alert("❌ Une erreur est survenue, veuillez réessayer.");
+      });
+  });
+</script>
 </body>
 </html>
+
