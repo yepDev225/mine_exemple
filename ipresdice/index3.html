@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ipresdice - Elite Financial Partners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #D4AF37 100%);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #D4AF37 50%, transparent 100%);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'luxury-gold': '#D4AF37',
+                        'rich-black': '#1a1a1a',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-rich-black">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full">
+                        <img src="./assets/img/logo1.png" alt="ipresdice logo">
+                    </div>
+                    <span class="font-serif text-2xl font-semibold text-rich-black">Ipresdice</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-rich-black hover:text-luxury-gold transition-colors duration-300">About</a>
+                    <a href="#services" class="text-rich-black hover:text-luxury-gold transition-colors duration-300">Services</a>
+                    <a href="#vision" class="text-rich-black hover:text-luxury-gold transition-colors duration-300">Vision</a>
+                    <a href="#testimonials" class="text-rich-black hover:text-luxury-gold transition-colors duration-300">Testimonials</a>
+                    <a href="#contact" class="text-rich-black hover:text-luxury-gold transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative flex items-center justify-center parallax" style="background-image: url('./assets/img/hero1.jpg')">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6" data-aos="fade-up">
+            <h1 class="font-serif text-5xl md:text-7xl font-light mb-6 leading-tight">
+                Investir intelligemment,<br>grandir durablement
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-12 max-w-2xl mx-auto">
+                Exclusive financial partnerships for visionary investors and entrepreneurs
+            </p>
+            <button class="gold-gradient text-rich-black px-12 py-4 rounded-sm font-semibold text-lg hover-lift transition-all duration-300">
+                Begin Your Journey
+            </button>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-feather="chevron-down" class="text-white"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">About Ipresdice</h2>
+                <div class="section-divider w-32 mx-auto mb-8"></div>
+                <p class="text-lg text-black-600 leading-relaxed">
+                    For over two decades, Ipresdice has been the trusted partner for elite investors and visionary entrepreneurs. 
+                    Our discreet approach and unparalleled expertise in high-value investments set us apart in the world of luxury finance.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="award" class="text-rich-black"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4">Excellence</h3>
+                    <p class="text-black-600">Consistently delivering exceptional results for our discerning clientele</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="shield" class="text-rich-black"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4">Discretion</h3>
+                    <p class="text-black-600">Absolute confidentiality in all our partnerships and transactions</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="trending-up" class="text-rich-black"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4">Vision</h3>
+                    <p class="text-black-600">Forward-thinking strategies for sustainable wealth creation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">Exclusive Services</h2>
+                <div class="section-divider w-32 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Tailored financial solutions for sophisticated investors seeking exceptional opportunities
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-sm shadow-sm hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <i data-feather="briefcase" class="text-luxury-gold w-12 h-12 mb-6"></i>
+                    <h3 class="font-serif text-2xl mb-4">Wealth Management</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive portfolio management with personalized investment strategies</p>
+                    <a href="#" class="text-luxury-gold font-semibold flex items-center">
+                        Learn more
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-sm hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <i data-feather="dollar-sign" class="text-luxury-gold w-12 h-12 mb-6"></i>
+                    <h3 class="font-serif text-2xl mb-4">Private Equity</h3>
+                    <p class="text-gray-600 mb-6">Access to exclusive private market investments and venture opportunities</p>
+                    <a href="#" class="text-luxury-gold font-semibold flex items-center">
+                        Learn more
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-sm hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <i data-feather="home" class="text-luxury-gold w-12 h-12 mb-6"></i>
+                    <h3 class="font-serif text-2xl mb-4">Real Estate</h3>
+                    <p class="text-gray-600 mb-6">Luxury property investments and development opportunities worldwide</p>
+                    <a href="#" class="text-luxury-gold font-semibold flex items-center">
+                        Learn more
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">Our Vision</h2>
+                    <div class="section-divider w-32 mb-8"></div>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        At Ipresdice, we believe in creating lasting legacies through intelligent investments and strategic partnerships. 
+                        Our vision extends beyond immediate returns to sustainable growth that spans generations.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        We combine traditional values with innovative approaches, ensuring our clients remain at the forefront 
+                        of global financial opportunities while preserving and enhancing their wealth.
+                    </p>
+                    <button class="border border-luxury-gold text-luxury-gold px-8 py-3 rounded-sm font-semibold hover:bg-luxury-gold hover:text-white transition-all duration-300">
+                        Our Philosophy
+                    </button>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="aspect-square bg-gray-100 rounded-sm overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Ipresdice Vision" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 gold-gradient opacity-20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">Client Testimonials</h2>
+                <div class="section-divider w-32 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Trusted by visionary leaders and successful entrepreneurs worldwide
+                </p>
+            </div>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-sm shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg">Alexander Reed</h4>
+                            <p class="text-gray-500 text-sm">Technology Entrepreneur</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Ipresdice transformed my approach to wealth management. Their strategic insights have been invaluable."
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                                 alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg">Sophie Laurent</h4>
+                            <p class="text-gray-500 text-sm">Luxury Brand Founder</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "The discretion and expertise at Ipresdice are unmatched. A true partner in growth."
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                                 alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg">James Wellington</h4>
+                            <p class="text-gray-500 text-sm">Private Equity Investor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Their global network and investment opportunities have significantly enhanced my portfolio."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">Begin Your Journey</h2>
+                <div class="section-divider w-32 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Connect with our team to explore how Ipresdice can elevate your financial strategy
+                </p>
+            </div>
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-luxury-gold">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-luxury-gold">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-luxury-gold">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-luxury-gold"></textarea>
+                    </div>
+                    <button type="submit" class="w-full gold-gradient text-rich-black py-4 rounded-sm font-semibold text-lg hover-lift transition-all duration-300">
+                        Submit Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rich-black text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-8 h-8 rounded-full">
+                            <img src="./assets/img/logo1.png" alt="ipresdice logo">
+                        </div>
+                        <span class="font-serif text-2xl font-semibold">Ipresdice</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Elite financial partnerships for visionary investors and entrepreneurs worldwide.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#about" class="hover:text-luxury-gold transition-colors">About</a></li>
+                        <li><a href="#services" class="hover:text-luxury-gold transition-colors">Services</a></li>
+                        <li><a href="#vision" class="hover:text-luxury-gold transition-colors">Vision</a></li>
+                        <li><a href="#contact" class="hover:text-luxury-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-luxury-gold transition-colors">Wealth Management</a></li>
+                        <li><a href="#" class="hover:text-luxury-gold transition-colors">Private Equity</a></li>
+                        <li><a href="#" class="hover:text-luxury-gold transition-colors">Real Estate</a></li>
+                        <li><a href="#" class="hover:text-luxury-gold transition-colors">Family Office</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-3"></i>
+                            <span>75008 Paris, France</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-3"></i>
+                            <span>+33 1 45 62 78 90</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-3"></i>
+                            <span>contact@ipresdice.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Ipresdice. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        feather.replace();
+        
+        // Simple parallax effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax');
+            if (parallax) {
+                parallax.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+            }
+        });
+    </script>
+</body>
+</html>

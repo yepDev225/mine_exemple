@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ipresdice - Conseil Financier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #60a5fa 100%);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .back-to-top {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media screen and (max-width: 768px){
+            body *{
+                overflow: hidden;
+            }
+            .mobile-menu *{
+                overflow: auto;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1e3a8a',
+                        'secondary': '#64748b',
+                        'accent': '#f1f5f9'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img src="./assets/img/logo1.png" alt="ipresdice logo">
+                    </div>
+                    <span class="text-2xl font-bold text-gray-900">Ipresdice</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-blue-900 font-medium transition-colors">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-900 font-medium transition-colors">À propos</a>
+                    <a href="#partners" class="text-gray-700 hover:text-blue-900 font-medium transition-colors">Partenaires</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-blue-900 font-medium transition-colors">Réalisations</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-900 font-medium transition-colors">Témoignages</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-900 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="flex items-center text-blue-900 font-medium">
+                        <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                        <span>+225 0707560014</span>
+                    </div>
+                    <button class="bg-blue-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition-colors">
+                        Demander une consultation
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2" id="mobile-menu-button">
+                    <i data-feather="menu" class="w-6 h-6 text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50 lg:hidden" id="mobile-menu">
+            <div class="p-6 bg-white/95">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                            <img src="./assets/img/logo1.png" alt="ipresdice logo">
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">Ipresdice</span>
+                    </div>
+                    <button class="p-2" id="close-menu">
+                        <i data-feather="x" class="w-6 h-6 text-gray-700"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-6">
+                    <a href="#services" class="block text-lg font-medium text-gray-700 hover:text-blue-900 transition-colors">Services</a>
+                    <a href="#about" class="block text-lg font-medium text-gray-700 hover:text-blue-900 transition-colors">À propos</a>
+                    <a href="#partners" class="block text-lg font-medium text-gray-700 hover:text-blue-900 transition-colors">Partenaires</a>
+                    <a href="#portfolio" class="block text-lg font-medium text-gray-700 hover:text-blue-900 transition-colors">Réalisations</a>
+                    <a href="#testimonials" class="block text-lg font-medium text-gray-700 hover:text-blue-900 transition-colors">Témoignages</a>
+                    <a href="#contact" class="block text-lg font-medium text-gray-700 hover:text-blue-900 transition-colors">Contact</a>
+                    
+                    <div class="pt-6 border-t border-gray-200">
+                        <div class="flex items-center text-blue-900 font-medium mb-4">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            <span>+225 0707560014</span>
+                        </div>
+                        <button class="w-full bg-blue-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors">
+                            Demander une consultation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 bg-[url('./assets/img/hero1.jpg')] bg-cover bg-center"></div>
+        
+        <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Financer l'avenir <span class="bg-gradient-to-r from-blue-200 to-slate-100 bg-clip-text text-transparent">avec confiance</span>
+            </h1>
+            <p class="text-lg md:text-xl lg:text-2xl mb-8 text-blue-100 max-w-2xl mx-auto">
+                Votre partenaire de confiance pour une croissance financière durable et stratégique
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a class="bg-white text-blue-900 px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-blue-50 transition-all hover-lift" href="#contact">
+                    Demander une consultation
+                </a>
+                <button class="border-2 border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-white/10 transition-all">
+                    Découvrir nos services
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-feather="chevron-down" class="text-white w-8 h-8"></i>
+        </div>
+    </section>
+
+    <!-- About Section Enhanced -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Notre Approche Unique</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Ipresdice Finance collabore avec les plus grands établissements de crédit et organismes de crédit à l'exportation (OCE) du monde entier, ainsi qu'avec un réseau exclusif de banques spécialisées, d'institutions financières privées et de sociétés de capital-investissement.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Nous sommes spécialisés dans la création de solutions financières sur mesure adaptées aux besoins spécifiques de chaque client.
+                    </p>
+                    
+                    <div class="bg-blue-50 rounded-2xl p-6 mb-8">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">Notre Engagement</h3>
+                        <p class="text-gray-700">
+                            <strong>Ni nous ni nos agents ne demandons de frais initiaux</strong> pour les services rendus par IPRESDICE FINANCE. Tous les frais sont basés sur la réussite de l'exécution, et tout accord de ce type sera conclu mutuellement sous forme contractuelle.
+                        </p>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i data-feather="phone" class="text-green-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Appel d'urgence</p>
+                            <p class="text-lg font-bold text-gray-900">+225 0707560014</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+                    <div class="bg-blue-50 rounded-2xl p-6 text-center hover-lift">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="globe" class="text-blue-900 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portefeuille National</h3>
+                        <p class="text-gray-600">Financement adapté aux projets locaux et nationaux</p>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-2xl p-6 text-center hover-lift">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="shield" class="text-green-900 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sans Frais Initiaux</h3>
+                        <p class="text-gray-600">Paiement uniquement sur réussite de l'exécution</p>
+                    </div>
+                    
+                    <div class="bg-purple-50 rounded-2xl p-6 text-center hover-lift">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="users" class="text-purple-900 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Réseau Exclusif</h3>
+                        <p class="text-gray-600">Partenariats avec les plus grandes institutions</p>
+                    </div>
+                    
+                    <div class="bg-orange-50 rounded-2xl p-6 text-center hover-lift">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="file-text" class="text-orange-900 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Contrats Sécurisés</h3>
+                        <p class="text-gray-600">Accords contractuels transparents et mutuels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos Services Experts</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Des solutions financières sur mesure pour accompagner votre réussite
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-feather="bar-chart-2" class="text-blue-900 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Conseil Financier</h3>
+                    <p class="text-gray-600 mb-6">
+                        Stratégies d'investissement personnalisées et planification financière pour maximiser votre patrimoine.
+                    </p>
+                    <a href="#" class="text-blue-900 font-semibold flex items-center">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-feather="dollar-sign" class="text-blue-900 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Prêts d'Entreprise</h3>
+                    <p class="text-gray-600 mb-6">
+                        Accès facilité aux financements et accompagnement dans vos projets de développement et d'innovation.
+                    </p>
+                    <a href="#" class="text-blue-900 font-semibold flex items-center">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-feather="pie-chart" class="text-blue-900 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Support Investissement</h3>
+                    <p class="text-gray-600 mb-6">
+                        Analyse de marché et accompagnement dans vos décisions d'investissement pour une croissance maîtrisée.
+                    </p>
+                    <a href="#" class="text-blue-900 font-semibold flex items-center">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos Partenaires Stratégiques</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Collaboration avec les plus grandes institutions financières mondiales
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="bg-white rounded-2xl p-8 text-center hover-lift" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="building" class="text-blue-900 w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Banques Internationales</h3>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center hover-lift" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="trending-up" class="text-green-900 w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">OCE Mondiaux</h3>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="shield" class="text-purple-900 w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Institutions Privées</h3>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center hover-lift" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="dollar-sign" class="text-orange-900 w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Capital-investissement</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-900 to-blue-700">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center text-white" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="award" class="text-white w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold mb-2">15+</h3>
+                    <p class="text-blue-200 font-medium">Années d'expérience</p>
+                </div>
+                
+                <div class="text-center text-white" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="users" class="text-white w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold mb-2">500+</h3>
+                    <p class="text-blue-200 font-medium">Clients satisfaits</p>
+                </div>
+                
+                <div class="text-center text-white" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="trending-up" class="text-white w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold mb-2">98%</h3>
+                    <p class="text-blue-200 font-medium">Taux de satisfaction</p>
+                </div>
+                
+                <div class="text-center text-white" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="globe" class="text-white w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold mb-2">25+</h3>
+                    <p class="text-blue-200 font-medium">Pays couverts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos Réalisations</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Des success stories qui témoignent de notre expertise
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-50 rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-r from-blue-900 to-blue-700 flex items-center justify-center">
+                        <i data-feather="briefcase" class="text-white w-16 h-16"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Startup Tech</h3>
+                        <p class="text-gray-600 mb-4">
+                            Accompagnement dans une levée de fonds de 5M€ pour une scale-up innovante.
+                        </p>
+                        <span class="inline-block bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">
+                            Financement
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 flex items-center justify-center">
+                        <i data-feather="home" class="text-white w-16 h-16"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Groupe Immobilier</h3>
+                        <p class="text-gray-600 mb-4">
+                            Restructuration financière permettant une croissance de 40% en 18 mois.
+                        </p>
+                        <span class="inline-block bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">
+                            Restructuration
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-r from-blue-700 to-blue-500 flex items-center justify-center">
+                        <i data-feather="shopping-bag" class="text-white w-16 h-16"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Commerce International</h3>
+                        <p class="text-gray-600 mb-4">
+                            Optimisation fiscale et stratégie d'expansion à l'international.
+                        </p>
+                        <span class="inline-block bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">
+                            International
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gradient-to-br from-blue-900 to-blue-700">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-white mb-4">Ce Que Disent Nos Clients</h2>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto">
+                    La confiance de nos partenaires est notre plus grande réussite
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-300 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="text-blue-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Pierre Martin</h4>
+                            <p class="text-blue-200 text-sm">CEO, TechInnov</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 italic">
+                        "Ipresdice a transformé notre approche financière. Leur expertise nous a permis de doubler notre chiffre d'affaires en 2 ans."
+                    </p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-300 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="text-blue-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sophie Laurent</h4>
+                            <p class="text-blue-200 text-sm">Directrice Financière, GlobalCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 italic">
+                        "Un accompagnement exceptionnel. Leur analyse stratégique nous a ouvert de nouvelles perspectives de croissance."
+                    </p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-300 rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="user" class="text-blue-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Thomas Dubois</h4>
+                            <p class="text-blue-200 text-sm">Fondateur, EcoSolutions</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 italic">
+                        "Leur expertise en financement nous a permis de sécuriser les investissements nécessaires à notre expansion internationale."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div data-aos="fade-right">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-6">Prêt à Transformer Votre Avenir Financier ?</h2>
+                        <p class="text-gray-600 text-lg mb-8">
+                            Contactez-nous pour une consultation personnalisée. Notre équipe d'experts est à votre écoute pour élaborer des solutions adaptées à vos objectifs.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i data-feather="phone" class="text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-900 font-semibold">+225 0707560014</p>
+                                    <p class="text-gray-600">Lun - Ven, 9h - 18h</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i data-feather="mail" class="text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-900 font-semibold">contact@ipresdice.fr</p>
+                                    <p class="text-gray-600">Nous répondons sous 24h</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i data-feather="map-pin" class="text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-900 font-semibold">Deux Plateau Vallon</p>
+                                    <p class="text-gray-600">Abidjan, Côte d'Ivoire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 rounded-2xl p-8" data-aos="fade-left">
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Prénom</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Nom</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Entreprise</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-900 text-white py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors hover-lift">
+                                Envoyer ma demande
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                            <img src="./assets/img/logo1.png" alt="ipresdice logo">
+                        </div>
+                        <span class="text-2xl font-bold">Ipresdice</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Votre partenaire de confiance pour une croissance financière durable.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Conseil Financier</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Prêts d'Entreprise</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Support Investissement</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Planification Patrimoniale</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Entreprise</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Carrières</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Presse</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Légal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">CGU</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p class="mb-4">Ce site web ou ses outils tiers utilisent des cookies, nécessaires à son fonctionnement. Pour en savoir plus ou retirer votre consentement à tout ou partie des cookies, veuillez les rejeter. En naviguant sur ce site web, vous acceptez l'utilisation de cookies.</p>
+                <p>&copy; 2025 IPRESDICE Finance. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top fixed bottom-8 right-8 w-12 h-12 bg-blue-900 text-white rounded-full shadow-lg hover:bg-blue-800 transition-colors z-40 flex items-center justify-center" id="back-to-top">
+        <i data-feather="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        function toggleBackToTop() {
+            if (window.scrollY > window.innerHeight) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        }
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ipresdice - Innovation Financière</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a0e17',
+                        secondary: '#1a2332',
+                        accent: '#00f5ff',
+                        accent2: '#00d4ff',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                        'dmsans': ['DM Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 50%, #0a0e17 100%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -15px); }
+            100% { transform: translate(0, -0px); }
+        }
+    </style>
+</head>
+<body class="bg-primary font-dmsans text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glassmorphism">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-accent to-accent2 rounded-lg"></div>
+                    <span class="font-space font-bold text-xl">Ipresdice</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#solutions" class="hover:text-accent transition-colors">Solutions</a>
+                    <a href="#services" class="hover:text-accent transition-colors">Services</a>
+                    <a href="#stats" class="hover:text-accent transition-colors">Impact</a>
+                    <a href="#pricing" class="hover:text-accent transition-colors">Tarifs</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="px-4 py-2 rounded-lg border border-accent text-accent hover:bg-accent hover:text-primary transition-colors">
+                        Connexion
+                    </button>
+                    <button class="md:hidden">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen hero-gradient pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-accent rounded-full filter blur-3xl opacity-20 floating"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent2 rounded-full filter blur-3xl opacity-20 floating" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 py-20 flex flex-col items-center text-center relative z-10">
+            <h1 class="font-space font-bold text-4xl md:text-6xl lg:text-7xl mb-8 leading-tight" data-aos="fade-up">
+                Transformez vos idées en <span class="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent">projets financés</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mb-12" data-aos="fade-up" data-aos-delay="200">
+                La plateforme financière nouvelle génération pour entrepreneurs visionnaires
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mb-20" data-aos="fade-up" data-aos-delay="400">
+                <button class="px-8 py-4 bg-gradient-to-r from-accent to-accent2 text-primary font-space font-semibold rounded-lg glow-effect hover:shadow-2xl transition-all">
+                    Commencer maintenant
+                </button>
+                <button class="px-8 py-4 glassmorphism border border-accent/30 text-accent font-space font-semibold rounded-lg hover:bg-accent/10 transition-all">
+                    Découvrir nos solutions
+                </button>
+            </div>
+
+            <!-- Animated Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl" data-aos="fade-up" data-aos-delay="600">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-space font-bold text-accent mb-2" data-count="250">0</div>
+                    <div class="text-gray-400">Projets financés</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-space font-bold text-accent2 mb-2" data-count="50">0</div>
+                    <div class="text-gray-400">Partenaires</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-space font-bold text-accent mb-2" data-count="15">0</div>
+                    <div class="text-gray-400">Pays desservis</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-space font-bold text-accent2 mb-2" data-count="98">0</div>
+                    <div class="text-gray-400">% de satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="font-space font-bold text-3xl md:text-4xl text-center mb-4" data-aos="fade-up">
+                Nos <span class="text-accent">Services</span>
+            </h2>
+            <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
+                Une suite complète d'outils financiers pour propulser votre entreprise vers de nouveaux sommets
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="glassmorphism rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent2 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="trending-up" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-space font-semibold text-xl mb-4">Financement Intelligent</h3>
+                    <p class="text-gray-400 mb-6">
+                        Algorithmes d'IA pour optimiser votre stratégie de financement et maximiser vos chances de succès
+                    </p>
+                    <div class="flex items-center text-accent">
+                        <span>En savoir plus</span>
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="glassmorphism rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent2 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-space font-semibold text-xl mb-4">Sécurité Avancée</h3>
+                    <p class="text-gray-400 mb-6">
+                        Protection de niveau bancaire avec cryptographie quantique et surveillance 24/7
+                    </p>
+                    <div class="flex items-center text-accent">
+                        <span>En savoir plus</span>
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="glassmorphism rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent2 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="zap" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-space font-semibold text-xl mb-4">Transactions Instantanées</h3>
+                    <p class="text-gray-400 mb-6">
+                        Réseau blockchain privé pour des transferts internationaux en temps réel
+                    </p>
+                    <div class="flex items-center text-accent">
+                        <span>En savoir plus</span>
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="font-space font-bold text-3xl md:text-4xl text-center mb-4" data-aos="fade-up">
+                Solutions <span class="text-accent">Adaptées</span>
+            </h2>
+            <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
+                Choisissez la formule qui correspond à vos ambitions
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plan Starter -->
+                <div class="glassmorphism rounded-2xl p-8 relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-8">
+                        <h3 class="font-space font-semibold text-2xl mb-2">Starter</h3>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-4xl font-space font-bold">49€</span>
+                            <span class="text-gray-400 ml-2">/mois</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Financement jusqu'à 50K€</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Support prioritaire</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Analytics de base</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 glassmorphism border border-accent/30 text-accent rounded-lg hover:bg-accent/10 transition-all">
+                        Commencer
+                    </button>
+                </div>
+                
+                <!-- Plan Pro (Featured) -->
+                <div class="glassmorphism rounded-2xl p-8 relative border-2 border-accent glow-effect transform scale-105" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent text-primary px-4 py-1 rounded-full text-sm font-space font-semibold">
+                            Populaire
+                        </span>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="font-space font-semibold text-2xl mb-2">Pro</h3>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-4xl font-space font-bold">99€</span>
+                            <span class="text-gray-400 ml-2">/mois</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Financement jusqu'à 500K€</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Support dédié 24/7</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Analytics avancés</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Réseau de partenaires</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 bg-gradient-to-r from-accent to-accent2 text-primary font-space font-semibold rounded-lg glow-effect hover:shadow-2xl transition-all">
+                        Essai gratuit 30 jours
+                    </button>
+                </div>
+                
+                <!-- Plan Enterprise -->
+                <div class="glassmorphism rounded-2xl p-8 relative" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-8">
+                        <h3 class="font-space font-semibold text-2xl mb-2">Enterprise</h3>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-4xl font-space font-bold">Sur mesure</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Financement illimité</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Équipe dédiée</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>Solutions sur mesure</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-accent mr-3 w-5 h-5"></i>
+                            <span>API personnalisée</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 glassmorphism border border-accent/30 text-accent rounded-lg hover:bg-accent/10 transition-all">
+                        Nous contacter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-accent to-accent2 rounded-lg"></div>
+                        <span class="font-space font-bold text-xl">Ipresdice</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Réinventons ensemble l'avenir de la finance d'entreprise.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-space font-semibold mb-4">Produit</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-accent transition-colors">Fonctionnalités</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Tarifs</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">API</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Sécurité</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-space font-semibold mb-4">Entreprise</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-accent transition-colors">À propos</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Carrières</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Presse</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-space font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contact@ipresdice.com</li>
+                        <li>+33 1 23 45 67 89</li>
+                        <li>Paris, France</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Ipresdice. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Animated counter
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + (element.getAttribute('data-count') === '98' ? '%' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + (element.getAttribute('data-count') === '98' ? '%' : '');
+                }
+            }, 16);
+        }
+
+        // Start counters when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('[data-count]');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        animateCounter(counter, target, 2000);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.hero-gradient'));
+    </script>
+</body>
+</html>
