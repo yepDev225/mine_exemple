@@ -57,25 +57,8 @@
             height: auto;
             transform: translateX(-50%) translateY(-50%);
         }
-        .service-timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .service-timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #0052CC;
-            top: 0;
-            bottom: 0;
-            left: 100%;
-            margin-left: -3px;
-        }
-        @media screen and (max-width: 768px) {
-            .service-timeline::after {
-                left: 31px;
-            }
+        .service-card:hover {
+            transform: translateY(-8px);
         }
     </style>
 </head>
@@ -131,7 +114,7 @@
         </div>
     </section>
 
-    <!-- Services Timeline -->
+    <!-- Services Grid -->
     <section id="services" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -139,57 +122,41 @@
                 <p class="text-gray-600 max-w-3xl mx-auto">Une offre complète de solutions logistiques pour répondre à tous vos besoins</p>
             </div>
 
-            <div class="service-timeline">
-                <!-- Service 1 -->
-                <div class="container left mb-12" data-aos="fade-right">
-                    <div class="content bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-kenz-blue p-3 rounded-full mr-4">
-                                <i data-feather="truck" class="text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-kenz-blue">Transport Routier</h3>
-                        </div>
-                        <p class="text-gray-600">Solution de transport terrestre sécurisée à travers toute l'Afrique de l'Ouest avec suivi GPS et gestion des risques.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-kenz-blue mb-4">
+                        <i data-feather="truck" class="w-12 h-12"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-kenz-blue mb-3">Transport Routier</h3>
+                    <p class="text-gray-600">Solution de transport terrestre sécurisée à travers toute l'Afrique de l'Ouest avec suivi GPS et gestion des risques.</p>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="container right mb-12" data-aos="fade-left">
-                    <div class="content bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-kenz-orange p-3 rounded-full mr-4">
-                                <i data-feather="package" class="text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-kenz-orange">Transit Multi-Modal</h3>
-                        </div>
-                        <p class="text-gray-600">Combinaison optimisée des modes de transport (routier, maritime, aérien) pour une efficacité maximale.</p>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-kenz-orange mb-4">
+                        <i data-feather="package" class="w-12 h-12"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-kenz-orange mb-3">Transit Multi-Modal</h3>
+                    <p class="text-gray-600">Combinaison optimisée des modes de transport (routier, maritime, aérien) pour une efficacité maximale.</p>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="container left mb-12" data-aos="fade-right">
-                    <div class="content bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-kenz-blue p-3 rounded-full mr-4">
-                                <i data-feather="home" class="text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-kenz-blue">Entreposage</h3>
-                        </div>
-                        <p class="text-gray-600">Espaces de stockage sécurisés avec contrôle climatique et gestion des inventaires en temps réel.</p>
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-kenz-blue mb-4">
+                        <i data-feather="home" class="w-12 h-12"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-kenz-blue mb-3">Entreposage</h3>
+                    <p class="text-gray-600">Espaces de stockage sécurisés avec contrôle climatique et gestion des inventaires en temps réel.</p>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="container right mb-12" data-aos="fade-left">
-                    <div class="content bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-kenz-orange p-3 rounded-full mr-4">
-                                <i data-feather="globe" class="text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-kenz-orange">Import/Export</h3>
-                        </div>
-                        <p class="text-gray-600">Gestion complète des formalités douanières et accompagnement personnalisé pour vos opérations internationales.</p>
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-kenz-orange mb-4">
+                        <i data-feather="globe" class="w-12 h-12"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-kenz-orange mb-3">Import/Export</h3>
+                    <p class="text-gray-600">Gestion complète des formalités douanières et accompagnement personnalisé pour vos opérations internationales.</p>
                 </div>
             </div>
         </div>
